@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 迈尔斯科技</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 联系我们页面额外样式 */
+        .contact-content {
+            padding: 80px 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 50px;
+        }
+        
+        .contact-info-section h2,
+        .contact-form-section h2 {
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        
+        .contact-item {
+            background: var(--bg-card);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .contact-item:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .contact-item h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .contact-item p {
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+        
+        .contact-form {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background: var(--bg-dark);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 5px;
+            color: var(--text-light);
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: var(--gradient-primary);
+            color: var(--bg-dark);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            box-shadow: var(--shadow-glow);
+            transform: translateY(-2px);
+        }
+        
+        .map-placeholder {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            height: 400px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            font-size: 1.2rem;
+            margin-top: 30px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1 class="logo">迈尔斯科技</h1>
+                <span class="tagline">智能包装解决方案</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="products.html">产品中心</a></li>
+                <li><a href="cases.html">客户案例</a></li>
+                <li><a href="contact.html" class="active">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>联系我们</h1>
+            <p>期待与您的合作</p>
+        </div>
+    </section>
+
+    <!-- 联系我们内容 -->
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- 左侧：联系信息 -->
+                <div class="contact-info-section">
+                    <h2>联系方式</h2>
+                    
+                    <div class="contact-item">
+                        <h3>📍 公司地址</h3>
+                        <p>河北省石家庄市裕华区槐中路306号</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h3>📞 联系电话</h3>
+                        <p>+86 157 3115 8807</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h3>📧 电子邮箱</h3>
+                        <p>info@milestecnology.com</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h3>🕐 工作时间</h3>
+                        <p>周一至周五：9:00 - 18:00</p>
+                        <p>周六：9:00 - 12:00</p>
+                    </div>
+                    
+                    <!-- 地图占位符 -->
+                    <div class="map-placeholder">
+                        📍 地图位置 - 河北省石家庄市裕华区槐中路306号
+                    </div>
+                </div>
+                
+                <!-- 右侧：联系表单 -->
+                <div class="contact-form-section">
+                    <h2>在线留言</h2>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">姓名 *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">公司名称</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">联系电话 *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">电子邮箱</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">需求描述 *</label>
+                            <textarea id="message" name="message" required placeholder="请描述您的包装需求，我们会尽快与您联系..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">提交留言</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>迈尔斯科技</h3>
+                    <p>智能包装解决方案引领者</p>
+                </div>
+                <div class="footer-section">
+                    <h4>联系方式</h4>
+                    <p>📍 河北省石家庄市裕华区槐中路306号</p>
+                    <p>📞 +86 157 3115 8807</p>
+                    <p>📧 info@milestecnology.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="about.html">关于我们</a></li>
+                        <li><a href="products.html">产品中心</a></li>
+                        <li><a href="cases.html">客户案例</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2022-2026 石家庄迈尔斯科技有限公司 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
