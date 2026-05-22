@@ -195,7 +195,7 @@
                 <div class="contact-form-section">
                     <h2>在线留言</h2>
                     
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" id="contactForm" action="https://formsubmit.co/info@milestecnology.com" method="POST">
                         <div class="form-group">
                             <label for="name">姓名 *</label>
                             <input type="text" id="name" name="name" required>
@@ -221,6 +221,11 @@
                             <textarea id="message" name="message" required placeholder="请描述您的包装需求，我们会尽快与您联系..."></textarea>
                         </div>
                         
+                        <!-- Formsubmit 配置 -->
+                        <input type="hidden" name="_subject" value="迈尔斯科技官网 - 新客户留言">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="text" name="_honey" style="display:none">
                         <button type="submit" class="submit-btn">提交留言</button>
                     </form>
                 </div>
