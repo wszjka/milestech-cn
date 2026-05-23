@@ -1,1725 +1,1713 @@
-﻿<!DOCTYPE html>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>产品中心 - 迈尔斯科技</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        .product-category {
-            padding: 60px 0;
-            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
-        }
-        
-        .product-category:last-child {
-            border-bottom: none;
-        }
-        
-        .category-title {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid var(--primary);
-        }
-        
-        .product-detail {
-            background: var(--bg-card);
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(0, 212, 255, 0.2);
-        }
-        
-        .product-detail h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-        
-        .product-specs {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }
-        
-        .spec-item {
-            background: rgba(0, 212, 255, 0.1);
-            padding: 10px 15px;
-            border-radius: 5px;
-            border-left: 3px solid var(--primary);
-        }
-        
-        .spec-label {
-            color: var(--text-gray);
-            font-size: 0.9rem;
-        }
-        
-        .spec-value {
-            color: var(--text-light);
-            font-weight: 600;
-            margin-top: 5px;
-        }
-        
-        .product-features {
-            margin-top: 20px;
-            padding-left: 20px;
-        }
-        
-        .product-features li {
-            color: var(--text-gray);
-            margin-bottom: 8px;
-        }
-        
-        .auxiliary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .aux-item {
-            background: var(--bg-card);
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            text-align: center;
-        }
-        
-        .aux-category {
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .aux-list {
-            color: var(--text-gray);
-            font-size: 0.9rem;
-            list-style: none;
-        }
-        
-        .aux-list li {
-            padding: 5px 0;
-        }
-    
-        .category-image {
-            width: 100%;
-            min-height: 300px;
-            overflow: hidden;
-            border-radius: 10px;
-            margin: 20px 0 30px 0;
-            background: var(--bg-card);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .category-image img {
-            max-width: 100%;
-            height: auto;
-            object-fit: contain;
-        }
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Products - MilesTech</title>
+ <link rel="stylesheet" href="css/style.css">
+ <style>
+ .product-category {
+ padding: 60px 0;
+ border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+ }
+ 
+ .product-category:last-child {
+ border-bottom: none;
+ }
+ 
+ .category-title {
+ font-size: 2rem;
+ color: var(--primary);
+ margin-bottom: 30px;
+ padding-bottom: 15px;
+ border-bottom: 2px solid var(--primary);
+ }
+ 
+ .product-detail {
+ background: var(--bg-card);
+ padding: 30px;
+ border-radius: 10px;
+ margin-bottom: 30px;
+ border: 1px solid rgba(0, 212, 255, 0.2);
+ }
+ 
+ .product-detail h3 {
+ color: var(--primary);
+ margin-bottom: 15px;
+ font-size: 1.5rem;
+ }
+ 
+ .product-specs {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr); max-width: 900px; margin-left: auto; margin-right: auto;
+ gap: 15px;
+ margin: 20px 0;
+ }
+ 
+ .spec-item {
+ background: rgba(0, 212, 255, 0.1);
+ padding: 10px 15px;
+ border-radius: 5px;
+ border-left: 3px solid var(--primary);
+ }
+ 
+ .spec-label {
+ color: var(--text-gray);
+ font-size: 0.9rem;
+ }
+ 
+ .spec-value {
+ color: var(--text-light);
+ font-weight: 600;
+ margin-top: 5px;
+ }
+ 
+ .product-features {
+ margin-top: 20px;
+ padding-left: 20px;
+ }
+ 
+ .product-features li {
+ color: var(--text-gray);
+ margin-bottom: 8px;
+ }
+ 
+ .auxiliary-grid {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr); max-width: 900px; margin-left: auto; margin-right: auto;
+ gap: 20px;
+ margin-top: 30px;
+ }
+ 
+ .aux-item {
+ background: var(--bg-card);
+ padding: 20px;
+ border-radius: 8px;
+ border: 1px solid rgba(0, 212, 255, 0.2);
+ text-align: center;
+ }
+ 
+ .aux-category {
+ color: var(--primary);
+ font-weight: 600;
+ margin-bottom: 10px;
+ }
+ 
+ .aux-list {
+ color: var(--text-gray);
+ font-size: 0.9rem;
+ list-style: none;
+ }
+ 
+ .aux-list li {
+ padding: 5px 0;
+ }
+ 
+ .category-image {
+ width: 100%;
+ min-height: 300px;
+ overflow: hidden;
+ border-radius: 10px;
+ margin: 20px 0 30px 0;
+ background: var(--bg-card);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ }
+ 
+ .category-image img {
+ max-width: 100%;
+ height: auto;
+ object-fit: contain;
+ }
 </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <h1 class="logo">迈尔斯科技</h1>
-                <span class="tagline">智能包装解决方案</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">首页</a></li>
-                <li><a href="about.html">关于我们</a></li>
-                <li><a href="products.html" class="active">产品中心</a></li>
-                <li><a href="cases.html">客户案例</a></li>
-                <li><a href="contact.html">联系我们</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <section class="page-header">
-        <div class="container">
-            <h1>产品中心</h1>
-            <p>全流程自动化包装设备与解决方案</p>
-        </div>
-    </section>
-
-    <!-- 一、立式制袋经典包装机（VFS系列） -->
-    <section class="product-category" id="vertical">
-        <div class="container">
-            <h2 class="category-title">一、立式制袋经典包装机（VFS系列）</h2>
-        <div class="category-image">
-            <img src="images/product-categories/1.jpg" alt="一、立式制袋经典包装机（VFS系列）">
-        </div>
-
-            <p style="color: var(--text-gray); margin-bottom: 30px;">适用于颗粒、粉末、液体等多种物料的自动化包装</p>
-            
-            <div class="product-detail">
-                <h3>VFS320B 立式全自动包装机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">设备尺寸</div>
-                        <div class="spec-value">1050×800×1010mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">制袋尺寸</div>
-                        <div class="spec-value">200×150mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">80包/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">压缩空气</div>
-                        <div class="spec-value">≥0.6MPa 350L/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">功率</div>
-                        <div class="spec-value">3KW</div>
-                    </div>
-                </div>
-                <ul class="product-features">
-                    <li>制袋形式：枕式袋、插脚袋、冲孔袋、手提袋、盒式袋、透气阀袋等</li>
-                </ul>
-            </div>
-
-            <div class="product-detail">
-                <h3>VFS5000D 立式全自动包装机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">设备尺寸</div>
-                        <div class="spec-value">1470×988×1400mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">制袋尺寸</div>
-                        <div class="spec-value">280×180mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">80包/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">压缩空气</div>
-                        <div class="spec-value">≥0.6MPa 360L/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">功率</div>
-                        <div class="spec-value">3KW</div>
-                    </div>
-                </div>
-                <ul class="product-features">
-                    <li>制袋形式：枕式袋、插脚袋、冲孔袋、手提袋、盒式袋、透气阀袋等</li>
-                </ul>
-            </div>
-
-            <div class="product-detail">
-                <h3>VFS5000B 立式全自动包装机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">设备尺寸</div>
-                        <div class="spec-value">1800×1220×1680mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">制袋尺寸</div>
-                        <div class="spec-value">340×250mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">90包/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">压缩空气</div>
-                        <div class="spec-value">≥0.6MPa 350L/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">功率</div>
-                        <div class="spec-value">5.5KW</div>
-                    </div>
-                </div>
-                <ul class="product-features">
-                    <li>制袋形式：枕式袋、插脚袋、冲孔袋、手提袋、盒式袋、透气阀袋等</li>
-                </ul>
-            </div>
-
-            <div class="product-detail">
-                <h3>VFST300B 立式全自动包装机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">设备尺寸</div>
-                        <div class="spec-value">1854×1440×1930mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">制袋尺寸</div>
-                        <div class="spec-value">460×350mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">80包/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">压缩空气</div>
-                        <div class="spec-value">≥0.6MPa 350L/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">功率</div>
-                        <div class="spec-value">6KW</div>
-                    </div>
-                </div>
-                <ul class="product-features">
-                    <li>制袋形式：枕式袋、插脚袋、冲孔袋、手提袋、盒式袋、透气阀袋等</li>
-                </ul>
-            </div>
-
-            <div class="product-detail">
-                <h3>VFS9000B 立式全自动包装机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">设备尺寸</div>
-                        <div class="spec-value">2000×1600×2200mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">制袋尺寸</div>
-                        <div class="spec-value">560×450mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">40包/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">压缩空气</div>
-                        <div class="spec-value">≥0.6MPa 350L/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">功率</div>
-                        <div class="spec-value">6KW</div>
-                    </div>
-                </div>
-                <ul class="product-features">
-                    <li>制袋形式：枕式袋、插脚袋、冲孔袋、手提袋、盒式袋、透气阀袋等</li>
-                </ul>
-            </div>
-
-            <div class="product-detail">
-                <h3>VFS1100B 立式全自动包装机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">设备尺寸</div>
-                        <div class="spec-value">2150×1750×2300mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">制袋尺寸</div>
-                        <div class="spec-value">650×535mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">20包/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">压缩空气</div>
-                        <div class="spec-value">≥0.6MPa 300L/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">功率</div>
-                        <div class="spec-value">6.5KW</div>
-                    </div>
-                </div>
-                <ul class="product-features">
-                    <li>制袋形式：枕式袋、插脚袋、冲孔袋、手提袋、盒式袋、透气阀袋等</li>
-                </ul>
-            </div>
-
-            <div class="product-detail">
-                <h3>VFS1500B 立式全自动包装机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">设备尺寸</div>
-                        <div class="spec-value">2450×1950×2680mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">制袋尺寸</div>
-                        <div class="spec-value">900×725mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">10包/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">压缩空气</div>
-                        <div class="spec-value">≥0.6MPa 300L/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">功率</div>
-                        <div class="spec-value">7.5KW</div>
-                    </div>
-                </div>
-                <ul class="product-features">
-                    <li>制袋形式：枕式袋、插脚袋、冲孔袋、手提袋、盒式袋、透气阀袋等</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- 二、盒式袋/倾斜式/透气阀包装机 -->
-    <section class="product-category" id="box-type">
-        <div class="container">
-            <h2 class="category-title">二、盒式袋/倾斜式/透气阀包装机</h2>
-        <div class="category-image">
-            <img src="images/product-categories/2.jpg" alt="二、盒式袋/倾斜式/透气阀包装机">
-        </div>
-
-            
-            <div class="product-detail">
-                <h3>VFS5000H5 盒式袋包装机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">外观尺寸</div>
-                        <div class="spec-value">2450×1230×1660mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">制袋形式</div>
-                        <div class="spec-value">盒式袋</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">制袋尺寸</div>
-                        <div class="spec-value">正面W:50~190mm 侧面W:35~90mm 边封W:5~8mm 袋长L:100~420mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">45包/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">压缩空气</div>
-                        <div class="spec-value">≥0.6MPa 350L/min</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>VFS7300H5 盒式袋包装机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">外观尺寸</div>
-                        <div class="spec-value">2550×1420×1930mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">制袋形式</div>
-                        <div class="spec-value">盒式袋</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">制袋尺寸</div>
-                        <div class="spec-value">正面W:60~260mm 侧面W:45~120mm 边封W:5~10mm 袋长L:100~460mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">45包/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">压缩空气</div>
-                        <div class="spec-value">≥0.6MPa 350L/min</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>VFS5000X 透气阀包装机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">外观尺寸</div>
-                        <div class="spec-value">1760×1496×1765mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">制袋形式</div>
-                        <div class="spec-value">枕式袋</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">制袋尺寸</div>
-                        <div class="spec-value">(50-500)×(65~260)mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">50包/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">压缩空气</div>
-                        <div class="spec-value">≥0.6MPa 350L/min</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 三、立式颗粒包装机组 -->
-    <section class="product-category" id="granule">
-        <div class="container">
-            <h2 class="category-title">三、立式颗粒包装机组</h2>
-        <div class="category-image">
-            <img src="images/product-categories/3.jpg" alt="三、立式颗粒包装机组">
-        </div>
-
-            
-            <div class="product-detail">
-                <h3>VFS5000D 颗粒包装机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">10-1000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量精度</div>
-                        <div class="spec-value">±0.2%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">80包/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">适用物料</div>
-                        <div class="spec-value">各类颗粒物料</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>VFS5000B 颗粒包装机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">100-2000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量精度</div>
-                        <div class="spec-value">±0.2%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">50包/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">适用物料</div>
-                        <div class="spec-value">各类颗粒物料</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>VFS7300B 颗粒包装机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">500-5000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量精度</div>
-                        <div class="spec-value">±0.2%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">50包/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">适用物料</div>
-                        <div class="spec-value">各类颗粒物料</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>VFS1100B 颗粒包装机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">2000-10000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量精度</div>
-                        <div class="spec-value">±0.2%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">30包/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">适用物料</div>
-                        <div class="spec-value">各类颗粒物料</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 四、立式粉剂包装机组 -->
-    <section class="product-category" id="powder">
-        <div class="container">
-            <h2 class="category-title">四、立式粉剂包装机组</h2>
-        <div class="category-image">
-            <img src="images/product-categories/4.jpg" alt="四、立式粉剂包装机组">
-        </div>
-
-            
-            <div class="product-detail">
-                <h3>VFS5000D 粉剂包装机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">10-1000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量精度</div>
-                        <div class="spec-value"><100g<±2%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">50包/min</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>VFS5000B 粉剂包装机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">100-2000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量精度</div>
-                        <div class="spec-value">100-500g<±1%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">50包/min</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>VFS7300B 粉剂包装机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">500-5000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量精度</div>
-                        <div class="spec-value">≥500g<±0.5%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">50包/min</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>VFS1100B 粉剂包装机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">2000-10000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量精度</div>
-                        <div class="spec-value">具体视物料特性</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">30包/min</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 五、液体灌装机组 -->
-    <section class="product-category" id="liquid">
-        <div class="container">
-            <h2 class="category-title">五、液体灌装机组</h2>
-        <div class="category-image">
-            <img src="images/product-categories/5.jpg" alt="五、液体灌装机组">
-        </div>
-
-            
-            <div class="product-detail">
-                <h3>VFS5000B 液体灌装机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">100-2000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量精度</div>
-                        <div class="spec-value">±0.5%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">70包/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量方式</div>
-                        <div class="spec-value">活塞式转子泵/隔膜泵</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>VFS7300B 液体灌装机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">500-5000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量精度</div>
-                        <div class="spec-value">±0.5%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">40包/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量方式</div>
-                        <div class="spec-value">活塞式转子泵/隔膜泵</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 六、挤压式包装机组 -->
-    <section class="product-category" id="extrusion">
-        <div class="container">
-            <h2 class="category-title">六、挤压式包装机组</h2>
-        <div class="category-image">
-            <img src="images/product-categories/6.jpg" alt="六、挤压式包装机组">
-        </div>
-
-            
-            <div class="product-detail">
-                <h3>VFS7300GY 挤压式包装机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value"><5000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量精度</div>
-                        <div class="spec-value">±0.5%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">25包/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量方式</div>
-                        <div class="spec-value">转子泵挤压式定量灌装</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>VFS7300GZ 挤压式包装机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value"><5000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量精度</div>
-                        <div class="spec-value">±0.5%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">15包/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量方式</div>
-                        <div class="spec-value">转子泵挤压式定量灌装</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 七、量杯式计量包装机组 -->
-    <section class="product-category" id="measuring-cup">
-        <div class="container">
-            <h2 class="category-title">七、量杯式计量包装机组</h2>
-        <div class="category-image">
-            <img src="images/product-categories/7.jpg" alt="七、量杯式计量包装机组">
-        </div>
-
-            
-            <div class="product-detail">
-                <h3>VFS5000D 量杯式计量包装机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value"><5000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量精度</div>
-                        <div class="spec-value">±0.5%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">70包/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">适用行业</div>
-                        <div class="spec-value">食盐、白糖等行业</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 八、全自动重膜包装机（FFS系列） -->
-    <section class="product-category" id="heavy-film">
-        <div class="container">
-            <h2 class="category-title">八、全自动重膜包装机（FFS系列）</h2>
-        <div class="category-image">
-            <img src="images/product-categories/8.jpg" alt="八、全自动重膜包装机（FFS系列）">
-        </div>
-
-            
-            <div class="product-detail">
-                <h3>通用参数</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">包装规格</div>
-                        <div class="spec-value">20-25kg/bag</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">卷膜要求</div>
-                        <div class="spec-value">M型PE重包装膜袋卷(管状)</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">膜厚</div>
-                        <div class="spec-value">140-200um±4%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">膜卷直径</div>
-                        <div class="spec-value">1500mm，膜卷内筒150±5mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">压缩空气</div>
-                        <div class="spec-value">耗气量3m³/min，气压≥0.6Mpa</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">噪音</div>
-                        <div class="spec-value"><80dB(离机器1m远，高1.6m处测量)</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>FFS600 重膜包装机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">设备尺寸</div>
-                        <div class="spec-value">5400×1950×2400mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">制袋尺寸</div>
-                        <div class="spec-value">M:80+3mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">750袋/小时</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">压缩空气</div>
-                        <div class="spec-value">≥0.6MPa 350L/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">功率</div>
-                        <div class="spec-value">10KW</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>FFS1200 重膜包装机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">设备尺寸</div>
-                        <div class="spec-value">5600×1950×2500mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">制袋尺寸</div>
-                        <div class="spec-value">L:650-950mm W:400mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">1200袋/小时</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">压缩空气</div>
-                        <div class="spec-value">≥0.6MPa 500L/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">功率</div>
-                        <div class="spec-value">12KW</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>FFS1800 重膜包装机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">设备尺寸</div>
-                        <div class="spec-value">6000×1950×2500mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">制袋尺寸</div>
-                        <div class="spec-value">H:80mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">1800袋/小时</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">压缩空气</div>
-                        <div class="spec-value">≥0.6MPa 600L/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">功率</div>
-                        <div class="spec-value">15KW</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 九、重袋包装机组（BBF系列） -->
-    <section class="product-category" id="heavy-bag">
-        <div class="container">
-            <h2 class="category-title">九、重袋包装机组（BBF系列）</h2>
-        <div class="category-image">
-            <img src="images/product-categories/9.jpg" alt="九、重袋包装机组（BBF系列）">
-        </div>
-
-            
-            <div class="product-detail">
-                <h3>BBF-F200 粉剂包装机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">包装材料</div>
-                        <div class="spec-value">编织袋、牛皮纸袋、复合膜塑料袋</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装尺寸</div>
-                        <div class="spec-value">(700-1100)×(480-650)mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装重量</div>
-                        <div class="spec-value">25~50公斤/袋</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量精度</div>
-                        <div class="spec-value">±2%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装速度</div>
-                        <div class="spec-value">3-8包/分钟</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">封口方式</div>
-                        <div class="spec-value">编织袋：折边/线缝；牛皮纸袋：热封/线缝；复合膜塑料袋：热封</div>
-                    </div>
-                </div>
-                <ul class="product-features">
-                    <li>适用物料：各类粉体物料</li>
-                </ul>
-            </div>
-
-            <div class="product-detail">
-                <h3>BBF-FV200 粉剂包装机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">包装材料</div>
-                        <div class="spec-value">PE/有内膜编织袋/纸袋</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装尺寸</div>
-                        <div class="spec-value">Max:1200×600mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装重量</div>
-                        <div class="spec-value">20~50kg/包</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量精度</div>
-                        <div class="spec-value">±2%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装速度</div>
-                        <div class="spec-value">Max200包/小时</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">封口方式</div>
-                        <div class="spec-value">同上</div>
-                    </div>
-                </div>
-                <ul class="product-features">
-                    <li>适用物料：各类粉体物料</li>
-                </ul>
-            </div>
-
-            <div class="product-detail">
-                <h3>BBF-FD100 双工位抽气脱气包装机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">包装材料</div>
-                        <div class="spec-value">PE、有内膜编织袋/纸袋</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装尺寸</div>
-                        <div class="spec-value">Max:1200×600mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装重量</div>
-                        <div class="spec-value">20-50kg/袋</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量精度</div>
-                        <div class="spec-value">±2%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装速度</div>
-                        <div class="spec-value">1~4包/分钟</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">封口方式</div>
-                        <div class="spec-value">同上</div>
-                    </div>
-                </div>
-                <ul class="product-features">
-                    <li>适用物料：比重小、含气量大的粉体物料</li>
-                </ul>
-            </div>
-
-            <div class="product-detail">
-                <h3>BBF-K1000 颗粒高速包装机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">包装材料</div>
-                        <div class="spec-value">编织袋/牛皮纸袋/复合膜塑料</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装尺寸</div>
-                        <div class="spec-value">(800-1000)×(450-550)mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装重量</div>
-                        <div class="spec-value">25-50kg/包</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量精度</div>
-                        <div class="spec-value">±0.2%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装速度</div>
-                        <div class="spec-value">Max:1000包/小时</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">封口方式</div>
-                        <div class="spec-value">同上</div>
-                    </div>
-                </div>
-                <ul class="product-features">
-                    <li>适用物料：各类颗粒、片状物料</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- 十、真空包装机组（ZB系列） -->
-    <section class="product-category" id="vacuum">
-        <div class="container">
-            <h2 class="category-title">十、真空包装机组（ZB系列）</h2>
-        <div class="category-image">
-            <img src="images/product-categories/10.jpg" alt="十、真空包装机组（ZB系列）">
-        </div>
-
-            
-            <div class="product-detail">
-                <h3>ZB500N 全自动六面体制袋式真空包装机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">制袋形式</div>
-                        <div class="spec-value">卷膜制袋</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">制袋尺寸</div>
-                        <div class="spec-value">55-150×35-80mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">100-1000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装速度</div>
-                        <div class="spec-value">15-20包/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">技术特点</div>
-                        <div class="spec-value">内抽式真空技术，双工位设计</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>ZB500N2 全自动六面体制袋式真空包装机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">制袋形式</div>
-                        <div class="spec-value">卷膜制袋</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">制袋尺寸</div>
-                        <div class="spec-value">20-38mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">未标注</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装速度</div>
-                        <div class="spec-value">未标注</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">技术特点</div>
-                        <div class="spec-value">内抽式真空技术，双工位设计</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>ZB500W/Z 全自动六面体制袋式真空包装机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">制袋形式</div>
-                        <div class="spec-value">卷膜制袋</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">制袋尺寸</div>
-                        <div class="spec-value">55-150×35-80mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">100-1000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装速度</div>
-                        <div class="spec-value">8-15包/min</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">技术特点</div>
-                        <div class="spec-value">外抽式真空技术，结构紧凑</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 十一、旋转给袋式包装机组（CF系列） -->
-    <section class="product-category" id="rotary">
-        <div class="container">
-            <h2 class="category-title">十一、旋转给袋式包装机组（CF系列）</h2>
-        <div class="category-image">
-            <img src="images/product-categories/11.jpg" alt="十一、旋转给袋式包装机组（CF系列）">
-        </div>
-
-            
-            <div class="product-detail">
-                <h3>通用参数</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">适用袋型</div>
-                        <div class="spec-value">四边封袋、三边封袋、自立袋、手提袋、拉链袋、有盖塑料袋、纸塑袋等</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">适用物料</div>
-                        <div class="spec-value">液体、膏体、颗粒、粉末、不规则块状物等</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包袋材质</div>
-                        <div class="spec-value">多层复合膜制成的预制袋、纸塑袋等</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>CF10-200 旋转给袋式包装机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">制袋尺寸</div>
-                        <div class="spec-value">W:90-210mm L:100-360mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">50-1000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装速度</div>
-                        <div class="spec-value">25-45包/分钟</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>CF8-250 旋转给袋式包装机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">制袋尺寸</div>
-                        <div class="spec-value">W:130-250mm L:100-360mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">200-1500g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装速度</div>
-                        <div class="spec-value">25-45包/分钟</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>CF8-300 旋转给袋式包装机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">制袋尺寸</div>
-                        <div class="spec-value">W:160-300mm L:100-400mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">500-2000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装速度</div>
-                        <div class="spec-value">25-45包/分钟</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>CF8-360 旋转给袋式包装机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">制袋尺寸</div>
-                        <div class="spec-value">W:250-360mm L:380-500mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">5000-10000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装速度</div>
-                        <div class="spec-value">8-15包/分钟</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>CF8-420 旋转给袋式包装机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">制袋尺寸</div>
-                        <div class="spec-value">W:350-420mm L:450-580mm</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">5000-15000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装速度</div>
-                        <div class="spec-value">8-15包/分钟</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 十二、定制包装生产线 -->
-    <section class="product-category" id="custom-line">
-        <div class="container">
-            <h2 class="category-title">十二、定制包装生产线</h2>
-        <div class="category-image">
-            <img src="images/product-categories/12.jpg" alt="十二、定制包装生产线">
-        </div>
-
-            
-            <div class="product-detail">
-                <h3>VFS系列立式二次包装机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">组成设备</div>
-                        <div class="spec-value">VFS7300B包装机、VFS1100B/1500B包装机、输送系统、计数理包机</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">适用范围</div>
-                        <div class="spec-value">150~1000g小规格产品的二次包装</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">主要参数</div>
-                        <div class="spec-value">小袋产能：120-150包/分钟；工作气压：≥5kgf/cm²；设备功率：>5KW</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>BBF编织袋二次包装机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">组成设备</div>
-                        <div class="spec-value">BBF系列包装机、缝包机、输送系统、计数理包机、机械手码垛</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">适用范围</div>
-                        <div class="spec-value">150~1000g小袋产品向编织袋的二次包装</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">主要参数</div>
-                        <div class="spec-value">大袋速度：4-10袋/分钟；小袋速度：40-90包/分钟</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>VFS系列小袋装箱线</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">组成设备</div>
-                        <div class="spec-value">全自动包装机、开箱机、自动装箱机、自动封箱机、自动捆扎机</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">适用范围</div>
-                        <div class="spec-value">散状物料小袋的自动装箱</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">主要参数</div>
-                        <div class="spec-value">可定制</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>BBF系列颗粒包装码垛线</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">组成设备</div>
-                        <div class="spec-value">称量机、BBF系列包装机、自动缝包/封口机、输送系统、重量/金属检测机、机械手码垛机</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">适用范围</div>
-                        <div class="spec-value">颗粒物料从称量到码垛的全流程</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">主要参数</div>
-                        <div class="spec-value">可定制</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>BBF系列粉料包装码垛线</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">组成设备</div>
-                        <div class="spec-value">螺旋供料系统、BBF系列包装机、自动缝包/封口机、爬坡与整形/压包输送机、重量/金属检测机、机械手码垛机</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">适用范围</div>
-                        <div class="spec-value">粉剂物料从供料到码垛的全流程</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">主要参数</div>
-                        <div class="spec-value">可定制</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 十三、称量设备 -->
-    <section class="product-category" id="weighing">
-        <div class="container">
-            <h2 class="category-title">十三、称量设备</h2>
-        <div class="category-image">
-            <img src="images/product-categories/13.jpg" alt="十三、称量设备">
-        </div>
-
-            
-            <div class="product-detail">
-                <h3>WM-Z4 标准线型秤</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">主要说明</div>
-                        <div class="spec-value">4斗5线性秤</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">100-5000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">精度</div>
-                        <div class="spec-value">±0.2%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装速度</div>
-                        <div class="spec-value">15-45包/分</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">适用行业</div>
-                        <div class="spec-value">日化、食品、调味品、种子等</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>WM-Z6 标准线型秤</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">主要说明</div>
-                        <div class="spec-value">6斗5线性秤</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">100-5000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">精度</div>
-                        <div class="spec-value">±0.2%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装速度</div>
-                        <div class="spec-value">20-55包/分</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">适用行业</div>
-                        <div class="spec-value">同上</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>WM-Z10（1.6L）标准线型秤</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">主要说明</div>
-                        <div class="spec-value">10斗1.6L线性组合秤</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">50-1000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">精度</div>
-                        <div class="spec-value">±0.2%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装速度</div>
-                        <div class="spec-value">20-80包/分</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">适用行业</div>
-                        <div class="spec-value">同上</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>WM-Z10（2.5L）标准线型秤</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">主要说明</div>
-                        <div class="spec-value">10斗2.5L线性组合秤</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">100-2000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">精度</div>
-                        <div class="spec-value">±0.2%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装速度</div>
-                        <div class="spec-value">20-70包/分</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">适用行业</div>
-                        <div class="spec-value">同上</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>WM-Z14 标准线型秤</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">主要说明</div>
-                        <div class="spec-value">14斗5线性组合秤</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">200-3000g</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">精度</div>
-                        <div class="spec-value">±0.2%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装速度</div>
-                        <div class="spec-value">20-70包/分</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">适用行业</div>
-                        <div class="spec-value">同上</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>SWM系列半自动机组</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">适用范围</div>
-                        <div class="spec-value">白糖、盐、种子、大米、味精、饲料、咖啡、芝麻等食品、调味品小颗粒状、粉状物料</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">称量范围</div>
-                        <div class="spec-value">5-25kg(可定制)</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">称量速度</div>
-                        <div class="spec-value">2-12包/分</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">称量精度</div>
-                        <div class="spec-value">±0.2%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">特点</div>
-                        <div class="spec-value">单斗或双斗净重式自动称量，人工套袋，全不锈钢密封结构</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>WM-L25 立式螺旋计量机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">主要说明</div>
-                        <div class="spec-value">立式螺旋50/75L</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">0.5-5Kg</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">精度</div>
-                        <div class="spec-value">±0.5%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装速度</div>
-                        <div class="spec-value">1-30包/分</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">适用物料</div>
-                        <div class="spec-value">各类粉体物料</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>WM-LV25 立式升降螺旋计量机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">主要说明</div>
-                        <div class="spec-value">立式升降螺旋100L</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">15-30Kg</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">精度</div>
-                        <div class="spec-value">±0.5%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装速度</div>
-                        <div class="spec-value">2-5包/分</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">适用物料</div>
-                        <div class="spec-value">各类粉体物料</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>WM-W25 卧式单斗螺旋计量机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">主要说明</div>
-                        <div class="spec-value">卧式单斗螺旋</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">5-30Kg</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">精度</div>
-                        <div class="spec-value">±0.5%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装速度</div>
-                        <div class="spec-value">1-8包/分</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">适用物料</div>
-                        <div class="spec-value">各类粉体物料</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>WM-W25/2 卧式双螺旋计量机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">主要说明</div>
-                        <div class="spec-value">卧式双螺旋</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">15-30Kg</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">精度</div>
-                        <div class="spec-value">±0.5%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">包装速度</div>
-                        <div class="spec-value">1-10包/分</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">适用物料</div>
-                        <div class="spec-value">各类粉体物料</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>WM-SD25 伺服秤</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">适用范围</div>
-                        <div class="spec-value">玉米种、颗粒肥料等流动性良好的物料</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">称量范围</div>
-                        <div class="spec-value">15kg-50kg(根据物料比重)</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">称量速度</div>
-                        <div class="spec-value">6-15次/分</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">称量精度</div>
-                        <div class="spec-value">±0.2%</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>TBM-K1000 吨袋包装机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">供料形式</div>
-                        <div class="spec-value">自放料/震动</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">500-1200Kg</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">精度</div>
-                        <div class="spec-value">±0.2%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">10-40Bag/H</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">适用行业</div>
-                        <div class="spec-value">化工、建材、矿产、粮食、冶金等</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-detail">
-                <h3>TBM-F1000S 吨袋包装机</h3>
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <div class="spec-label">供料形式</div>
-                        <div class="spec-value">卧螺/净重式</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">计量范围</div>
-                        <div class="spec-value">500-1200Kg</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">精度</div>
-                        <div class="spec-value">±0.2%</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">速度</div>
-                        <div class="spec-value">10-20Bag/H</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">适用行业</div>
-                        <div class="spec-value">同上</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h3>迈尔斯科技</h3>
-                    <p>智能包装解决方案引领者</p>
-                </div>
-                <div class="footer-section">
-                    <h4>联系方式</h4>
-                    <p>📍 河北省石家庄市裕华区槐中路306号</p>
-                    <p>📞 +86 157 3115 8807</p>
-                    <p>📧 info@milestecnology.com</p>
-                </div>
-                <div class="footer-section">
-                    <h4>快速链接</h4>
-                    <ul>
-                        <li><a href="about.html">关于我们</a></li>
-                        <li><a href="products.html">产品中心</a></li>
-                        <li><a href="cases.html">客户案例</a></li>
-                        <li><a href="contact.html">联系我们</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2022-2026 石家庄迈尔斯科技有限公司 版权所有</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
+ <nav class="navbar">
+ <div class="container">
+ <div class="nav-brand">
+ <h1 class="logo">MilesTech</h1>
+ <span class="tagline">Intelligent Packaging Solutions</span>
+ </div>
+ <ul class="nav-menu">
+ <li><a href="index.html">Home</a></li>
+ <li><a href="about.html">About Us</a></li>
+ <li><a href="products.html" class="active">Products</a></li>
+ <li><a href="cases.html">Cases</a></li>
+ <li><a href="contact.html">Contact Us</a></li>
+ </ul>
+ </div>
+ </nav>
+
+ <section class="page-header">
+ <div class="container">
+ <h1>Products</h1>
+ <p>Full-Process Automated Packaging Equipment & Solutions</p>
+ </div>
+ </section>
+
+ <!-- I. Vertical Form-Fill-Seal Packaging Machines (VFS Series) -->
+ <section class="product-category" id="vertical">
+ <div class="container">
+ <h2 class="category-title">I. Vertical Form-Fill-Seal Packaging Machines (VFS Series)</h2>
+ <div class="category-image">
+ <img src="images/product-categories/1.jpg" alt="I. Vertical Form-Fill-Seal Packaging Machines (VFS Series)">
+ </div>
+
+ <p style="color: var(--text-gray); margin-bottom: 30px;">Suitable for automated packaging of granules, powders, liquids and more</p>
+ 
+ <div class="product-detail">
+ <h3>VFS320B VerticalAutomatic Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Dimensions</div>
+ <div class="spec-value">1050×800×1010mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">200×150mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">80 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 350L/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Power</div>
+ <div class="spec-value">3KW</div>
+ </div>
+ </div>
+ <ul class="product-features">
+ <li>Bag Type：Pillow bag, gusset bag, punched bag, handle bag, box bag, breathable valve bag, etc.</li>
+ </ul>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS5000D VerticalAutomatic Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Dimensions</div>
+ <div class="spec-value">1470×988×1400mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">280×180mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">80 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 360L/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Power</div>
+ <div class="spec-value">3KW</div>
+ </div>
+ </div>
+ <ul class="product-features">
+ <li>Bag Type：Pillow bag, gusset bag, punched bag, handle bag, box bag, breathable valve bag, etc.</li>
+ </ul>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS5000B VerticalAutomatic Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Dimensions</div>
+ <div class="spec-value">1800×1220×1680mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">340×250mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">90 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 350L/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Power</div>
+ <div class="spec-value">5.5KW</div>
+ </div>
+ </div>
+ <ul class="product-features">
+ <li>Bag Type：Pillow bag, gusset bag, punched bag, handle bag, box bag, breathable valve bag, etc.</li>
+ </ul>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFST300B VerticalAutomatic Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Dimensions</div>
+ <div class="spec-value">1854×1440×1930mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">460×350mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">80 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 350L/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Power</div>
+ <div class="spec-value">6KW</div>
+ </div>
+ </div>
+ <ul class="product-features">
+ <li>Bag Type：Pillow bag, gusset bag, punched bag, handle bag, box bag, breathable valve bag, etc.</li>
+ </ul>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS9000B VerticalAutomatic Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Dimensions</div>
+ <div class="spec-value">2000×1600×2200mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">560×450mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">40 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 350L/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Power</div>
+ <div class="spec-value">6KW</div>
+ </div>
+ </div>
+ <ul class="product-features">
+ <li>Bag Type：Pillow bag, gusset bag, punched bag, handle bag, box bag, breathable valve bag, etc.</li>
+ </ul>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS1100B VerticalAutomatic Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Dimensions</div>
+ <div class="spec-value">2150×1750×2300mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">650×535mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">20 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 300L/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Power</div>
+ <div class="spec-value">6.5KW</div>
+ </div>
+ </div>
+ <ul class="product-features">
+ <li>Bag Type：Pillow bag, gusset bag, punched bag, handle bag, box bag, breathable valve bag, etc.</li>
+ </ul>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS1500B VerticalAutomatic Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Dimensions</div>
+ <div class="spec-value">2450×1950×2680mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">900×725mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">10 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 300L/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Power</div>
+ <div class="spec-value">7.5KW</div>
+ </div>
+ </div>
+ <ul class="product-features">
+ <li>Bag Type：Pillow bag, gusset bag, punched bag, handle bag, box bag, breathable valve bag, etc.</li>
+ </ul>
+ </div>
+ </div>
+ </section>
+
+ <!-- II. Box Bag/Inclined/Breathable ValvePackaging Machine -->
+ <section class="product-category" id="box-type">
+ <div class="container">
+ <h2 class="category-title">II. Box Bag/Inclined/Breathable ValvePackaging Machine</h2>
+ <div class="category-image">
+ <img src="images/product-categories/2.jpg" alt="II. Box Bag/Inclined/Breathable ValvePackaging Machine">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>VFS5000H5 Box Bag Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Overall Dimensions</div>
+ <div class="spec-value">2450×1230×1660mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Type</div>
+ <div class="spec-value">Box Bag</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">FrontW:50~190mm SideW:35~90mm Edge SealW:5~8mm Bag LengthL:100~420mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">45 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 350L/min</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS7300H5 Box Bag Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Overall Dimensions</div>
+ <div class="spec-value">2550×1420×1930mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Type</div>
+ <div class="spec-value">Box Bag</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">FrontW:60~260mm SideW:45~120mm Edge SealW:5~10mm Bag LengthL:100~460mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">45 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 350L/min</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS5000X Breathable ValvePackaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Overall Dimensions</div>
+ <div class="spec-value">1760×1496×1765mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Type</div>
+ <div class="spec-value">Pillow Bag</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">(50-500)×(65~260)mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">50 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 350L/min</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- III. Vertical Granule Packaging Units -->
+ <section class="product-category" id="granule">
+ <div class="container">
+ <h2 class="category-title">III. Vertical Granule Packaging Units</h2>
+ <div class="category-image">
+ <img src="images/product-categories/3.jpg" alt="III. Vertical Granule Packaging Units">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>VFS5000D Granule Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">10-1000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">80 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Materials</div>
+ <div class="spec-value">Various GranulesMaterials</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS5000B Granule Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">100-2000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">50 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Materials</div>
+ <div class="spec-value">Various GranulesMaterials</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS7300B Granule Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">500-5000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">50 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Materials</div>
+ <div class="spec-value">Various GranulesMaterials</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS1100B Granule Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">2000-10000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">30 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Materials</div>
+ <div class="spec-value">Various GranulesMaterials</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- IV. Vertical Powder Packaging Units -->
+ <section class="product-category" id="powder">
+ <div class="container">
+ <h2 class="category-title">IV. Vertical Powder Packaging Units</h2>
+ <div class="category-image">
+ <img src="images/product-categories/4.jpg" alt="IV. Vertical Powder Packaging Units">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>VFS5000D Powder Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">10-1000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value"><100g<±2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">50 packs/min</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS5000B Powder Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">100-2000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">100-500g<±1%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">50 packs/min</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS7300B Powder Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">500-5000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">≥500g<±0.5%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">50 packs/min</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS1100B Powder Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">2000-10000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">Depending on Material Properties</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">30 packs/min</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- V. Liquid Filling Units -->
+ <section class="product-category" id="liquid">
+ <div class="container">
+ <h2 class="category-title">V. Liquid Filling Units</h2>
+ <div class="category-image">
+ <img src="images/product-categories/5.jpg" alt="V. Liquid Filling Units">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>VFS5000B Liquid Filling Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">100-2000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±0.5%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">70 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Method</div>
+ <div class="spec-value">Piston Rotor Pump/Diaphragm Pump</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS7300B Liquid Filling Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">500-5000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±0.5%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">40 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Method</div>
+ <div class="spec-value">Piston Rotor Pump/Diaphragm Pump</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- VI. Extrusion Packaging Units -->
+ <section class="product-category" id="extrusion">
+ <div class="container">
+ <h2 class="category-title">VI. Extrusion Packaging Units</h2>
+ <div class="category-image">
+ <img src="images/product-categories/6.jpg" alt="VI. Extrusion Packaging Units">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>VFS7300GY Extrusion Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value"><5000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±0.5%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">25 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Method</div>
+ <div class="spec-value">Rotor Pump Extrusion Metering Filling</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS7300GZ Extrusion Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value"><5000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±0.5%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">15 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Method</div>
+ <div class="spec-value">Rotor Pump Extrusion Metering Filling</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- VII. Volumetric Cup Packaging Machines -->
+ <section class="product-category" id="measuring-cup">
+ <div class="container">
+ <h2 class="category-title">VII. Volumetric Cup Packaging Machines</h2>
+ <div class="category-image">
+ <img src="images/product-categories/7.jpg" alt="VII. Volumetric Cup Packaging Machines">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>VFS5000D Volumetric Cup Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value"><5000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±0.5%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">70 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Industries</div>
+ <div class="spec-value">White Sugar, Saltand Other Industries</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- VIII. Automatic Heavy-Duty Film Packaging Machine（FFS Series） -->
+ <section class="product-category" id="heavy-film">
+ <div class="container">
+ <h2 class="category-title">VIII. Automatic Heavy-Duty Film Packaging Machine（FFS Series）</h2>
+ <div class="category-image">
+ <img src="images/product-categories/8.jpg" alt="VIII. Automatic Heavy-Duty Film Packaging Machine（FFS Series）">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>General Parameters</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Package Spec</div>
+ <div class="spec-value">20-25kg/bag</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Film Requirements</div>
+ <div class="spec-value">M-type PE Heavy-Duty Packaging FilmBag Roll(Tubular)</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Film Thickness</div>
+ <div class="spec-value">140-200um±4%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Film Roll Diameter</div>
+ <div class="spec-value">1500mm，Film Core ID150±5mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">Air Consumption3m³/min，Air Pressure≥0.6Mpa</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Noise Level</div>
+ <div class="spec-value"><80dB(from Machine 1m distance, 1.6m heightMeasured At)</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>FFS600 Heavy-Duty FilmPackaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Dimensions</div>
+ <div class="spec-value">5400×1950×2400mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">M:80+3mm<br>L:650-950mm<br>W:400mm<br>H:80mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">750 bags/hr</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 350L/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Power</div>
+ <div class="spec-value">10KW</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>FFS1200 Heavy-Duty FilmPackaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Dimensions</div>
+ <div class="spec-value">5600×1950×2500mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">M:80+3mm<br>L:650-950mm<br>W:400mm<br>H:80mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">1200 bags/hr</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 500L/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Power</div>
+ <div class="spec-value">12KW</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>FFS1800 Heavy-Duty FilmPackaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Dimensions</div>
+ <div class="spec-value">6000×1950×2500mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">M:80+3mm<br>L:650-950mm<br>W:400mm<br>H:80mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">1800 bags/hr</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 600L/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Power</div>
+ <div class="spec-value">15KW</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- IX. Heavy Bag Packaging Machine Unit（BBF Series ） -->
+ <section class="product-category" id="heavy-bag">
+ <div class="container">
+ <h2 class="category-title">IX. Heavy Bag Packaging Machine Unit（BBF Series ）</h2>
+ <div class="category-image">
+ <img src="images/product-categories/9.jpg" alt="IX. Heavy Bag Packaging Machine Unit（BBF Series ）">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>BBF-F200 Powder Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Packaging Material</div>
+ <div class="spec-value">Woven Bag, Kraft Paper Bag, Composite Film Plastic Bag</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Package Size</div>
+ <div class="spec-value">(700-1100)×(480-650)mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingWeight</div>
+ <div class="spec-value">25~50kg/bag</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">3-8 packs/</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Sealing Method</div>
+ <div class="spec-value">Woven Bag：Folded Edge/Stitched Closure；Kraft Paper Bag：Heat Seal/Stitched Closure；Composite Film Plastic Bag：Heat Seal</div>
+ </div>
+ </div>
+ <ul class="product-features">
+ <li>Applicable Materials：Various Powder Materials</li>
+ </ul>
+ </div>
+
+ <div class="product-detail">
+ <h3>BBF-FV200 Powder Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Packaging Material</div>
+ <div class="spec-value">PE/Laminated Woven Bag/Paper Bag</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Package Size</div>
+ <div class="spec-value">Max:1200×600mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingWeight</div>
+ <div class="spec-value">20~50kg/pack</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">Max200 packs/hours</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Sealing Method</div>
+ <div class="spec-value">Same as Above</div>
+ </div>
+ </div>
+ <ul class="product-features">
+ <li>Applicable Materials：Various Powder Materials</li>
+ </ul>
+ </div>
+
+ <div class="product-detail">
+ <h3>BBF-FD100 Dual-Station Vacuum & DegassingPackaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Packaging Material</div>
+ <div class="spec-value">PE, Laminated Woven Bag/Paper Bag</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Package Size</div>
+ <div class="spec-value">Max:1200×600mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingWeight</div>
+ <div class="spec-value">20-50kg/bag</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">1~4 packs/</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Sealing Method</div>
+ <div class="spec-value">Same as Above</div>
+ </div>
+ </div>
+ <ul class="product-features">
+ <li>Applicable Materials：Low Density, High Air Content Powder Materials</li>
+ </ul>
+ </div>
+
+ <div class="product-detail">
+ <h3>BBF-K1000 Granules High-SpeedPackaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Packaging Material</div>
+ <div class="spec-value">Woven Bag/Kraft Paper Bag/Composite Film Plastic</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Package Size</div>
+ <div class="spec-value">(800-1000)×(450-550)mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingWeight</div>
+ <div class="spec-value">25-50kg/pack</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">Max:1000 packs/hours</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Sealing Method</div>
+ <div class="spec-value">Same as Above</div>
+ </div>
+ </div>
+ <ul class="product-features">
+ <li>Applicable Materials：Various Granules, Flake Materials</li>
+ </ul>
+ </div>
+ </div>
+ </section>
+
+ <!-- X. Vacuum Packaging Units (ZB Series) -->
+ <section class="product-category" id="vacuum">
+ <div class="container">
+ <h2 class="category-title">X. Vacuum Packaging Units (ZB Series)</h2>
+ <div class="category-image">
+ <img src="images/product-categories/10.jpg" alt="X. Vacuum Packaging Units (ZB Series)">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>ZB500N Automatic 6-Side Vacuum Bag Packaging Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Bag Type</div>
+ <div class="spec-value">Roll Film Bag Making</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">55-150×35-80mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">100-1000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">20-38 packs/min</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>ZB500N2 Automatic 6-Side Vacuum Bag Packaging Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Bag Type</div>
+ <div class="spec-value">Roll Film Bag Making</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">55-150×35-80mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">100-1000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">20-38 packs/min</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>ZB500W/Z Automatic 6-Side Vacuum Bag Packaging Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Bag Type</div>
+ <div class="spec-value">Roll Film Bag Making</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">55-150×35-80mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">100-1000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">8-15 packs/min</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- XI. Rotary Pre-Made Pouch Packaging Machines (CF Series) -->
+ <section class="product-category" id="rotary">
+ <div class="container">
+ <h2 class="category-title">XI. Rotary Pre-Made Pouch Packaging Machines (CF Series)</h2>
+ <div class="category-image">
+ <img src="images/product-categories/11.jpg" alt="XI. Rotary Pre-Made Pouch Packaging Machines (CF Series)">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>General Parameters</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Applicable Pouch Types</div>
+ <div class="spec-value">Four-side Seal Pouch, Three-side Seal Pouch, Stand-up Pouch, Handle Bag, Zipper Pouch, Lidded Plastic Bag, Paper-Plastic Pouches</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Materials</div>
+ <div class="spec-value">Liquids, Pastes, Granules, Powder, Irregular Blocks, etc.</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Material</div>
+ <div class="spec-value">Pre-made pouches made of multi-layer composite film, Paper-Plastic Pouches</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>CF10-200 Rotary Pre-Made Pouch Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">W:90-210mm L:100-360mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">50-1000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">25-45 packs/</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>CF8-250 Rotary Pre-Made Pouch Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">W:130-250mm L:100-360mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">200-1500g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">25-45 packs/</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>CF8-300 Rotary Pre-Made Pouch Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">W:160-300mm L:100-400mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">500-2000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">25-45 packs/</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>CF8-360 Rotary Pre-Made Pouch Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">W:250-360mm L:380-500mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">5000-10000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">8-15 packs/</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>CF8-420 Rotary Pre-Made Pouch Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">W:350-420mm L:450-580mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">5000-15000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">8-15 packs/</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- XII. Custom Packaging Production Lines -->
+ <section class="product-category" id="custom-line">
+ <div class="container">
+ <h2 class="category-title">XII. Custom Packaging Production Lines</h2>
+ <div class="category-image">
+ <img src="images/product-categories/12.jpg" alt="XII. Custom Packaging Production Lines">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>VFS Series Vertical Secondary Packaging Units</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Equipment Components</div>
+ <div class="spec-value">VFS7300BPackaging Machine, VFS1100B/1500BPackaging Machine, Conveying System, Counting & Collating Machine</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Application Scope</div>
+ <div class="spec-value">150~1000gSmall Product Secondary Packaging</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Main Parameters</div>
+ <div class="spec-value">Small Bag Capacity：120-150 packs/；Operating Air Pressure：≥5kgf/cm²；Equipment Power：>5KW</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>BBFWoven Bag SecondaryPackaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Equipment Components</div>
+ <div class="spec-value">BBF Series Packaging Machine, Bag Stitcher, Conveying System, Counting & Collating Machine, Robotic Palletizing</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Application Scope</div>
+ <div class="spec-value">150~1000gSmall BagProduct to Woven Bag Secondary Packaging</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Main Parameters</div>
+ <div class="spec-value">Large BagSpeed：4-10 bags/；Small BagSpeed：40-90 packs/</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS Series Small Bag Cartoning Line</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Equipment Components</div>
+ <div class="spec-value">Automatic Packaging Machine, Carton Erector, Automatic Case Packer, Automatic Carton Sealer, Automatic Strapping Machine</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Application Scope</div>
+ <div class="spec-value">Bulk Materials Small Bag Automatic Cartoning</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Main Parameters</div>
+ <div class="spec-value">Customizable</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>BBF Series Granule Packaging Palletizing Line</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Equipment Components</div>
+ <div class="spec-value">Weighing Machine, BBF Series Packaging Machine, Automatic Stitching/Sealing Machine, Conveying System, Weight/Metal Detector, Robotic Palletizing</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Application Scope</div>
+ <div class="spec-value">Granule Materials from Weighing toPalletizing Full Process</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Main Parameters</div>
+ <div class="spec-value">Customizable</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>BBF Series Powder Packaging Palletizing Line</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Equipment Components</div>
+ <div class="spec-value">Screw Feeding System, BBF Series Packaging Machine, Automatic Stitching/Sealing Machine, Incline & Shaping/Compression Conveyor, Weight/Metal Detector, Robotic Palletizing</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Application Scope</div>
+ <div class="spec-value">Powder Materials from Feeding toPalletizing Full Process</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Main Parameters</div>
+ <div class="spec-value">Customizable</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- XIII. Weighing Equipment -->
+ <section class="product-category" id="weighing">
+ <div class="container">
+ <h2 class="category-title">XIII. Weighing Equipment</h2>
+ <div class="category-image">
+ <img src="images/product-categories/13.jpg" alt="XIII. Weighing Equipment">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>WM-Z4 Standard Linear Scale</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Main Description</div>
+ <div class="spec-value">4-Bucket 5L Linear Scale</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">100-5000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">15-45 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Industries</div>
+ <div class="spec-value">Daily Chemicals, Food, Seasonings, Seeds etc.</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>WM-Z6 Standard Linear Scale</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Main Description</div>
+ <div class="spec-value">6-Bucket 5L Linear Scale</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">100-5000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">20-55 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Industries</div>
+ <div class="spec-value">Same as Above</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>WM-Z10（1.6L）Standard Linear Scale</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Main Description</div>
+ <div class="spec-value">10-Bucket 1.6LLinearCombination Weigher</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">50-1000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">20-80 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Industries</div>
+ <div class="spec-value">Same as Above</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>WM-Z10（2.5L）Standard Linear Scale</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Main Description</div>
+ <div class="spec-value">10-Bucket 2.5LLinearCombination Weigher</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">100-2000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">20-70 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Industries</div>
+ <div class="spec-value">Same as Above</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>WM-Z14 Standard Linear Scale</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Main Description</div>
+ <div class="spec-value">14-Bucket 5LinearCombination Weigher</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">200-3000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">20-70 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Industries</div>
+ <div class="spec-value">Same as Above</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>SWM Series Semi-Automatic Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Application Scope</div>
+ <div class="spec-value">White Sugar, Salt, Seeds, Rice, MSG, Feed, Coffee, Sesame and Food Products, Seasonings Small Granule Form, Powder Form Materials</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Weighing Range</div>
+ <div class="spec-value">5-25kg (Customizable)</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">WeighingSpeed</div>
+ <div class="spec-value">2-12 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Weighing Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Features</div>
+ <div class="spec-value">Single or Dual HopperDual HopperNet Weight TypeAutomaticWeighing，Manual Bag Placement，All Stainless Steel Sealed Structure</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>WM-L25 Vertical Screw Weigher</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Main Description</div>
+ <div class="spec-value">Vertical Screw 50/75L</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">0.5-5Kg</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Accuracy</div>
+ <div class="spec-value">±0.5%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">1-30 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Materials</div>
+ <div class="spec-value">Various Powder Materials</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>WM-LV25 Vertical Lifting Screw Weigher</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Main Description</div>
+ <div class="spec-value">Vertical Lifting Screw 100L</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">15-30Kg</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Accuracy</div>
+ <div class="spec-value">±0.5%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">2-5 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Materials</div>
+ <div class="spec-value">Various Powder Materials</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>WM-W25 Horizontal Single-Hopper Screw Weighing Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Main Description</div>
+ <div class="spec-value">Horizontal Single-Hopper Screw</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">5-30Kg</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Accuracy</div>
+ <div class="spec-value">±0.5%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">1-8 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Materials</div>
+ <div class="spec-value">Various Powder Materials</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>WM-W25/2 Horizontal Dual-Screw Weighing Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Main Description</div>
+ <div class="spec-value">Horizontal Dual-Screw</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">15-30Kg</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Accuracy</div>
+ <div class="spec-value">±0.5%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">1-10 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Materials</div>
+ <div class="spec-value">Various Powder Materials</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>WM-SD25 Servo Scale</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Application Scope</div>
+ <div class="spec-value">Corn Seeds, GranulesFertilizer etc. Materials with Good Flowability</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Weighing Range</div>
+ <div class="spec-value">15kg-50kg (Based on Material Density)</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">WeighingSpeed</div>
+ <div class="spec-value">6-15 cycles/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Weighing Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>TBM-K1000 Ton BagPackaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Feeding Type</div>
+ <div class="spec-value">Self-Discharging/Vibration</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">500-1200Kg</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">10-40Bag/H</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Industries</div>
+ <div class="spec-value">Chemicals, Building Materials, Minerals, Grain, Metallurgy etc.</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>TBM-F1000S Ton BagPackaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Feeding Type</div>
+ <div class="spec-value">Horizontal Screw/Net Weight Type</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">500-1200Kg</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">10-20Bag/H</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Industries</div>
+ <div class="spec-value">Same as Above</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <footer class="footer">
+ <div class="container">
+ <div class="footer-grid">
+ <div class="footer-section">
+ <h3>MilesTech</h3>
+ <p>Leader in Intelligent Packaging Solutions</p>
+ </div>
+ <div class="footer-section">
+ <h4>Contact</h4>
+ <p>📍 No.306 Huaizhong Road, Yuhua District, Shijiazhuang, Hebei</p>
+ <p>📞 +86 157 3115 8807</p>
+ <p>📧 info@milestecnology.com</p>
+ </div>
+ <div class="footer-section">
+ <h4>Quick Links</h4>
+ <ul>
+ <li><a href="about.html">About Us</a></li>
+ <li><a href="products.html">Products</a></li>
+ <li><a href="cases.html">Cases</a></li>
+ <li><a href="contact.html">Contact Us</a></li>
+ </ul>
+ </div>
+ </div>
+ <div class="footer-bottom">
+ <p>&copy; 2022-2026 Shijiazhuang Miles Technology Co., Ltd. All Rights Reserved</p>
+ </div>
+ </div>
+ </footer>
+
+ <script src="js/main.js"></script>
 </body>
 </html>
