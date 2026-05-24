@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页 - MilesTech</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1 class="logo">MilesTech</h1>
+                <span class="tagline">智能包装解决方案</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px"><ul class="nav-menu">
+                <li><a href="../zh/index.html" class="active">首页</a></li>
+                <li><a href="../zh/about.html">关于我们</a></li>
+                <li><a href="../zh/products.html">产品中心</a></li>
+                <li><a href="../zh/cases.html">客户案例</a></li>
+                <li><a href="../zh/contact.html">联系我们</a></li>
+            </ul>
+<!-- Language Switcher -->
+<style>
+#lang-switcher{display:flex;align-items:center;margin-left:15px;position:relative}
+#lang-toggle{display:flex;flex-direction:column;align-items:center;background:#0066cc;color:#fff;border:none;padding:5px 12px;border-radius:8px;cursor:pointer;box-shadow:0 2px 8px rgba(0,102,204,0.3);font-family:inherit;font-size:13px;line-height:1.3;transition:all .2s}
+#lang-toggle:hover{background:#0052a3;transform:scale(1.05)}
+#lang-toggle .ls-label{font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:1px;opacity:.75}
+#lang-toggle .ls-codes{font-size:11px;font-weight:700}
+#lang-dropdown{display:none;position:absolute;top:100%;right:0;margin-top:5px;background:#1e1e1e;border:1px solid #333;border-radius:10px;overflow:hidden;min-width:150px;box-shadow:0 6px 24px rgba(0,0,0,.5);z-index:10000}
+#lang-dropdown a{display:flex;align-items:center;gap:8px;padding:8px 14px;color:#ccc;text-decoration:none;font-size:13px;transition:background .15s}
+#lang-dropdown a:hover,#lang-dropdown a.active{background:#2a2a2a;color:#00d4ff}
+#lang-dropdown a.active{font-weight:600}
+</style>
+<div id="lang-switcher">
+  <div id="lang-toggle" onclick="toggleLang()">
+    <span class="ls-label">Language</span>
+    <span class="ls-codes">EN/ZH/ES/RU/AR</span>
+  </div>
+  <div id="lang-dropdown">
+    <a id="lang-en" href="#" data-lang="en">🇬🇧 EN English</a>
+    <a id="lang-zh" href="#" data-lang="zh">🇨🇳 中文</a>
+    <a id="lang-es" href="#" data-lang="es">🇪🇸 Español</a>
+    <a id="lang-ru" href="#" data-lang="ru">🇷🇺 Русский</a>
+    <a id="lang-ar" href="#" data-lang="ar">🇸🇦 العربية</a>
+  </div>
+</div>
+<script>
+function toggleLang(){var d=document.getElementById('lang-dropdown');d.style.display=d.style.display==='block'?'none':'block'}
+document.addEventListener('click',function(e){if(!e.target.closest('#lang-switcher'))document.getElementById('lang-dropdown').style.display='none'});
+(function(){
+  var path=location.pathname;
+  var m=path.match(/\/(en|zh|es|ru|ar)\/([^/]+)$/);
+  var page=(m&&m[2])||'index.html';
+  var curLang=(m&&m[1])||'zh';
+  var el=document.getElementById('lang-'+curLang);
+  if(el)el.className+=' active';
+  var links=document.querySelectorAll('#lang-dropdown a');
+  for(var i=0;i<links.length;i++){
+    links[i].href='../'+links[i].getAttribute('data-lang')+'/'+page;
+  }
+})();
+</script></div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">智能包装解决方案领导者</h1>
+                <p class="hero-subtitle">国家高新技术企业 | ISO9001+CE认证 | 自动化包装设备研发</p>
+                <div class="hero-buttons">
+                    <a href="../zh/products.html" class="btn btn-primary">查看产品</a>
+                    <a href="../zh/contact.html" class="btn btn-secondary">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 企业亮点 -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>国家高新技术企业</h3>
+                    <p>成立于2022年，注册资本2亿元，国家高新技术企业认证</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>全系列产品</h3>
+                    <p>立式/柜式/卧式/复合包装机 + 交钥匙方案</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>30+知名客户</h3>
+                    <p>隆平高科、中粮、洽洽、正大集团等信赖之选</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>双重认证</h3>
+                    <p>ISO9001质量管理体系 + CE欧洲安全认证</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心产品展示 -->
+    <section class="products-preview">
+        <div class="container">
+            <h2 class="section-title">核心产品</h2>
+            <p class="section-subtitle">全系列自动化包装设备</p>
+            <div class="home-products-grid">
+                <a href="../zh/products.html#cat1" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/1.jpg" alt="VFS Series"></div>
+                    <h3>VFS立式制袋填充封口机</h3>
+                </a>
+                <a href="../zh/products.html#cat2" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/2.jpg" alt="Box Bag Packaging Machine"></div>
+                    <h3>方袋/倾斜式包装机</h3>
+                </a>
+                <a href="../zh/products.html#cat3" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/3.jpg" alt="立式颗粒包装机组"></div>
+                    <h3>立式颗粒包装机组</h3>
+                </a>
+                <a href="../zh/products.html#cat4" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/4.jpg" alt="立式粉剂包装机组"></div>
+                    <h3>立式粉剂包装机组</h3>
+                </a>
+                <a href="../zh/products.html#cat5" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/5.jpg" alt="Liquid Filling Machine"></div>
+                    <h3>液体灌装机组</h3>
+                </a>
+                <a href="../zh/products.html#cat6" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/6.jpg" alt="Extrusion Packaging Machine"></div>
+                    <h3>挤压包装机组</h3>
+                </a>
+                <a href="../zh/products.html#cat7" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/7.jpg" alt="量杯式包装机"></div>
+                    <h3>量杯式包装机</h3>
+                </a>
+                <a href="../zh/products.html#cat8" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/8.jpg" alt="FFS Heavy-Duty Film Packaging Machine"></div>
+                    <h3>FFS自动重膜包装机</h3>
+                </a>
+                <a href="../zh/products.html#cat9" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/9.jpg" alt="BBF Heavy Bag Packaging Machine"></div>
+                    <h3>BBF重型袋包装机组</h3>
+                </a>
+                <a href="../zh/products.html#cat10" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/10.jpg" alt="ZB Vacuum Packaging Machine"></div>
+                    <h3>ZB真空包装机组</h3>
+                </a>
+                <a href="../zh/products.html#cat11" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/11.jpg" alt="CF旋转预制袋包装机"></div>
+                    <h3>CF旋转预制袋包装机</h3>
+                </a>
+                <a href="../zh/products.html#cat12" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/12.jpg" alt="Custom Production Line"></div>
+                    <h3>定制包装生产线</h3>
+                </a>
+            </div>
+            <div style="text-align:center; margin-top:40px;">
+                <a href="../zh/products.html" class="btn btn-primary">查看全部产品 →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 客户Logo墙 -->
+    <section class="clients">
+        <div class="container">
+            <h2 class="section-title">我们的客户</h2>
+            <p class="section-subtitle">30+行业龙头企业信赖之选</p>
+            <div class="clients-grid">
+                <div class="client-logo">Longping High-Tech</div>
+                <div class="client-logo">COFCO Group</div>
+                <div class="client-logo">Jinmailang</div>
+                <div class="client-logo">QiaQia Food</div>
+                <div class="client-logo">CP Group</div>
+                <div class="client-logo">Quanyin High-Tech</div>
+                <div class="client-logo">Denghai Seeds</div>
+                <div class="client-logo">CNSG Hongsifang</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>MilesTech</h3>
+                    <p>智能包装解决方案领导者</p>
+                </div>
+                <div class="footer-section">
+                    <h4>联系方式</h4>
+                    <p>📍 河北省石家庄市裕华区槐中路306号</p>
+                    <p>📞 +86 157 3115 8807</p>
+                    <p>📧 info@milestecnology.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="../zh/about.html">关于我们</a></li>
+                        <li><a href="../zh/products.html">产品中心</a></li>
+                        <li><a href="../zh/cases.html">客户案例</a></li>
+                        <li><a href="../zh/contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2022-2026 石家庄迈尔斯科技有限公司 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
+

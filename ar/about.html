@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن - MilesTech</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1 class="logo">MilesTech</h1>
+                <span class="tagline">حلول التغليف الذكية</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px"><ul class="nav-menu">
+                <li><a href="../ar/index.html">الرئيسية</a></li>
+                <li><a href="../ar/about.html" class="active">من نحن</a></li>
+                <li><a href="../ar/products.html">المنتجات</a></li>
+                <li><a href="../ar/cases.html">الحالات</a></li>
+                <li><a href="../ar/contact.html">اتصل بنا</a></li>
+            </ul>
+<!-- Language Switcher -->
+<style>
+#lang-switcher{display:flex;align-items:center;margin-left:15px;position:relative}
+#lang-toggle{display:flex;flex-direction:column;align-items:center;background:#0066cc;color:#fff;border:none;padding:5px 12px;border-radius:8px;cursor:pointer;box-shadow:0 2px 8px rgba(0,102,204,0.3);font-family:inherit;font-size:13px;line-height:1.3;transition:all .2s}
+#lang-toggle:hover{background:#0052a3;transform:scale(1.05)}
+#lang-toggle .ls-label{font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:1px;opacity:.75}
+#lang-toggle .ls-codes{font-size:11px;font-weight:700}
+#lang-dropdown{display:none;position:absolute;top:100%;right:0;margin-top:5px;background:#1e1e1e;border:1px solid #333;border-radius:10px;overflow:hidden;min-width:150px;box-shadow:0 6px 24px rgba(0,0,0,.5);z-index:10000}
+#lang-dropdown a{display:flex;align-items:center;gap:8px;padding:8px 14px;color:#ccc;text-decoration:none;font-size:13px;transition:background .15s}
+#lang-dropdown a:hover,#lang-dropdown a.active{background:#2a2a2a;color:#00d4ff}
+#lang-dropdown a.active{font-weight:600}
+</style>
+<div id="lang-switcher">
+  <div id="lang-toggle" onclick="toggleLang()">
+    <span class="ls-label">Language</span>
+    <span class="ls-codes">EN/ZH/ES/RU/AR</span>
+  </div>
+  <div id="lang-dropdown">
+    <a id="lang-en" href="#" data-lang="en">🇬🇧 EN English</a>
+    <a id="lang-zh" href="#" data-lang="zh">🇨🇳 中文</a>
+    <a id="lang-es" href="#" data-lang="es">🇪🇸 Español</a>
+    <a id="lang-ru" href="#" data-lang="ru">🇷🇺 Русский</a>
+    <a id="lang-ar" href="#" data-lang="ar">🇸🇦 العربية</a>
+  </div>
+</div>
+<script>
+function toggleLang(){var d=document.getElementById('lang-dropdown');d.style.display=d.style.display==='block'?'none':'block'}
+document.addEventListener('click',function(e){if(!e.target.closest('#lang-switcher'))document.getElementById('lang-dropdown').style.display='none'});
+(function(){
+  var path=location.pathname;
+  var m=path.match(/\/(en|zh|es|ru|ar)\/([^/]+)$/);
+  var page=(m&&m[2])||'index.html';
+  var curLang=(m&&m[1])||'zh';
+  var el=document.getElementById('lang-'+curLang);
+  if(el)el.className+=' active';
+  var links=document.querySelectorAll('#lang-dropdown a');
+  for(var i=0;i<links.length;i++){
+    links[i].href='../'+links[i].getAttribute('data-lang')+'/'+page;
+  }
+})();
+</script></div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>من نحن</h1>
+            <p>اكتشف MilesTech — شركة تجارة معدات الأتمتة العالمية</p>
+        </div>
+    </section>
+
+    <!-- نظرة عامة على الشركة -->
+    <section class="about-intro">
+        <div class="container">
+            <div class="about-text-block">
+                <h2>نظرة عامة على الشركة</h2>
+                <p class="lead">شركة شيجياتشوانغ مايلز للتكنولوجيا المحدودة هي شركة تجارية عالمية متخصصة في معدات الأتمتة. بفضل خبرة المجموعة التي تزيد عن 20 عامًا، نمتلك فهمًا عميقًا للآلات المخصصة — مما يضع أساسًا متينًا لتقديم معدات تغليف متينة وموثوقة.</p>
+                <p>نحن ملتزمون بتزويد العملاء العالميين بآلات تغليف عالية الجودة وحلول مخصصة احترافية. بالاستفادة من الموارد الصناعية العميقة للمجموعة، نطابق بدقة احتياجات العملاء مع خدمة شاملة.</p>
+            </div>
+
+            <div class="about-stats-grid">
+            </div>
+        </div>
+    </section>
+
+    <!-- المزايا الأساسية -->
+    <section class="advantages-section">
+        <div class="container">
+            <h2 class="section-title">المزايا الأساسية</h2>
+            <p class="section-subtitle">خمس نقاط قوة أساسية تبني مكانة القيادة الصناعية</p>
+
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">⚙️</div>
+                    <h3>الخبرة التقنية</h3>
+                    <p>نظام تحكم سيرفو مطور ذاتياً، وزن عالي الدقة ±0.2 جم</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">📦</div>
+                    <h3>محفظة المنتجات</h3>
+                    <p>مجموعة كاملة تغطي معدات التغليف العمودية والخزائن والأفقية والمركبة</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">🏭</div>
+                    <h3>قدرة المفتاح في اليد</h3>
+                    <p>تصميم خط إنتاج آلي كامل العملية من التغذية إلى التكديس</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">🛡️</div>
+                    <h3>ضمان الجودة</h3>
+                    <p>إدارة الجودة ISO9001 + شهادة السلامة الأوروبية CE</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">🤝</div>
+                    <h3>شبكة الخدمة</h3>
+                    <p>Full-cycle service: installation, commissioning, training, maintenance & after-sales support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- مجالات التطبيق -->
+    <section class="applications-section">
+        <div class="container">
+            <h2 class="section-title">مجالات التطبيق</h2>
+            <p class="section-subtitle">تغطية متعددة الصناعات لتلبية الاحتياجات المتنوعة</p>
+
+            <div class="applications-grid">
+                <div class="app-card">
+                    <div class="app-icon">🌾</div>
+                    <h3>Agriculture & Seeds</h3>
+                    <p>التغليف الآلي للبذور والأسمدة والأعلاف والمزيد</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon">🍜</div>
+                    <h3>معالجة الأغذية</h3>
+                    <p>حلول التغليف للدقيق والتوابل والوجبات الخفيفة والمزيد</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon">🧪</div>
+                    <h3>المواد الكيميائية</h3>
+                    <p>التغليف الآلي للحبيبات والمساحيق والمنتجات الكيميائية الأخرى</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon">🏗️</div>
+                    <h3>مواد البناء</h3>
+                    <p>معدات التغليف للملاط والإضافات ومنتجات مواد البناء</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>MilesTech</h3>
+                    <p>الرائد في حلول التغليف الذكي</p>
+                </div>
+                <div class="footer-section">
+                    <h4>اتصل</h4>
+                    <p>📍 رقم 306 طريق هوايتشونغ، منطقة يوهوا، شيجياتشوانغ، خبي</p>
+                    <p>📞 +86 157 3115 8807</p>
+                    <p>📧 info@milestecnology.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="../ar/about.html">من نحن</a></li>
+                        <li><a href="../ar/products.html">المنتجات</a></li>
+                        <li><a href="../ar/cases.html">الحالات</a></li>
+                        <li><a href="../ar/contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2022-2026 شركة شيجياتشوانغ مايلز للتكنولوجيا المحدودة. جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
+

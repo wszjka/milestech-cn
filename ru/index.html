@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - MilesTech</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1 class="logo">MilesTech</h1>
+                <span class="tagline">Интеллектуальные Упаковочные Решения</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px"><ul class="nav-menu">
+                <li><a href="../ru/index.html" class="active">Главная</a></li>
+                <li><a href="../ru/about.html">О нас</a></li>
+                <li><a href="../ru/products.html">Продукция</a></li>
+                <li><a href="../ru/cases.html">Кейсы</a></li>
+                <li><a href="../ru/contact.html">Контакты</a></li>
+            </ul>
+<!-- Language Switcher -->
+<style>
+#lang-switcher{display:flex;align-items:center;margin-left:15px;position:relative}
+#lang-toggle{display:flex;flex-direction:column;align-items:center;background:#0066cc;color:#fff;border:none;padding:5px 12px;border-radius:8px;cursor:pointer;box-shadow:0 2px 8px rgba(0,102,204,0.3);font-family:inherit;font-size:13px;line-height:1.3;transition:all .2s}
+#lang-toggle:hover{background:#0052a3;transform:scale(1.05)}
+#lang-toggle .ls-label{font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:1px;opacity:.75}
+#lang-toggle .ls-codes{font-size:11px;font-weight:700}
+#lang-dropdown{display:none;position:absolute;top:100%;right:0;margin-top:5px;background:#1e1e1e;border:1px solid #333;border-radius:10px;overflow:hidden;min-width:150px;box-shadow:0 6px 24px rgba(0,0,0,.5);z-index:10000}
+#lang-dropdown a{display:flex;align-items:center;gap:8px;padding:8px 14px;color:#ccc;text-decoration:none;font-size:13px;transition:background .15s}
+#lang-dropdown a:hover,#lang-dropdown a.active{background:#2a2a2a;color:#00d4ff}
+#lang-dropdown a.active{font-weight:600}
+</style>
+<div id="lang-switcher">
+  <div id="lang-toggle" onclick="toggleLang()">
+    <span class="ls-label">Language</span>
+    <span class="ls-codes">EN/ZH/ES/RU/AR</span>
+  </div>
+  <div id="lang-dropdown">
+    <a id="lang-en" href="#" data-lang="en">🇬🇧 EN English</a>
+    <a id="lang-zh" href="#" data-lang="zh">🇨🇳 中文</a>
+    <a id="lang-es" href="#" data-lang="es">🇪🇸 Español</a>
+    <a id="lang-ru" href="#" data-lang="ru">🇷🇺 Русский</a>
+    <a id="lang-ar" href="#" data-lang="ar">🇸🇦 العربية</a>
+  </div>
+</div>
+<script>
+function toggleLang(){var d=document.getElementById('lang-dropdown');d.style.display=d.style.display==='block'?'none':'block'}
+document.addEventListener('click',function(e){if(!e.target.closest('#lang-switcher'))document.getElementById('lang-dropdown').style.display='none'});
+(function(){
+  var path=location.pathname;
+  var m=path.match(/\/(en|zh|es|ru|ar)\/([^/]+)$/);
+  var page=(m&&m[2])||'index.html';
+  var curLang=(m&&m[1])||'zh';
+  var el=document.getElementById('lang-'+curLang);
+  if(el)el.className+=' active';
+  var links=document.querySelectorAll('#lang-dropdown a');
+  for(var i=0;i<links.length;i++){
+    links[i].href='../'+links[i].getAttribute('data-lang')+'/'+page;
+  }
+})();
+</script></div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Лидер в области интеллектуальных упаковочных решений</h1>
+                <p class="hero-subtitle">Национальное высокотехнологичное предприятие | ISO9001 + CE | Разработка автоматического упаковочного оборудования</p>
+                <div class="hero-buttons">
+                    <a href="../ru/products.html" class="btn btn-primary">Смотреть Продукцию</a>
+                    <a href="../ru/contact.html" class="btn btn-secondary">Контакты</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 企业亮点 -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Высокие технологии</h3>
+                    <p>Осн. в 2022 г., уставный капитал 200 млн юаней, сертифицированное высокотехнологичное предприятие</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Полный ассортимент продукции</h3>
+                    <p>Вертикальные/шкафные/горизонтальные/композитные упаковочные машины + решения под ключ</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>30+ известных клиентов</h3>
+                    <p>Нам доверяют Longping High-Tech, COFCO, QiaQia, CP Group и др.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>Двойная сертификация</h3>
+                    <p>Менеджмент качества ISO9001 + европейский сертификат безопасности CE</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心产品展示 -->
+    <section class="products-preview">
+        <div class="container">
+            <h2 class="section-title">Основная Продукция</h2>
+            <p class="section-subtitle">Полный спектр автоматического упаковочного оборудования</p>
+            <div class="home-products-grid">
+                <a href="../ru/products.html#cat1" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/1.jpg" alt="VFS Series"></div>
+                    <h3>Вертикальная машина VFS формования-наполнения-запечатывания</h3>
+                </a>
+                <a href="../ru/products.html#cat2" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/2.jpg" alt="Box Bag Packaging Machine"></div>
+                    <h3>Упаковочная машина для коробчатых пакетов / наклонная</h3>
+                </a>
+                <a href="../ru/products.html#cat3" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/3.jpg" alt="Вертикальная упаковочная установка для гранул"></div>
+                    <h3>Вертикальная упаковочная установка для гранул</h3>
+                </a>
+                <a href="../ru/products.html#cat4" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/4.jpg" alt="Вертикальная упаковочная установка для порошков"></div>
+                    <h3>Вертикальная упаковочная установка для порошков</h3>
+                </a>
+                <a href="../ru/products.html#cat5" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/5.jpg" alt="Liquid Filling Machine"></div>
+                    <h3>Установка розлива жидкостей</h3>
+                </a>
+                <a href="../ru/products.html#cat6" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/6.jpg" alt="Extrusion Packaging Machine"></div>
+                    <h3>Установка экструзионной упаковки</h3>
+                </a>
+                <a href="../ru/products.html#cat7" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/7.jpg" alt="Объёмно-чашечная упаковочная машина"></div>
+                    <h3>Объёмно-чашечная упаковочная машина</h3>
+                </a>
+                <a href="../ru/products.html#cat8" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/8.jpg" alt="FFS Heavy-Duty Film Packaging Machine"></div>
+                    <h3>Автоматическая машина FFS для тяжёлой плёнки</h3>
+                </a>
+                <a href="../ru/products.html#cat9" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/9.jpg" alt="BBF Heavy Bag Packaging Machine"></div>
+                    <h3>Установка BBF для упаковки в тяжёлые мешки</h3>
+                </a>
+                <a href="../ru/products.html#cat10" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/10.jpg" alt="ZB Vacuum Packaging Machine"></div>
+                    <h3>Вакуумная упаковочная установка ZB</h3>
+                </a>
+                <a href="../ru/products.html#cat11" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/11.jpg" alt="Роторная машина CF для готовых пакетов"></div>
+                    <h3>Роторная машина CF для готовых пакетов</h3>
+                </a>
+                <a href="../ru/products.html#cat12" class="home-product-card">
+                    <div class="home-product-img"><img src="../images/product-categories/12.jpg" alt="Custom Production Line"></div>
+                    <h3>Индивидуальная упаковочная производственная линия</h3>
+                </a>
+            </div>
+            <div style="text-align:center; margin-top:40px;">
+                <a href="../ru/products.html" class="btn btn-primary">Смотреть Всю Продукцию →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 客户Logo墙 -->
+    <section class="clients">
+        <div class="container">
+            <h2 class="section-title">Наши Клиенты</h2>
+            <p class="section-subtitle">Нам доверяют 30+ лидеров отрасли</p>
+            <div class="clients-grid">
+                <div class="client-logo">Longping High-Tech</div>
+                <div class="client-logo">COFCO Group</div>
+                <div class="client-logo">Jinmailang</div>
+                <div class="client-logo">QiaQia Food</div>
+                <div class="client-logo">CP Group</div>
+                <div class="client-logo">Quanyin High-Tech</div>
+                <div class="client-logo">Denghai Seeds</div>
+                <div class="client-logo">CNSG Hongsifang</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>MilesTech</h3>
+                    <p>Лидер в области интеллектуальных упаковочных решений</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>📍 ул. Хуайчжун 306, р-н Юйхуа, Шицзячжуан, Хэбэй</p>
+                    <p>📞 +86 157 3115 8807</p>
+                    <p>📧 info@milestecnology.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Быстрые Ссылки</h4>
+                    <ul>
+                        <li><a href="../ru/about.html">О нас</a></li>
+                        <li><a href="../ru/products.html">Продукция</a></li>
+                        <li><a href="../ru/cases.html">Кейсы</a></li>
+                        <li><a href="../ru/contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2022-2026 Shijiazhuang Miles Technology Co., Ltd. Все права защищены</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
+

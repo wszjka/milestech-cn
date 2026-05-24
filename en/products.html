@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Products - MilesTech</title>
+ <link rel="stylesheet" href="../css/style.css">
+ <style>
+ .product-category {
+ padding: 60px 0;
+ border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+ }
+ 
+ .product-category:last-child {
+ border-bottom: none;
+ }
+ 
+ .category-title {
+ font-size: 2rem;
+ color: var(--primary);
+ margin-bottom: 30px;
+ padding-bottom: 15px;
+ border-bottom: 2px solid var(--primary);
+ }
+ 
+ .product-detail {
+ background: var(--bg-card);
+ padding: 30px;
+ border-radius: 10px;
+ margin-bottom: 30px;
+ border: 1px solid rgba(0, 212, 255, 0.2);
+ }
+ 
+ .product-detail h3 {
+ color: var(--primary);
+ margin-bottom: 15px;
+ font-size: 1.5rem;
+ }
+ 
+ .product-specs {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr); max-width: 900px; margin-left: auto; margin-right: auto;
+ gap: 15px;
+ margin: 20px 0;
+ }
+ 
+ .spec-item {
+ background: rgba(0, 212, 255, 0.1);
+ padding: 10px 15px;
+ border-radius: 5px;
+ border-left: 3px solid var(--primary);
+ }
+ 
+ .spec-label {
+ color: var(--text-gray);
+ font-size: 0.9rem;
+ }
+ 
+ .spec-value {
+ color: var(--text-light);
+ font-weight: 600;
+ margin-top: 5px;
+ }
+ 
+ .product-features {
+ margin-top: 20px;
+ padding-left: 20px;
+ }
+ 
+ .product-features li {
+ color: var(--text-gray);
+ margin-bottom: 8px;
+ }
+ 
+ .auxiliary-grid {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr); max-width: 900px; margin-left: auto; margin-right: auto;
+ gap: 20px;
+ margin-top: 30px;
+ }
+ 
+ .aux-item {
+ background: var(--bg-card);
+ padding: 20px;
+ border-radius: 8px;
+ border: 1px solid rgba(0, 212, 255, 0.2);
+ text-align: center;
+ }
+ 
+ .aux-category {
+ color: var(--primary);
+ font-weight: 600;
+ margin-bottom: 10px;
+ }
+ 
+ .aux-list {
+ color: var(--text-gray);
+ font-size: 0.9rem;
+ list-style: none;
+ }
+ 
+ .aux-list li {
+ padding: 5px 0;
+ }
+ 
+ .category-image {
+ width: 100%;
+ min-height: 300px;
+ overflow: hidden;
+ border-radius: 10px;
+ margin: 20px 0 30px 0;
+ background: var(--bg-card);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ }
+ 
+ .category-image img {
+ max-width: 100%;
+ height: auto;
+ object-fit: contain;
+ }
+</style>
+</head>
+<body>
+ <nav class="navbar">
+ <div class="container">
+ <div class="nav-brand">
+ <h1 class="logo">MilesTech</h1>
+ <span class="tagline">Intelligent Packaging Solutions</span>
+ </div>
+ <div style="display:flex;align-items:center;gap:10px"><ul class="nav-menu">
+ <li><a href="../en/index.html">Home</a></li>
+ <li><a href="../en/about.html">About Us</a></li>
+ <li><a href="../en/products.html" class="active">Products</a></li>
+ <li><a href="../en/cases.html">Cases</a></li>
+ <li><a href="../en/contact.html">Contact Us</a></li>
+ </ul>
+<!-- Language Switcher -->
+<style>
+#lang-switcher{display:flex;align-items:center;margin-left:15px;position:relative}
+#lang-toggle{display:flex;flex-direction:column;align-items:center;background:#0066cc;color:#fff;border:none;padding:5px 12px;border-radius:8px;cursor:pointer;box-shadow:0 2px 8px rgba(0,102,204,0.3);font-family:inherit;font-size:13px;line-height:1.3;transition:all .2s}
+#lang-toggle:hover{background:#0052a3;transform:scale(1.05)}
+#lang-toggle .ls-label{font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:1px;opacity:.75}
+#lang-toggle .ls-codes{font-size:11px;font-weight:700}
+#lang-dropdown{display:none;position:absolute;top:100%;right:0;margin-top:5px;background:#1e1e1e;border:1px solid #333;border-radius:10px;overflow:hidden;min-width:150px;box-shadow:0 6px 24px rgba(0,0,0,.5);z-index:10000}
+#lang-dropdown a{display:flex;align-items:center;gap:8px;padding:8px 14px;color:#ccc;text-decoration:none;font-size:13px;transition:background .15s}
+#lang-dropdown a:hover,#lang-dropdown a.active{background:#2a2a2a;color:#00d4ff}
+#lang-dropdown a.active{font-weight:600}
+</style>
+<div id="lang-switcher">
+  <div id="lang-toggle" onclick="toggleLang()">
+    <span class="ls-label">Language</span>
+    <span class="ls-codes">EN/ZH/ES/RU/AR</span>
+  </div>
+  <div id="lang-dropdown">
+    <a id="lang-en" href="#" data-lang="en">🇬🇧 EN English</a>
+    <a id="lang-zh" href="#" data-lang="zh">🇨🇳 中文</a>
+    <a id="lang-es" href="#" data-lang="es">🇪🇸 Español</a>
+    <a id="lang-ru" href="#" data-lang="ru">🇷🇺 Русский</a>
+    <a id="lang-ar" href="#" data-lang="ar">🇸🇦 العربية</a>
+  </div>
+</div>
+<script>
+function toggleLang(){var d=document.getElementById('lang-dropdown');d.style.display=d.style.display==='block'?'none':'block'}
+document.addEventListener('click',function(e){if(!e.target.closest('#lang-switcher'))document.getElementById('lang-dropdown').style.display='none'});
+(function(){
+  var path=location.pathname;
+  var m=path.match(/\/(en|zh|es|ru|ar)\/([^/]+)$/);
+  var page=(m&&m[2])||'index.html';
+  var curLang=(m&&m[1])||'zh';
+  var el=document.getElementById('lang-'+curLang);
+  if(el)el.className+=' active';
+  var links=document.querySelectorAll('#lang-dropdown a');
+  for(var i=0;i<links.length;i++){
+    links[i].href='../'+links[i].getAttribute('data-lang')+'/'+page;
+  }
+})();
+</script></div>
+ </div>
+ </nav>
+
+ <section class="page-header">
+ <div class="container">
+ <h1>Products</h1>
+ <p>Full-Process Automated Packaging Equipment & Solutions</p>
+ </div>
+ </section>
+
+ <!-- I. Vertical Form-Fill-Seal Packaging Machines (VFS Series) -->
+ <section class="product-category" id="vertical">
+ <div class="container">
+ <h2 class="category-title">I. Vertical Form-Fill-Seal Packaging Machines (VFS Series)</h2>
+ <div class="category-image">
+ <img src="../images/product-categories/1.jpg" alt="I. Vertical Form-Fill-Seal Packaging Machines (VFS Series)">
+ </div>
+
+ <p style="color: var(--text-gray); margin-bottom: 30px;">Suitable for automated packaging of granules, powders, liquids and more</p>
+ 
+ <div class="product-detail">
+ <h3>VFS320B VerticalAutomatic Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Dimensions</div>
+ <div class="spec-value">1050×800×1010mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">200×150mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">80 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 350L/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Power</div>
+ <div class="spec-value">3KW</div>
+ </div>
+ </div>
+ <ul class="product-features">
+ <li>Bag Type：Pillow bag, gusset bag, punched bag, handle bag, box bag, breathable valve bag, etc.</li>
+ </ul>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS5000D VerticalAutomatic Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Dimensions</div>
+ <div class="spec-value">1470×988×1400mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">280×180mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">80 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 360L/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Power</div>
+ <div class="spec-value">3KW</div>
+ </div>
+ </div>
+ <ul class="product-features">
+ <li>Bag Type：Pillow bag, gusset bag, punched bag, handle bag, box bag, breathable valve bag, etc.</li>
+ </ul>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS5000B VerticalAutomatic Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Dimensions</div>
+ <div class="spec-value">1800×1220×1680mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">340×250mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">90 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 350L/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Power</div>
+ <div class="spec-value">5.5KW</div>
+ </div>
+ </div>
+ <ul class="product-features">
+ <li>Bag Type：Pillow bag, gusset bag, punched bag, handle bag, box bag, breathable valve bag, etc.</li>
+ </ul>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFST300B VerticalAutomatic Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Dimensions</div>
+ <div class="spec-value">1854×1440×1930mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">460×350mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">80 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 350L/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Power</div>
+ <div class="spec-value">6KW</div>
+ </div>
+ </div>
+ <ul class="product-features">
+ <li>Bag Type：Pillow bag, gusset bag, punched bag, handle bag, box bag, breathable valve bag, etc.</li>
+ </ul>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS9000B VerticalAutomatic Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Dimensions</div>
+ <div class="spec-value">2000×1600×2200mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">560×450mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">40 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 350L/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Power</div>
+ <div class="spec-value">6KW</div>
+ </div>
+ </div>
+ <ul class="product-features">
+ <li>Bag Type：Pillow bag, gusset bag, punched bag, handle bag, box bag, breathable valve bag, etc.</li>
+ </ul>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS1100B VerticalAutomatic Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Dimensions</div>
+ <div class="spec-value">2150×1750×2300mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">650×535mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">20 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 300L/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Power</div>
+ <div class="spec-value">6.5KW</div>
+ </div>
+ </div>
+ <ul class="product-features">
+ <li>Bag Type：Pillow bag, gusset bag, punched bag, handle bag, box bag, breathable valve bag, etc.</li>
+ </ul>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS1500B VerticalAutomatic Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Dimensions</div>
+ <div class="spec-value">2450×1950×2680mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">900×725mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">10 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 300L/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Power</div>
+ <div class="spec-value">7.5KW</div>
+ </div>
+ </div>
+ <ul class="product-features">
+ <li>Bag Type：Pillow bag, gusset bag, punched bag, handle bag, box bag, breathable valve bag, etc.</li>
+ </ul>
+ </div>
+ </div>
+ </section>
+
+ <!-- II. Box Bag/Inclined/Breathable ValvePackaging Machine -->
+ <section class="product-category" id="box-type">
+ <div class="container">
+ <h2 class="category-title">II. Box Bag/Inclined/Breathable ValvePackaging Machine</h2>
+ <div class="category-image">
+ <img src="../images/product-categories/2.jpg" alt="II. Box Bag/Inclined/Breathable ValvePackaging Machine">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>VFS5000H5 Box Bag Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Overall Dimensions</div>
+ <div class="spec-value">2450×1230×1660mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Type</div>
+ <div class="spec-value">Box Bag</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">FrontW:50~190mm SideW:35~90mm Edge SealW:5~8mm Bag LengthL:100~420mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">45 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 350L/min</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS7300H5 Box Bag Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Overall Dimensions</div>
+ <div class="spec-value">2550×1420×1930mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Type</div>
+ <div class="spec-value">Box Bag</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">FrontW:60~260mm SideW:45~120mm Edge SealW:5~10mm Bag LengthL:100~460mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">45 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 350L/min</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS5000X Breathable ValvePackaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Overall Dimensions</div>
+ <div class="spec-value">1760×1496×1765mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Type</div>
+ <div class="spec-value">Pillow Bag</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">(50-500)×(65~260)mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">50 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 350L/min</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- III. Vertical Granule Packaging Units -->
+ <section class="product-category" id="granule">
+ <div class="container">
+ <h2 class="category-title">III. Vertical Granule Packaging Units</h2>
+ <div class="category-image">
+ <img src="../images/product-categories/3.jpg" alt="III. Vertical Granule Packaging Units">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>VFS5000D Granule Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">10-1000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">80 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Materials</div>
+ <div class="spec-value">Various GranulesMaterials</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS5000B Granule Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">100-2000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">50 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Materials</div>
+ <div class="spec-value">Various GranulesMaterials</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS7300B Granule Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">500-5000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">50 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Materials</div>
+ <div class="spec-value">Various GranulesMaterials</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS1100B Granule Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">2000-10000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">30 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Materials</div>
+ <div class="spec-value">Various GranulesMaterials</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- IV. Vertical Powder Packaging Units -->
+ <section class="product-category" id="powder">
+ <div class="container">
+ <h2 class="category-title">IV. Vertical Powder Packaging Units</h2>
+ <div class="category-image">
+ <img src="../images/product-categories/4.jpg" alt="IV. Vertical Powder Packaging Units">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>VFS5000D Powder Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">10-1000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value"><100g<±2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">50 packs/min</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS5000B Powder Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">100-2000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">100-500g<±1%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">50 packs/min</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS7300B Powder Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">500-5000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">≥500g<±0.5%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">50 packs/min</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS1100B Powder Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">2000-10000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">Depending on Material Properties</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">30 packs/min</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- V. Liquid Filling Units -->
+ <section class="product-category" id="liquid">
+ <div class="container">
+ <h2 class="category-title">V. Liquid Filling Units</h2>
+ <div class="category-image">
+ <img src="../images/product-categories/5.jpg" alt="V. Liquid Filling Units">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>VFS5000B Liquid Filling Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">100-2000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±0.5%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">70 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Method</div>
+ <div class="spec-value">Piston Rotor Pump/Diaphragm Pump</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS7300B Liquid Filling Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">500-5000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±0.5%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">40 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Method</div>
+ <div class="spec-value">Piston Rotor Pump/Diaphragm Pump</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- VI. Extrusion Packaging Units -->
+ <section class="product-category" id="extrusion">
+ <div class="container">
+ <h2 class="category-title">VI. Extrusion Packaging Units</h2>
+ <div class="category-image">
+ <img src="../images/product-categories/6.jpg" alt="VI. Extrusion Packaging Units">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>VFS7300GY Extrusion Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value"><5000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±0.5%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">25 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Method</div>
+ <div class="spec-value">Rotor Pump Extrusion Metering Filling</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS7300GZ Extrusion Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value"><5000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±0.5%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">15 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Method</div>
+ <div class="spec-value">Rotor Pump Extrusion Metering Filling</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- VII. Volumetric Cup Packaging Machines -->
+ <section class="product-category" id="measuring-cup">
+ <div class="container">
+ <h2 class="category-title">VII. Volumetric Cup Packaging Machines</h2>
+ <div class="category-image">
+ <img src="../images/product-categories/7.jpg" alt="VII. Volumetric Cup Packaging Machines">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>VFS5000D Volumetric Cup Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value"><5000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±0.5%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">70 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Industries</div>
+ <div class="spec-value">White Sugar, Saltand Other Industries</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- VIII. Automatic Heavy-Duty Film Packaging Machine（FFS Series） -->
+ <section class="product-category" id="heavy-film">
+ <div class="container">
+ <h2 class="category-title">VIII. Automatic Heavy-Duty Film Packaging Machine（FFS Series）</h2>
+ <div class="category-image">
+ <img src="../images/product-categories/8.jpg" alt="VIII. Automatic Heavy-Duty Film Packaging Machine（FFS Series）">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>General Parameters</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Package Spec</div>
+ <div class="spec-value">20-25kg/bag</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Film Requirements</div>
+ <div class="spec-value">M-type PE Heavy-Duty Packaging FilmBag Roll(Tubular)</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Film Thickness</div>
+ <div class="spec-value">140-200um±4%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Film Roll Diameter</div>
+ <div class="spec-value">1500mm，Film Core ID150±5mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">Air Consumption3m³/min，Air Pressure≥0.6Mpa</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Noise Level</div>
+ <div class="spec-value"><80dB(from Machine 1m distance, 1.6m heightMeasured At)</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>FFS600 Heavy-Duty FilmPackaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Dimensions</div>
+ <div class="spec-value">5400×1950×2400mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">M:80+3mm<br>L:650-950mm<br>W:400mm<br>H:80mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">750 bags/hr</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 350L/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Power</div>
+ <div class="spec-value">10KW</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>FFS1200 Heavy-Duty FilmPackaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Dimensions</div>
+ <div class="spec-value">5600×1950×2500mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">M:80+3mm<br>L:650-950mm<br>W:400mm<br>H:80mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">1200 bags/hr</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 500L/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Power</div>
+ <div class="spec-value">12KW</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>FFS1800 Heavy-Duty FilmPackaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Dimensions</div>
+ <div class="spec-value">6000×1950×2500mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">M:80+3mm<br>L:650-950mm<br>W:400mm<br>H:80mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">1800 bags/hr</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Compressed Air</div>
+ <div class="spec-value">≥0.6MPa 600L/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Power</div>
+ <div class="spec-value">15KW</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- IX. Heavy Bag Packaging Machine Unit（BBF Series ） -->
+ <section class="product-category" id="heavy-bag">
+ <div class="container">
+ <h2 class="category-title">IX. Heavy Bag Packaging Machine Unit（BBF Series ）</h2>
+ <div class="category-image">
+ <img src="../images/product-categories/9.jpg" alt="IX. Heavy Bag Packaging Machine Unit（BBF Series ）">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>BBF-F200 Powder Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Packaging Material</div>
+ <div class="spec-value">Woven Bag, Kraft Paper Bag, Composite Film Plastic Bag</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Package Size</div>
+ <div class="spec-value">(700-1100)×(480-650)mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingWeight</div>
+ <div class="spec-value">25~50kg/bag</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">3-8 packs/</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Sealing Method</div>
+ <div class="spec-value">Woven Bag：Folded Edge/Stitched Closure；Kraft Paper Bag：Heat Seal/Stitched Closure；Composite Film Plastic Bag：Heat Seal</div>
+ </div>
+ </div>
+ <ul class="product-features">
+ <li>Applicable Materials：Various Powder Materials</li>
+ </ul>
+ </div>
+
+ <div class="product-detail">
+ <h3>BBF-FV200 Powder Packaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Packaging Material</div>
+ <div class="spec-value">PE/Laminated Woven Bag/Paper Bag</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Package Size</div>
+ <div class="spec-value">Max:1200×600mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingWeight</div>
+ <div class="spec-value">20~50kg/pack</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">Max200 packs/hours</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Sealing Method</div>
+ <div class="spec-value">Same as Above</div>
+ </div>
+ </div>
+ <ul class="product-features">
+ <li>Applicable Materials：Various Powder Materials</li>
+ </ul>
+ </div>
+
+ <div class="product-detail">
+ <h3>BBF-FD100 Dual-Station Vacuum & DegassingPackaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Packaging Material</div>
+ <div class="spec-value">PE, Laminated Woven Bag/Paper Bag</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Package Size</div>
+ <div class="spec-value">Max:1200×600mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingWeight</div>
+ <div class="spec-value">20-50kg/bag</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">1~4 packs/</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Sealing Method</div>
+ <div class="spec-value">Same as Above</div>
+ </div>
+ </div>
+ <ul class="product-features">
+ <li>Applicable Materials：Low Density, High Air Content Powder Materials</li>
+ </ul>
+ </div>
+
+ <div class="product-detail">
+ <h3>BBF-K1000 Granules High-SpeedPackaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Packaging Material</div>
+ <div class="spec-value">Woven Bag/Kraft Paper Bag/Composite Film Plastic</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Package Size</div>
+ <div class="spec-value">(800-1000)×(450-550)mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingWeight</div>
+ <div class="spec-value">25-50kg/pack</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">Max:1000 packs/hours</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Sealing Method</div>
+ <div class="spec-value">Same as Above</div>
+ </div>
+ </div>
+ <ul class="product-features">
+ <li>Applicable Materials：Various Granules, Flake Materials</li>
+ </ul>
+ </div>
+ </div>
+ </section>
+
+ <!-- X. Vacuum Packaging Units (ZB Series) -->
+ <section class="product-category" id="vacuum">
+ <div class="container">
+ <h2 class="category-title">X. Vacuum Packaging Units (ZB Series)</h2>
+ <div class="category-image">
+ <img src="../images/product-categories/10.jpg" alt="X. Vacuum Packaging Units (ZB Series)">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>ZB500N Automatic 6-Side Vacuum Bag Packaging Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Bag Type</div>
+ <div class="spec-value">Roll Film Bag Making</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">55-150×35-80mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">100-1000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">20-38 packs/min</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>ZB500N2 Automatic 6-Side Vacuum Bag Packaging Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Bag Type</div>
+ <div class="spec-value">Roll Film Bag Making</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">55-150×35-80mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">100-1000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">20-38 packs/min</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>ZB500W/Z Automatic 6-Side Vacuum Bag Packaging Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Bag Type</div>
+ <div class="spec-value">Roll Film Bag Making</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">55-150×35-80mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">100-1000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">8-15 packs/min</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- XI. Rotary Pre-Made Pouch Packaging Machines (CF Series) -->
+ <section class="product-category" id="rotary">
+ <div class="container">
+ <h2 class="category-title">XI. Rotary Pre-Made Pouch Packaging Machines (CF Series)</h2>
+ <div class="category-image">
+ <img src="../images/product-categories/11.jpg" alt="XI. Rotary Pre-Made Pouch Packaging Machines (CF Series)">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>General Parameters</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Applicable Pouch Types</div>
+ <div class="spec-value">Four-side Seal Pouch, Three-side Seal Pouch, Stand-up Pouch, Handle Bag, Zipper Pouch, Lidded Plastic Bag, Paper-Plastic Pouches</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Materials</div>
+ <div class="spec-value">Liquids, Pastes, Granules, Powder, Irregular Blocks, etc.</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Bag Material</div>
+ <div class="spec-value">Pre-made pouches made of multi-layer composite film, Paper-Plastic Pouches</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>CF10-200 Rotary Pre-Made Pouch Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">W:90-210mm L:100-360mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">50-1000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">25-45 packs/</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>CF8-250 Rotary Pre-Made Pouch Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">W:130-250mm L:100-360mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">200-1500g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">25-45 packs/</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>CF8-300 Rotary Pre-Made Pouch Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">W:160-300mm L:100-400mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">500-2000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">25-45 packs/</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>CF8-360 Rotary Pre-Made Pouch Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">W:250-360mm L:380-500mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">5000-10000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">8-15 packs/</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>CF8-420 Rotary Pre-Made Pouch Packaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Bag Size</div>
+ <div class="spec-value">W:350-420mm L:450-580mm</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">5000-15000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">8-15 packs/</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- XII. Custom Packaging Production Lines -->
+ <section class="product-category" id="custom-line">
+ <div class="container">
+ <h2 class="category-title">XII. Custom Packaging Production Lines</h2>
+ <div class="category-image">
+ <img src="../images/product-categories/12.jpg" alt="XII. Custom Packaging Production Lines">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>VFS Series Vertical Secondary Packaging Units</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Equipment Components</div>
+ <div class="spec-value">VFS7300BPackaging Machine, VFS1100B/1500BPackaging Machine, Conveying System, Counting & Collating Machine</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Application Scope</div>
+ <div class="spec-value">150~1000gSmall Product Secondary Packaging</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Main Parameters</div>
+ <div class="spec-value">Small Bag Capacity：120-150 packs/；Operating Air Pressure：≥5kgf/cm²；Equipment Power：>5KW</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>BBFWoven Bag SecondaryPackaging Machine Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Equipment Components</div>
+ <div class="spec-value">BBF Series Packaging Machine, Bag Stitcher, Conveying System, Counting & Collating Machine, Robotic Palletizing</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Application Scope</div>
+ <div class="spec-value">150~1000gSmall BagProduct to Woven Bag Secondary Packaging</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Main Parameters</div>
+ <div class="spec-value">Large BagSpeed：4-10 bags/；Small BagSpeed：40-90 packs/</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>VFS Series Small Bag Cartoning Line</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Equipment Components</div>
+ <div class="spec-value">Automatic Packaging Machine, Carton Erector, Automatic Case Packer, Automatic Carton Sealer, Automatic Strapping Machine</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Application Scope</div>
+ <div class="spec-value">Bulk Materials Small Bag Automatic Cartoning</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Main Parameters</div>
+ <div class="spec-value">Customizable</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>BBF Series Granule Packaging Palletizing Line</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Equipment Components</div>
+ <div class="spec-value">Weighing Machine, BBF Series Packaging Machine, Automatic Stitching/Sealing Machine, Conveying System, Weight/Metal Detector, Robotic Palletizing</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Application Scope</div>
+ <div class="spec-value">Granule Materials from Weighing toPalletizing Full Process</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Main Parameters</div>
+ <div class="spec-value">Customizable</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>BBF Series Powder Packaging Palletizing Line</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Equipment Components</div>
+ <div class="spec-value">Screw Feeding System, BBF Series Packaging Machine, Automatic Stitching/Sealing Machine, Incline & Shaping/Compression Conveyor, Weight/Metal Detector, Robotic Palletizing</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Application Scope</div>
+ <div class="spec-value">Powder Materials from Feeding toPalletizing Full Process</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Main Parameters</div>
+ <div class="spec-value">Customizable</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- XIII. Weighing Equipment -->
+ <section class="product-category" id="weighing">
+ <div class="container">
+ <h2 class="category-title">XIII. Weighing Equipment</h2>
+ <div class="category-image">
+ <img src="../images/product-categories/13.jpg" alt="XIII. Weighing Equipment">
+ </div>
+
+ 
+ <div class="product-detail">
+ <h3>WM-Z4 Standard Linear Scale</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Main Description</div>
+ <div class="spec-value">4-Bucket 5L Linear Scale</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">100-5000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">15-45 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Industries</div>
+ <div class="spec-value">Daily Chemicals, Food, Seasonings, Seeds etc.</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>WM-Z6 Standard Linear Scale</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Main Description</div>
+ <div class="spec-value">6-Bucket 5L Linear Scale</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">100-5000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">20-55 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Industries</div>
+ <div class="spec-value">Same as Above</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>WM-Z10（1.6L）Standard Linear Scale</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Main Description</div>
+ <div class="spec-value">10-Bucket 1.6LLinearCombination Weigher</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">50-1000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">20-80 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Industries</div>
+ <div class="spec-value">Same as Above</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>WM-Z10（2.5L）Standard Linear Scale</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Main Description</div>
+ <div class="spec-value">10-Bucket 2.5LLinearCombination Weigher</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">100-2000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">20-70 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Industries</div>
+ <div class="spec-value">Same as Above</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>WM-Z14 Standard Linear Scale</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Main Description</div>
+ <div class="spec-value">14-Bucket 5LinearCombination Weigher</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">200-3000g</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">20-70 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Industries</div>
+ <div class="spec-value">Same as Above</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>SWM Series Semi-Automatic Unit</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Application Scope</div>
+ <div class="spec-value">White Sugar, Salt, Seeds, Rice, MSG, Feed, Coffee, Sesame and Food Products, Seasonings Small Granule Form, Powder Form Materials</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Weighing Range</div>
+ <div class="spec-value">5-25kg (Customizable)</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">WeighingSpeed</div>
+ <div class="spec-value">2-12 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Weighing Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Features</div>
+ <div class="spec-value">Single or Dual HopperDual HopperNet Weight TypeAutomaticWeighing，Manual Bag Placement，All Stainless Steel Sealed Structure</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>WM-L25 Vertical Screw Weigher</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Main Description</div>
+ <div class="spec-value">Vertical Screw 50/75L</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">0.5-5Kg</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Accuracy</div>
+ <div class="spec-value">±0.5%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">1-30 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Materials</div>
+ <div class="spec-value">Various Powder Materials</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>WM-LV25 Vertical Lifting Screw Weigher</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Main Description</div>
+ <div class="spec-value">Vertical Lifting Screw 100L</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">15-30Kg</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Accuracy</div>
+ <div class="spec-value">±0.5%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">2-5 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Materials</div>
+ <div class="spec-value">Various Powder Materials</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>WM-W25 Horizontal Single-Hopper Screw Weighing Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Main Description</div>
+ <div class="spec-value">Horizontal Single-Hopper Screw</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">5-30Kg</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Accuracy</div>
+ <div class="spec-value">±0.5%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">1-8 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Materials</div>
+ <div class="spec-value">Various Powder Materials</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>WM-W25/2 Horizontal Dual-Screw Weighing Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Main Description</div>
+ <div class="spec-value">Horizontal Dual-Screw</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">15-30Kg</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Accuracy</div>
+ <div class="spec-value">±0.5%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">PackagingSpeed</div>
+ <div class="spec-value">1-10 packs/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Materials</div>
+ <div class="spec-value">Various Powder Materials</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>WM-SD25 Servo Scale</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Application Scope</div>
+ <div class="spec-value">Corn Seeds, GranulesFertilizer etc. Materials with Good Flowability</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Weighing Range</div>
+ <div class="spec-value">15kg-50kg (Based on Material Density)</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">WeighingSpeed</div>
+ <div class="spec-value">6-15 cycles/min</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Weighing Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>TBM-K1000 Ton BagPackaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Feeding Type</div>
+ <div class="spec-value">Self-Discharging/Vibration</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">500-1200Kg</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">10-40Bag/H</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Industries</div>
+ <div class="spec-value">Chemicals, Building Materials, Minerals, Grain, Metallurgy etc.</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="product-detail">
+ <h3>TBM-F1000S Ton BagPackaging Machine</h3>
+ <div class="product-specs">
+ <div class="spec-item">
+ <div class="spec-label">Feeding Type</div>
+ <div class="spec-value">Horizontal Screw/Net Weight Type</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Measuring Range</div>
+ <div class="spec-value">500-1200Kg</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Accuracy</div>
+ <div class="spec-value">±0.2%</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Speed</div>
+ <div class="spec-value">10-20Bag/H</div>
+ </div>
+ <div class="spec-item">
+ <div class="spec-label">Applicable Industries</div>
+ <div class="spec-value">Same as Above</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <footer class="footer">
+ <div class="container">
+ <div class="footer-grid">
+ <div class="footer-section">
+ <h3>MilesTech</h3>
+ <p>Leader in Intelligent Packaging Solutions</p>
+ </div>
+ <div class="footer-section">
+ <h4>Contact</h4>
+ <p>📍 No.306 Huaizhong Road, Yuhua District, Shijiazhuang, Hebei</p>
+ <p>📞 +86 157 3115 8807</p>
+ <p>📧 info@milestecnology.com</p>
+ </div>
+ <div class="footer-section">
+ <h4>Quick Links</h4>
+ <ul>
+ <li><a href="../en/about.html">About Us</a></li>
+ <li><a href="../en/products.html">Products</a></li>
+ <li><a href="../en/cases.html">Cases</a></li>
+ <li><a href="../en/contact.html">Contact Us</a></li>
+ </ul>
+ </div>
+ </div>
+ <div class="footer-bottom">
+ <p>&copy; 2022-2026 Shijiazhuang Miles Technology Co., Ltd. All Rights Reserved</p>
+ </div>
+ </div>
+ </footer>
+
+ <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - MilesTech</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1 class="logo">MilesTech</h1>
+                <span class="tagline">Интеллектуальные Упаковочные Решения</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px"><ul class="nav-menu">
+                <li><a href="../ru/index.html">Главная</a></li>
+                <li><a href="../ru/about.html" class="active">О нас</a></li>
+                <li><a href="../ru/products.html">Продукция</a></li>
+                <li><a href="../ru/cases.html">Кейсы</a></li>
+                <li><a href="../ru/contact.html">Контакты</a></li>
+            </ul>
+<!-- Language Switcher -->
+<style>
+#lang-switcher{display:flex;align-items:center;margin-left:15px;position:relative}
+#lang-toggle{display:flex;flex-direction:column;align-items:center;background:#0066cc;color:#fff;border:none;padding:5px 12px;border-radius:8px;cursor:pointer;box-shadow:0 2px 8px rgba(0,102,204,0.3);font-family:inherit;font-size:13px;line-height:1.3;transition:all .2s}
+#lang-toggle:hover{background:#0052a3;transform:scale(1.05)}
+#lang-toggle .ls-label{font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:1px;opacity:.75}
+#lang-toggle .ls-codes{font-size:11px;font-weight:700}
+#lang-dropdown{display:none;position:absolute;top:100%;right:0;margin-top:5px;background:#1e1e1e;border:1px solid #333;border-radius:10px;overflow:hidden;min-width:150px;box-shadow:0 6px 24px rgba(0,0,0,.5);z-index:10000}
+#lang-dropdown a{display:flex;align-items:center;gap:8px;padding:8px 14px;color:#ccc;text-decoration:none;font-size:13px;transition:background .15s}
+#lang-dropdown a:hover,#lang-dropdown a.active{background:#2a2a2a;color:#00d4ff}
+#lang-dropdown a.active{font-weight:600}
+</style>
+<div id="lang-switcher">
+  <div id="lang-toggle" onclick="toggleLang()">
+    <span class="ls-label">Language</span>
+    <span class="ls-codes">EN/ZH/ES/RU/AR</span>
+  </div>
+  <div id="lang-dropdown">
+    <a id="lang-en" href="#" data-lang="en">🇬🇧 EN English</a>
+    <a id="lang-zh" href="#" data-lang="zh">🇨🇳 中文</a>
+    <a id="lang-es" href="#" data-lang="es">🇪🇸 Español</a>
+    <a id="lang-ru" href="#" data-lang="ru">🇷🇺 Русский</a>
+    <a id="lang-ar" href="#" data-lang="ar">🇸🇦 العربية</a>
+  </div>
+</div>
+<script>
+function toggleLang(){var d=document.getElementById('lang-dropdown');d.style.display=d.style.display==='block'?'none':'block'}
+document.addEventListener('click',function(e){if(!e.target.closest('#lang-switcher'))document.getElementById('lang-dropdown').style.display='none'});
+(function(){
+  var path=location.pathname;
+  var m=path.match(/\/(en|zh|es|ru|ar)\/([^/]+)$/);
+  var page=(m&&m[2])||'index.html';
+  var curLang=(m&&m[1])||'zh';
+  var el=document.getElementById('lang-'+curLang);
+  if(el)el.className+=' active';
+  var links=document.querySelectorAll('#lang-dropdown a');
+  for(var i=0;i<links.length;i++){
+    links[i].href='../'+links[i].getAttribute('data-lang')+'/'+page;
+  }
+})();
+</script></div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>О нас</h1>
+            <p>Откройте для себя MilesTech — Глобальная торговая компания автоматизированного оборудования</p>
+        </div>
+    </section>
+
+    <!-- Обзор компании -->
+    <section class="about-intro">
+        <div class="container">
+            <div class="about-text-block">
+                <h2>Обзор компании</h2>
+                <p class="lead">Shijiazhuang Miles Technology Co., Ltd. — глобальная торговая компания, специализирующаяся на оборудовании автоматизации. Опираясь на более чем 20-летний опыт группы, мы глубоко понимаем заказное машиностроение — закладывая прочную основу для поставки долговечного и надёжного упаковочного оборудования.</p>
+                <p>Мы стремимся предоставлять клиентам по всему миру высококачественное упаковочное оборудование и профессиональные индивидуальные решения. Используя глубокие отраслевые ресурсы группы, мы точно подбираем потребности клиентов с комплексным обслуживанием — от подбора оборудования до послепродажной поддержки.</p>
+            </div>
+
+            <div class="about-stats-grid">
+            </div>
+        </div>
+    </section>
+
+    <!-- Ключевые Преимущества -->
+    <section class="advantages-section">
+        <div class="container">
+            <h2 class="section-title">Ключевые Преимущества</h2>
+            <p class="section-subtitle">Пять ключевых преимуществ, обеспечивающих лидерство в отрасли</p>
+
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">⚙️</div>
+                    <h3>Техническая экспертиза</h3>
+                    <p>Собственная система сервоуправления, высокоточное взвешивание ±0.2 г</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">📦</div>
+                    <h3>Ассортимент продукции</h3>
+                    <p>Полный ассортимент вертикального, шкафного, горизонтального и композитного упаковочного оборудования</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">🏭</div>
+                    <h3>Возможность под ключ</h3>
+                    <p>Проектирование автоматизированной производственной линии полного цикла от подачи до паллетирования</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">🛡️</div>
+                    <h3>Гарантия качества</h3>
+                    <p>Менеджмент качества ISO9001 + европейский сертификат безопасности CE</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">🤝</div>
+                    <h3>Сервисная сеть</h3>
+                    <p>Full-cycle service: installation, commissioning, training, maintenance & after-sales support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Области применения -->
+    <section class="applications-section">
+        <div class="container">
+            <h2 class="section-title">Области применения</h2>
+            <p class="section-subtitle">Многоотраслевое покрытие для различных потребностей</p>
+
+            <div class="applications-grid">
+                <div class="app-card">
+                    <div class="app-icon">🌾</div>
+                    <h3>Agriculture & Seeds</h3>
+                    <p>Автоматическая упаковка семян, удобрений, кормов и др.</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon">🍜</div>
+                    <h3>Пищевая промышленность</h3>
+                    <p>Упаковочные решения для муки, приправ, снеков и др.</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon">🧪</div>
+                    <h3>Химические материалы</h3>
+                    <p>Автоматическая упаковка гранул, порошков и других химических продуктов</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon">🏗️</div>
+                    <h3>Строительные материалы</h3>
+                    <p>Упаковочное оборудование для строительных растворов, добавок и строительных материалов</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>MilesTech</h3>
+                    <p>Лидер в области интеллектуальных упаковочных решений</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>📍 ул. Хуайчжун 306, р-н Юйхуа, Шицзячжуан, Хэбэй</p>
+                    <p>📞 +86 157 3115 8807</p>
+                    <p>📧 info@milestecnology.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Быстрые Ссылки</h4>
+                    <ul>
+                        <li><a href="../ru/about.html">О нас</a></li>
+                        <li><a href="../ru/products.html">Продукция</a></li>
+                        <li><a href="../ru/cases.html">Кейсы</a></li>
+                        <li><a href="../ru/contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2022-2026 Shijiazhuang Miles Technology Co., Ltd. Все права защищены</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
+
