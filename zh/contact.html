@@ -138,7 +138,8 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
     </section>
 
     <!-- 联系我们内容 -->
-    <section class="contact-content">
+    <div class="contact-split">
+<section class="contact-content">
         <div class="container">
             <div class="contact-grid">
                 <!-- 左侧：联系信息 -->
@@ -188,16 +189,16 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
     <div class="inquiry-mail-options">
      <p class="inq-opt-title">或选择发送方式</p>
      <div class="inq-opt-buttons">
-      <button type="button" class="btn btn-outline" data-mail="native">本机邮件客户端</button>
+      <button type="button" class="btn btn-outline" data-mail="foxmail">Foxmail 网页版</button>
       <button type="button" class="btn btn-outline" data-mail="gmail">Gmail 网页版</button>
       <button type="button" class="btn btn-outline" data-mail="outlook">Outlook 网页版</button>
       <button type="button" class="btn btn-outline" data-mail="webmail">其他网页邮箱</button>
      </div>
-     <p class="inq-opt-hint">「本机邮件客户端」需要系统已设置默认邮件程序（Outlook、网易邮箱大师、Foxmail 等）。若点击后无反应，请改用网页邮箱，或点「复制询价内容」后自行粘贴发送。</p>
+     <p class="inq-opt-hint">「生成询价邮件」需要系统已设置默认邮件程序（Outlook、网易邮箱大师、Foxmail 等）。若点击后无反应，请改用网页邮箱，或点「复制询价内容」后自行粘贴发送。</p>
      <p class="inq-opt-status" id="inq-status" role="status"></p>
     </div>
    </form>
-   <p class="inquiry-note">本表单为纯前端：提交后调用本机邮件客户端（Outlook / 网易邮箱大师等），也可选择 Gmail / Outlook 网页邮箱，或复制内容后自行发送至 info@milestecnology.com。</p>
+   
   </div>
  </section>
  <script>(function(){
@@ -244,15 +245,15 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
   btn.addEventListener('click',function(){
    if(!valid())return;
    var kind=btn.getAttribute('data-mail'),p=payload(),url='';
-   if(kind==='native'){nativeMail();status("已尝试打开本机邮件客户端；若无反应，请选择下方网页邮箱或复制内容。");return;}
+   if(kind==='foxmail'||kind==='webmail'){
+    copyText();
+    window.open(kind==='foxmail'?'https://mail.qq.com/':'https://mail.163.com/','_blank','noopener');
+    status("询价内容已复制，请在打开的邮箱网页中新建邮件粘贴。");return;
+   }
    if(kind==='gmail'){
     url='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(TO)+'&su='+encodeURIComponent(p.su)+'&body='+encodeURIComponent(p.body);
    }else if(kind==='outlook'){
     url='https://outlook.live.com/mail/0/deeplink/compose?to='+encodeURIComponent(TO)+'&subject='+encodeURIComponent(p.su)+'&body='+encodeURIComponent(p.body);
-   }else{
-    copyText();
-    window.open('https://mail.163.com/','_blank','noopener');
-    status("询价内容已复制，请在打开的邮箱网页中新建邮件粘贴。");return;
    }
    window.open(url,'_blank','noopener');
   });
@@ -263,6 +264,7 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
  });
 })();</script>
 <!-- /WB:INQUIRY -->
+</div>
 <!-- 页脚 -->
     <footer class="footer">
         <div class="container">

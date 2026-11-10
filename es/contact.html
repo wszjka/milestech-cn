@@ -138,7 +138,8 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
     </section>
 
     <!-- 联系我们内容 -->
-    <section class="contact-content">
+    <div class="contact-split">
+<section class="contact-content">
         <div class="container">
             <div class="contact-grid">
                 <!-- 左侧：联系信息 -->
@@ -188,16 +189,16 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
     <div class="inquiry-mail-options">
      <p class="inq-opt-title">O elija cómo enviarlo</p>
      <div class="inq-opt-buttons">
-      <button type="button" class="btn btn-outline" data-mail="native">Cliente de correo local</button>
+      <button type="button" class="btn btn-outline" data-mail="foxmail">Foxmail (web)</button>
       <button type="button" class="btn btn-outline" data-mail="gmail">Gmail (web)</button>
       <button type="button" class="btn btn-outline" data-mail="outlook">Outlook (web)</button>
       <button type="button" class="btn btn-outline" data-mail="webmail">Otro correo web</button>
      </div>
-     <p class="inq-opt-hint">«Cliente de correo local» requiere un programa de correo predeterminado (Outlook, NetEase Mail Master, Foxmail, etc.). Si no ocurre nada, use un correo web o copie la consulta y péguela en un mensaje nuevo.</p>
+     <p class="inq-opt-hint">«Generar correo de consulta» requiere un programa de correo predeterminado (Outlook, NetEase Mail Master, Foxmail, etc.). Si no ocurre nada, use un correo web o copie la consulta y péguela en un mensaje nuevo.</p>
      <p class="inq-opt-status" id="inq-status" role="status"></p>
     </div>
    </form>
-   <p class="inquiry-note">Este formulario funciona en su navegador: abre su cliente de correo predeterminado (Outlook / NetEase Mail Master), o puede usar Gmail / Outlook en la web, o copiar el contenido y enviarlo a info@milestecnology.com.</p>
+   
   </div>
  </section>
  <script>(function(){
@@ -244,15 +245,15 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
   btn.addEventListener('click',function(){
    if(!valid())return;
    var kind=btn.getAttribute('data-mail'),p=payload(),url='';
-   if(kind==='native'){nativeMail();status("Se intentó abrir el cliente de correo. Si no ocurre nada, use un correo web o copie la consulta.");return;}
+   if(kind==='foxmail'||kind==='webmail'){
+    copyText();
+    window.open(kind==='foxmail'?'https://mail.qq.com/':'https://mail.163.com/','_blank','noopener');
+    status("Consulta copiada. Péguela en un mensaje nuevo de su correo web.");return;
+   }
    if(kind==='gmail'){
     url='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(TO)+'&su='+encodeURIComponent(p.su)+'&body='+encodeURIComponent(p.body);
    }else if(kind==='outlook'){
     url='https://outlook.live.com/mail/0/deeplink/compose?to='+encodeURIComponent(TO)+'&subject='+encodeURIComponent(p.su)+'&body='+encodeURIComponent(p.body);
-   }else{
-    copyText();
-    window.open('https://mail.163.com/','_blank','noopener');
-    status("Consulta copiada. Péguela en un mensaje nuevo de su correo web.");return;
    }
    window.open(url,'_blank','noopener');
   });
@@ -263,6 +264,7 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
  });
 })();</script>
 <!-- /WB:INQUIRY -->
+</div>
 <!-- 页脚 -->
     <footer class="footer">
         <div class="container">

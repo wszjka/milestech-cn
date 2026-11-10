@@ -138,7 +138,8 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
     </section>
 
     <!-- 联系我们内容 -->
-    <section class="contact-content">
+    <div class="contact-split">
+<section class="contact-content">
         <div class="container">
             <div class="contact-grid">
                 <!-- 左侧：联系信息 -->
@@ -188,16 +189,16 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
     <div class="inquiry-mail-options">
      <p class="inq-opt-title">Or choose how to send</p>
      <div class="inq-opt-buttons">
-      <button type="button" class="btn btn-outline" data-mail="native">Default mail app</button>
+      <button type="button" class="btn btn-outline" data-mail="foxmail">Foxmail (web)</button>
       <button type="button" class="btn btn-outline" data-mail="gmail">Gmail (web)</button>
       <button type="button" class="btn btn-outline" data-mail="outlook">Outlook (web)</button>
       <button type="button" class="btn btn-outline" data-mail="webmail">Other webmail</button>
      </div>
-     <p class="inq-opt-hint">The default mail app option requires a mail program registered on your device (Outlook, NetEase Mail Master, Foxmail, etc.). If nothing happens, use a webmail option above or copy the enquiry and paste it into a new message.</p>
+     <p class="inq-opt-hint">The &quot;Generate enquiry email&quot; button requires a default mail app registered on your device (Outlook, NetEase Mail Master, Foxmail, etc.). If nothing happens, use a webmail option above or copy the enquiry and paste it into a new message.</p>
      <p class="inq-opt-status" id="inq-status" role="status"></p>
     </div>
    </form>
-   <p class="inquiry-note">This form runs entirely in your browser: it opens your default mail app (Outlook / NetEase Mail Master), or you can use Gmail / Outlook on the web, or copy the content and email it to info@milestecnology.com.</p>
+   
   </div>
  </section>
  <script>(function(){
@@ -244,15 +245,15 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
   btn.addEventListener('click',function(){
    if(!valid())return;
    var kind=btn.getAttribute('data-mail'),p=payload(),url='';
-   if(kind==='native'){nativeMail();status("Tried to open your mail app. If nothing happened, use a webmail option below or copy the enquiry.");return;}
+   if(kind==='foxmail'||kind==='webmail'){
+    copyText();
+    window.open(kind==='foxmail'?'https://mail.qq.com/':'https://mail.163.com/','_blank','noopener');
+    status("Enquiry copied. Please paste it into a new message in your webmail.");return;
+   }
    if(kind==='gmail'){
     url='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(TO)+'&su='+encodeURIComponent(p.su)+'&body='+encodeURIComponent(p.body);
    }else if(kind==='outlook'){
     url='https://outlook.live.com/mail/0/deeplink/compose?to='+encodeURIComponent(TO)+'&subject='+encodeURIComponent(p.su)+'&body='+encodeURIComponent(p.body);
-   }else{
-    copyText();
-    window.open('https://mail.163.com/','_blank','noopener');
-    status("Enquiry copied. Please paste it into a new message in your webmail.");return;
    }
    window.open(url,'_blank','noopener');
   });
@@ -263,6 +264,7 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
  });
 })();</script>
 <!-- /WB:INQUIRY -->
+</div>
 <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
