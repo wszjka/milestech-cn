@@ -705,3 +705,13 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* ---------- 首页 Hero 背景增强（2026-11-10） ----------
+   源站 images/hero-bg.jpg 返回 404，首屏只有深色渐变，观感像空白。
+   这里补齐 images/hero-bg.jpg（生产线素材），并降低遮罩强度让背景可见。
+   仅对 lang="zh" 生效，其余四语保持原样。 */
+html[lang="zh"] .hero {
+    background: linear-gradient(rgba(6, 10, 22, 0.62), rgba(6, 10, 22, 0.90)),
+                url('../images/hero-bg.jpg') center/cover no-repeat;
+}
+html[lang="zh"] .hero .hero-overlay { opacity: 0.42; }

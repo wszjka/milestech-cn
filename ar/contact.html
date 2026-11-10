@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اتصل بنا - MilesTech</title>
+    <title>اتصل بنا - MilesTech | اختيار المعدات وعرض السعر</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
         /* اتصل Page Styles */
@@ -69,14 +69,27 @@
             }
         }
     </style>
+ <link rel="stylesheet" href="../products/assets/category-switch.css">
+ <link rel="stylesheet" href="../products/assets/site-enhancements.css">
+<!-- WB:SEO -->
+ <meta name="description" content="تواصل مع MilesTech للحصول على استشارة في اختيار معدات التغليف وضواغط الهواء الموفرة للطاقة، وقوائم التكوين وعروض الأسعار. أرسل استفسارك عبر النموذج أو اتصل على +86 157 3115 8807.">
+ <meta name="keywords" content="اتصل بنا,عرض سعر,اختيار المعدات,MilesTech,هوبي مايلز للتكنولوجيا">
+ <link rel="canonical" href="https://milestech.cn/ar/contact.html">
+ <link rel="alternate" hreflang="zh" href="https://milestech.cn/zh/contact.html">
+ <link rel="alternate" hreflang="en" href="https://milestech.cn/en/contact.html">
+ <link rel="alternate" hreflang="es" href="https://milestech.cn/es/contact.html">
+ <link rel="alternate" hreflang="ru" href="https://milestech.cn/ru/contact.html">
+ <link rel="alternate" hreflang="ar" href="https://milestech.cn/ar/contact.html">
+ <link rel="alternate" hreflang="x-default" href="https://milestech.cn/en/contact.html">
+<!-- /WB:SEO -->
 </head>
 <body>
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <h1 class="logo">MilesTech</h1>
-                <span class="tagline">حلول التغليف الذكية</span>
+                <p class="logo">MilesTech</p>
+                <span class="tagline">معدات قابلة للتخصيص</span>
             </div>
             <div style="display:flex;align-items:center;gap:10px"><ul class="nav-menu">
                 <li><a href="../ar/index.html">الرئيسية</a></li>
@@ -148,7 +161,7 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
                     <div class="contact-item">
                         <div class="ci-text">
                             <h3>عنوان الشركة</h3>
-                            <p>غرفة 519، مبنى مكاتب، شارع ديانتشانغ 5، حي تشانغآن، مدينة هوبي، مقاطعة خبي، الصين</p>
+                            <p>غرفة 519، مبنى مكاتب، شارع ديانتشانغ 5، حي تشانغآن، مدينة شيجياتشوانغ، مقاطعة خبي، الصين</p>
                         </div>
                         <div class="ci-icon">📍</div>
                     </div>
@@ -182,18 +195,66 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
             </div>
         </div>
     </section>
+<!-- WB:INQUIRY -->
+<section class="inquiry-section">
+  <div class="container">
+   <h2 class="section-title">استفسار عبر الإنترنت</h2>
+   <p class="section-subtitle" style="text-align:center">املأ متطلباتك لتوليد بريد إلكتروني — نرد عادة خلال يوم عمل واحد</p>
+   <form class="inquiry-form" id="inquiry-form">
+    <label>المنتج<input name="product" id="inq-product" readonly></label>
+    <label>اسمك<input name="name" required placeholder="اسمك"></label>
+    <label>الشركة<input name="company" placeholder="اختياري"></label>
+    <label>البريد الإلكتروني<input name="email" type="email" required placeholder="name@company.com"></label>
+    <label class="full">المتطلبات (التطبيق، الطاقة الإنتاجية، الضغط أو المادة)<textarea name="message" placeholder="مثال: استهلاك الهواء، الضغط المطلوب، شكل المادة، الطاقة الإنتاجية المستهدفة"></textarea></label>
+    <div class="inquiry-actions">
+     <button type="submit" class="btn btn-primary">توليد بريد الاستفسار</button>
+     <button type="button" class="btn btn-secondary" id="inq-copy">نسخ الاستفسار</button>
+    </div>
+   </form>
+   <p class="inquiry-note">يعمل هذا النموذج داخل متصفحك بالكامل: يفتح برنامج البريد المحلي، أو يمكنك نسخ المحتوى وإرساله إلى info@milestecnology.com.</p>
+  </div>
+ </section>
+ <script>(function(){
+ var MAP={"two-stage-vfd": "ضاغط هواء ثنائي المراحل بتردد متغير", "two-stage-fixed-speed": "ضاغط هواء ثنائي المراحل بسرعة ثابتة", "single-stage-vfd": "ضاغط هواء أحادي المرحلة بتردد متغير", "single-stage-fixed-speed": "ضاغط هواء أحادي المرحلة بسرعة ثابتة", "low-pressure-screw": "ضاغط هواء لولبي منخفض الضغط", "medium-high-pressure-screw": "ضاغط هواء لولبي متوسط وعالي الضغط"}, f=document.getElementById('inquiry-form');
+ if(!f)return;
+ var q={};
+ try{(window.__WBQ||location.search||'').replace(/^\?/,'').split('&').forEach(function(kv){
+  var i=kv.indexOf('=');if(i>0)q[decodeURIComponent(kv.slice(0,i))]=decodeURIComponent(kv.slice(i+1).replace(/\+/g,' '));});}catch(e){}
+ var pid=q['product']||'';
+ document.getElementById('inq-product').value=MAP[pid]||pid||'غير محدد';
+ function body(){
+  var d={},els=f.querySelectorAll('[name]');
+  for(var i=0;i<els.length;i++)d[els[i].name]=els[i].value||'';
+  return ['المنتج: '+d['product'],'الاسم: '+d['name'],'الشركة: '+d['company'],
+          'البريد الإلكتروني: '+d['email'],'','المتطلبات:',d['message']].join('\n');
+ }
+ f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=f.name.value.trim(),em=f.email.value.trim();
+  if(!n||!em){alert('يرجى إدخال الاسم والبريد الإلكتروني على الأقل.');return;}
+  var s='استفسار عن معدات - '+(MAP[pid]||pid||'استفسار عن معدات');
+  location.href='mailto:info@milestecnology.com?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(body());
+ });
+ document.getElementById('inq-copy').addEventListener('click',function(){
+  var t=body(),ta=document.createElement('textarea');
+  ta.value=t;document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');this.textContent='تم نسخ الاستفسار — يمكنك لصقه في بريدك.';}catch(e){alert(t);}
+  document.body.removeChild(ta);
+ });
+})();</script>
+<!-- /WB:INQUIRY -->
 
-    <!-- 页脚 -->
+<!-- 页脚 -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
                     <h3>MilesTech</h3>
-                    <p>الرائد في حلول التغليف الذكي</p>
+                    <p>مورد شامل للمعدات القابلة للتخصيص</p>
                 </div>
                 <div class="footer-section">
                     <h4>اتصل</h4>
-                    <p>📍 غرفة 519، مبنى مكاتب، شارع ديانتشانغ 5، حي تشانغآن، مدينة هوبي، مقاطعة خبي، الصين</p>
+                    <p>📍 غرفة 519، مبنى مكاتب، شارع ديانتشانغ 5، حي تشانغآن، مدينة شيجياتشوانغ، مقاطعة خبي، الصين</p>
                     <p>📞 +86 15731158807</p>
                     <p>📧 info@milestecnology.com</p>
                 </div>
@@ -202,7 +263,13 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
                     <ul>
                         <li><a href="../ar/about.html">من نحن</a></li>
                         <li><a href="../ar/products.html">المنتجات</a></li>
-                        <li><a href="../ar/cases.html">الحالات</a></li>
+                        <!-- WB:FOOTER-CATS -->
+<li class="footer-sub"><a href="../ar/packaging-machines.html">معدات التغليف</a></li>
+                        <li class="footer-sub"><a href="../ar/air-compressors.html">ضواغط الهواء</a></li>
+                        <li class="footer-sub"><a href="../ar/other-products.html">الكهروميكانيكية والعدد</a></li>
+<!-- /WB:FOOTER-CATS -->
+
+<li><a href="../ar/cases.html">الحالات</a></li>
                         <li><a href="../ar/contact.html">اتصل بنا</a></li>
                     </ul>
                 </div>

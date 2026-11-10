@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты - MilesTech</title>
+    <title>Контакты - MilesTech | Подбор оборудования и расчёт стоимости</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
         /* Контакты Page Styles */
@@ -56,14 +56,27 @@
             }
         }
     </style>
+ <link rel="stylesheet" href="../products/assets/category-switch.css">
+ <link rel="stylesheet" href="../products/assets/site-enhancements.css">
+<!-- WB:SEO -->
+ <meta name="description" content="Свяжитесь с MilesTech для подбора упаковочного оборудования и энергосберегающих компрессоров, получения спецификации и коммерческого предложения. Заполните форму на сайте или позвоните +86 157 3115 8807.">
+ <meta name="keywords" content="контакты,коммерческое предложение,подбор оборудования,MilesTech,Hebei Miles Technology">
+ <link rel="canonical" href="https://milestech.cn/ru/contact.html">
+ <link rel="alternate" hreflang="zh" href="https://milestech.cn/zh/contact.html">
+ <link rel="alternate" hreflang="en" href="https://milestech.cn/en/contact.html">
+ <link rel="alternate" hreflang="es" href="https://milestech.cn/es/contact.html">
+ <link rel="alternate" hreflang="ru" href="https://milestech.cn/ru/contact.html">
+ <link rel="alternate" hreflang="ar" href="https://milestech.cn/ar/contact.html">
+ <link rel="alternate" hreflang="x-default" href="https://milestech.cn/en/contact.html">
+<!-- /WB:SEO -->
 </head>
 <body>
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <h1 class="logo">MilesTech</h1>
-                <span class="tagline">Интеллектуальные Упаковочные Решения</span>
+                <p class="logo">MilesTech</p>
+                <span class="tagline">Оборудование с индивидуальной конфигурацией</span>
             </div>
             <div style="display:flex;align-items:center;gap:10px"><ul class="nav-menu">
                 <li><a href="../ru/index.html">Главная</a></li>
@@ -157,14 +170,62 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
             </div>
         </div>
     </section>
+<!-- WB:INQUIRY -->
+<section class="inquiry-section">
+  <div class="container">
+   <h2 class="section-title">Онлайн-запрос</h2>
+   <p class="section-subtitle" style="text-align:center">Заполните требования — форма сформирует письмо; обычно мы отвечаем в течение одного рабочего дня</p>
+   <form class="inquiry-form" id="inquiry-form">
+    <label>Продукт<input name="product" id="inq-product" readonly></label>
+    <label>Ваше имя<input name="name" required placeholder="Ваше имя"></label>
+    <label>Компания<input name="company" placeholder="Необязательно"></label>
+    <label>E-mail<input name="email" type="email" required placeholder="name@company.com"></label>
+    <label class="full">Требования (применение, производительность, давление или материал)<textarea name="message" placeholder="например: расход воздуха, требуемое давление, вид материала, целевая производительность"></textarea></label>
+    <div class="inquiry-actions">
+     <button type="submit" class="btn btn-primary">Сформировать письмо</button>
+     <button type="button" class="btn btn-secondary" id="inq-copy">Скопировать запрос</button>
+    </div>
+   </form>
+   <p class="inquiry-note">Форма работает полностью в браузере: открывает локальный почтовый клиент, либо скопируйте текст и отправьте на info@milestecnology.com.</p>
+  </div>
+ </section>
+ <script>(function(){
+ var MAP={"two-stage-vfd": "Двухступенчатый винтовой компрессор с частотным приводом", "two-stage-fixed-speed": "Двухступенчатый винтовой компрессор с фиксированной частотой", "single-stage-vfd": "Одноступенчатый винтовой компрессор с частотным приводом", "single-stage-fixed-speed": "Одноступенчатый винтовой компрессор с фиксированной частотой", "low-pressure-screw": "Низконапорный винтовой компрессор", "medium-high-pressure-screw": "Винтовой компрессор среднего и высокого давления"}, f=document.getElementById('inquiry-form');
+ if(!f)return;
+ var q={};
+ try{(window.__WBQ||location.search||'').replace(/^\?/,'').split('&').forEach(function(kv){
+  var i=kv.indexOf('=');if(i>0)q[decodeURIComponent(kv.slice(0,i))]=decodeURIComponent(kv.slice(i+1).replace(/\+/g,' '));});}catch(e){}
+ var pid=q['product']||'';
+ document.getElementById('inq-product').value=MAP[pid]||pid||'Не указано';
+ function body(){
+  var d={},els=f.querySelectorAll('[name]');
+  for(var i=0;i<els.length;i++)d[els[i].name]=els[i].value||'';
+  return ['Продукт: '+d['product'],'Имя: '+d['name'],'Компания: '+d['company'],
+          'E-mail: '+d['email'],'','Требования:',d['message']].join('\n');
+ }
+ f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=f.name.value.trim(),em=f.email.value.trim();
+  if(!n||!em){alert('Укажите как минимум имя и e-mail.');return;}
+  var s='Запрос по оборудованию - '+(MAP[pid]||pid||'Запрос по оборудованию');
+  location.href='mailto:info@milestecnology.com?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(body());
+ });
+ document.getElementById('inq-copy').addEventListener('click',function(){
+  var t=body(),ta=document.createElement('textarea');
+  ta.value=t;document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');this.textContent='Запрос скопирован — можно вставить его в письмо.';}catch(e){alert(t);}
+  document.body.removeChild(ta);
+ });
+})();</script>
+<!-- /WB:INQUIRY -->
 
-    <!-- 页脚 -->
+<!-- 页脚 -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
                     <h3>MilesTech</h3>
-                    <p>Лидер в области интеллектуальных упаковочных решений</p>
+                    <p>Поставщик комплексных решений с индивидуальной конфигурацией</p>
                 </div>
                 <div class="footer-section">
                     <h4>Контакты</h4>
@@ -177,7 +238,13 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
                     <ul>
                         <li><a href="../ru/about.html">О нас</a></li>
                         <li><a href="../ru/products.html">Продукция</a></li>
-                        <li><a href="../ru/cases.html">Кейсы</a></li>
+                        <!-- WB:FOOTER-CATS -->
+<li class="footer-sub"><a href="../ru/packaging-machines.html">Упаковочное оборудование</a></li>
+                        <li class="footer-sub"><a href="../ru/air-compressors.html">Воздушные компрессоры</a></li>
+                        <li class="footer-sub"><a href="../ru/other-products.html">Электромеханика и инструмент</a></li>
+<!-- /WB:FOOTER-CATS -->
+
+<li><a href="../ru/cases.html">Кейсы</a></li>
                         <li><a href="../ru/contact.html">Контакты</a></li>
                     </ul>
                 </div>

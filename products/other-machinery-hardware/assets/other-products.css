@@ -1,0 +1,134 @@
+/* ============================================================
+   第三类产品大类：其他机电产品与五金产品
+   与空压机 .air-hero / 包装机械 .pm-hero 保持同一视觉语言
+   ============================================================ */
+
+/* ---------- 大类页横幅（与另两个大类同款） ---------- */
+.oh-hero {
+    position: relative;
+    min-height: 420px;
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(15, 15, 30, .82), rgba(15, 15, 30, .62)),
+                url('../images/category-cover.jpg') center / cover no-repeat;
+}
+.oh-hero .container { position: relative; z-index: 2; padding: 70px 20px; }
+.oh-hero h1 {
+    font-size: clamp(2.1rem, 5vw, 3.5rem);
+    color: var(--text-light);
+    margin-bottom: 14px;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, .6);
+}
+.oh-hero p {
+    font-size: 1.1rem;
+    color: #d8e6ef;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, .7);
+}
+
+/* ---------- 大类说明 ---------- */
+.oh-intro { padding: 52px 0 4px; text-align: center; }
+.oh-intro h2 { font-size: 1.8rem; color: var(--text-light); margin-bottom: 14px; }
+.oh-intro p {
+    max-width: 860px; margin: 0 auto; color: var(--text-gray);
+    line-height: 1.85; font-size: 1rem;
+}
+.oh-intro-note {
+    display: block; margin-top: 14px; font-size: .86rem;
+    color: var(--text-gray); opacity: .82;
+}
+
+/* ---------- 5 大系列导航 ---------- */
+.oh-series-section { padding: 44px 0 64px; }
+.oh-series-nav {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 16px; margin-top: 30px;
+}
+.oh-series-card {
+    display: block; padding: 24px 20px; border-radius: 12px;
+    background: var(--bg-card); border: 1px solid rgba(0, 212, 255, .22);
+    color: var(--text-light); text-decoration: none;
+    transition: transform .2s, border-color .2s, box-shadow .2s;
+}
+.oh-series-card:hover {
+    transform: translateY(-4px); border-color: var(--primary);
+    box-shadow: var(--shadow-glow);
+}
+.oh-series-card.is-current {
+    border-color: var(--primary);
+    background: linear-gradient(135deg, rgba(0, 212, 255, .13), var(--bg-card));
+}
+.oh-series-tag {
+    display: inline-block; font-size: .74rem; letter-spacing: .08em;
+    color: var(--primary); margin-bottom: 10px;
+}
+.oh-series-card h3 { font-size: 1.05rem; line-height: 1.5; margin-bottom: 8px; color: var(--text-light); }
+.oh-series-card p { font-size: .86rem; line-height: 1.65; color: var(--text-gray); margin: 0; }
+.oh-series-count { display: block; margin-top: 12px; font-size: .8rem; color: var(--primary); }
+
+/* ---------- 小类网格 ---------- */
+.oh-breadcrumb {
+    padding: 22px 0 0; font-size: .87rem; color: var(--text-gray);
+}
+.oh-breadcrumb a { color: var(--primary); text-decoration: none; }
+.oh-breadcrumb a:hover { text-decoration: underline; }
+.oh-breadcrumb span { margin: 0 8px; opacity: .6; }
+.oh-item-section { padding: 30px 0 66px; }
+.oh-item-head { margin-bottom: 26px; }
+.oh-item-head h2 { font-size: 1.65rem; color: var(--text-light); margin-bottom: 8px; }
+.oh-item-head p { color: var(--text-gray); line-height: 1.7; }
+.oh-item-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.oh-card {
+    background: var(--bg-card); border: 1px solid rgba(0, 212, 255, .18);
+    border-radius: 12px; overflow: hidden;
+    display: flex; flex-direction: column;
+    text-decoration: none; color: inherit;
+    transition: transform .2s, border-color .2s;
+}
+.oh-card:hover { transform: translateY(-3px); border-color: var(--primary); }
+.oh-card-figure {
+    aspect-ratio: 1 / 1;
+    background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+}
+.oh-card-figure img { width: 100%; height: 100%; object-fit: contain; padding: 8px; display: block; }
+/* 未找到合格图的小类：纯空白占位，不显示破图、不显示文字 */
+.oh-card-blank { background: #fff; }
+.oh-card h3 {
+    font-size: .98rem; font-weight: 600; color: var(--text-light);
+    padding: 16px 18px 8px; margin: 0; text-align: center;
+}
+.oh-card-action {
+    display: block; text-align: center; font-size: .82rem;
+    color: var(--primary); padding: 0 12px 16px; opacity: .88;
+}
+.oh-card:hover .oh-card-action { opacity: 1; }
+.oh-back { margin-top: 30px; }
+.oh-back a { color: var(--primary); text-decoration: none; font-size: .93rem; }
+.oh-back a:hover { text-decoration: underline; }
+
+/* ---------- CTA ---------- */
+.oh-cta { padding: 54px 0 72px; text-align: center; }
+.oh-cta h2 { font-size: 1.8rem; color: var(--text-light); margin-bottom: 14px; }
+.oh-cta p { color: var(--text-gray); max-width: 700px; margin: 0 auto 26px; line-height: 1.8; }
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 1100px) {
+    .oh-series-nav { grid-template-columns: repeat(3, 1fr); }
+    .oh-item-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 760px) {
+    .oh-series-nav { grid-template-columns: repeat(2, 1fr); }
+    .oh-item-grid { grid-template-columns: repeat(2, 1fr); }
+    .oh-hero { min-height: 320px; }
+}
+@media (max-width: 460px) {
+    .oh-item-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .oh-card h3 { padding: 12px 10px 16px; font-size: .88rem; }
+}

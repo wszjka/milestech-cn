@@ -1,0 +1,93 @@
+/* ============================================================
+   Products — 产品大类入口组件（跨大类共用）
+   依赖站点全局 css/style.css 中的 CSS 变量
+   路径说明：本文件位于 products/assets/，
+            供各语言首页 / products.html / 各大类页面共同引用。
+   新增产品大类时，入口卡样式直接复用本文件，无需改动单个大类目录。
+   ============================================================ */
+
+/* ---------- 三大类并列切换（products.html 与各大类页） ---------- */
+.category-switch { padding: 64px 0 16px; }
+.category-switch .section-title { text-align: center; }
+.category-switch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1120px;
+    margin: 32px auto 0;
+}
+.category-switch-card {
+    display: block;
+    padding: 28px 26px;
+    background: var(--bg-card);
+    border: 1px solid rgba(0, 212, 255, .22);
+    border-radius: 12px;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: transform .2s, border-color .2s, box-shadow .2s;
+}
+.category-switch-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-glow);
+}
+.category-switch-card.is-current {
+    border-color: var(--primary);
+    background: linear-gradient(135deg, rgba(0, 212, 255, .13), var(--bg-card));
+}
+.category-switch-card .cs-tag {
+    display: inline-block;
+    font-size: .74rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+.category-switch-card h3 { font-size: 1.35rem; margin-bottom: 8px; color: var(--text-light); }
+.category-switch-card p { color: var(--text-gray); font-size: .93rem; line-height: 1.6; }
+
+/* ---------- 首页大类入口卡 ---------- */
+.home-category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1120px;
+    margin: 0 auto 42px;
+}
+.home-category-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px 24px;
+    background: var(--bg-card);
+    border: 1px solid rgba(0, 212, 255, .22);
+    border-radius: 12px;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: transform .2s, border-color .2s, box-shadow .2s;
+}
+.home-category-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-glow);
+}
+.home-category-icon {
+    flex: 0 0 52px;
+    height: 52px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    background: rgba(0, 212, 255, .14);
+    color: var(--primary);
+}
+.home-category-card h3 { font-size: 1.1rem; margin-bottom: 4px; }
+.home-category-card p { color: var(--text-gray); font-size: .88rem; margin: 0; }
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 980px) {
+    .category-switch-grid, .home-category-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+    .category-switch-grid, .home-category-grid { grid-template-columns: 1fr; }
+    .category-switch-card { padding: 22px 20px; }
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contáctenos - MilesTech</title>
+    <title>Contacto - MilesTech | Selección de equipos y cotización</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
         /* Contacto Page Styles */
@@ -56,14 +56,27 @@
             }
         }
     </style>
+ <link rel="stylesheet" href="../products/assets/category-switch.css">
+ <link rel="stylesheet" href="../products/assets/site-enhancements.css">
+<!-- WB:SEO -->
+ <meta name="description" content="Contacte con MilesTech para asesoría de selección, listas de configuración y cotizaciones de maquinaria de empaque y compresores de aire de bajo consumo. Envíe su consulta en línea o llame al +86 157 3115 8807.">
+ <meta name="keywords" content="contacto,cotización,selección de equipos,MilesTech,Hebei Miles Technology">
+ <link rel="canonical" href="https://milestech.cn/es/contact.html">
+ <link rel="alternate" hreflang="zh" href="https://milestech.cn/zh/contact.html">
+ <link rel="alternate" hreflang="en" href="https://milestech.cn/en/contact.html">
+ <link rel="alternate" hreflang="es" href="https://milestech.cn/es/contact.html">
+ <link rel="alternate" hreflang="ru" href="https://milestech.cn/ru/contact.html">
+ <link rel="alternate" hreflang="ar" href="https://milestech.cn/ar/contact.html">
+ <link rel="alternate" hreflang="x-default" href="https://milestech.cn/en/contact.html">
+<!-- /WB:SEO -->
 </head>
 <body>
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <h1 class="logo">MilesTech</h1>
-                <span class="tagline">Soluciones de Empaque Inteligente</span>
+                <p class="logo">MilesTech</p>
+                <span class="tagline">Soluciones de Equipos Personalizables</span>
             </div>
             <div style="display:flex;align-items:center;gap:10px"><ul class="nav-menu">
                 <li><a href="../es/index.html">Inicio</a></li>
@@ -134,7 +147,7 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
                     
                     <div class="contact-item">
                         <h3>📍 Dirección de la Empresa</h3>
-                        <p>Habitacion 519, Edificio de Oficinas, Calle Dianchang 5, Distrito Changan, Ciudad de Shijiazhuang, Provincia de Hebei, China</p>
+                        <p>Oficina 519, Edificio de Oficinas, Calle Dianchang 5, Distrito Changan, Ciudad de Shijiazhuang, Provincia de Hebei, China</p>
                     </div>
                     
                     <div class="contact-item">
@@ -157,18 +170,66 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
             </div>
         </div>
     </section>
+<!-- WB:INQUIRY -->
+<section class="inquiry-section">
+  <div class="container">
+   <h2 class="section-title">Consulta en Línea</h2>
+   <p class="section-subtitle" style="text-align:center">Complete sus requisitos para generar un correo; normalmente respondemos en un día hábil</p>
+   <form class="inquiry-form" id="inquiry-form">
+    <label>Producto<input name="product" id="inq-product" readonly></label>
+    <label>Su nombre<input name="name" required placeholder="Su nombre"></label>
+    <label>Empresa<input name="company" placeholder="Opcional"></label>
+    <label>Correo electrónico<input name="email" type="email" required placeholder="name@company.com"></label>
+    <label class="full">Requisitos (aplicación, capacidad, presión o material)<textarea name="message" placeholder="p. ej. caudal de aire, presión requerida, forma del material, capacidad objetivo"></textarea></label>
+    <div class="inquiry-actions">
+     <button type="submit" class="btn btn-primary">Generar correo de consulta</button>
+     <button type="button" class="btn btn-secondary" id="inq-copy">Copiar consulta</button>
+    </div>
+   </form>
+   <p class="inquiry-note">Este formulario funciona en su navegador: abre su cliente de correo local, o puede copiar el contenido y enviarlo a info@milestecnology.com.</p>
+  </div>
+ </section>
+ <script>(function(){
+ var MAP={"two-stage-vfd": "Compresor de Aire de Doble Etapa con Variador de Frecuencia", "two-stage-fixed-speed": "Compresor de Aire de Doble Etapa de Velocidad Fija", "single-stage-vfd": "Compresor de Aire de Una Etapa con Variador de Frecuencia", "single-stage-fixed-speed": "Compresor de Aire de Una Etapa de Velocidad Fija", "low-pressure-screw": "Compresor de Tornillo de Baja Presión", "medium-high-pressure-screw": "Compresor de Tornillo de Media y Alta Presión"}, f=document.getElementById('inquiry-form');
+ if(!f)return;
+ var q={};
+ try{(window.__WBQ||location.search||'').replace(/^\?/,'').split('&').forEach(function(kv){
+  var i=kv.indexOf('=');if(i>0)q[decodeURIComponent(kv.slice(0,i))]=decodeURIComponent(kv.slice(i+1).replace(/\+/g,' '));});}catch(e){}
+ var pid=q['product']||'';
+ document.getElementById('inq-product').value=MAP[pid]||pid||'Sin especificar';
+ function body(){
+  var d={},els=f.querySelectorAll('[name]');
+  for(var i=0;i<els.length;i++)d[els[i].name]=els[i].value||'';
+  return ['Producto: '+d['product'],'Nombre: '+d['name'],'Empresa: '+d['company'],
+          'Correo: '+d['email'],'','Requerimientos:',d['message']].join('\n');
+ }
+ f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=f.name.value.trim(),em=f.email.value.trim();
+  if(!n||!em){alert('Indique al menos su nombre y correo electrónico.');return;}
+  var s='Consulta de equipo - '+(MAP[pid]||pid||'Consulta de equipo');
+  location.href='mailto:info@milestecnology.com?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(body());
+ });
+ document.getElementById('inq-copy').addEventListener('click',function(){
+  var t=body(),ta=document.createElement('textarea');
+  ta.value=t;document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');this.textContent='Consulta copiada; puede pegarla en su correo.';}catch(e){alert(t);}
+  document.body.removeChild(ta);
+ });
+})();</script>
+<!-- /WB:INQUIRY -->
 
-    <!-- 页脚 -->
+<!-- 页脚 -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
                     <h3>MilesTech</h3>
-                    <p>Líder en Soluciones de Empaque Inteligente</p>
+                    <p>Proveedor Integral de Equipos Personalizables</p>
                 </div>
                 <div class="footer-section">
                     <h4>Contacto</h4>
-                    <p>📍 Habitacion 519, Edificio de Oficinas, Calle Dianchang 5, Distrito Changan, Ciudad de Shijiazhuang, Provincia de Hebei, China</p>
+                    <p>📍 Oficina 519, Edificio de Oficinas, Calle Dianchang 5, Distrito Changan, Ciudad de Shijiazhuang, Provincia de Hebei, China</p>
                     <p>📞 +86 157 3115 8807</p>
                     <p>📧 info@milestecnology.com</p>
                 </div>
@@ -177,7 +238,13 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
                     <ul>
                         <li><a href="../es/about.html">Sobre Nosotros</a></li>
                         <li><a href="../es/products.html">Productos</a></li>
-                        <li><a href="../es/cases.html">Casos</a></li>
+                        <!-- WB:FOOTER-CATS -->
+<li class="footer-sub"><a href="../es/packaging-machines.html">Maquinaria de Empaque</a></li>
+                        <li class="footer-sub"><a href="../es/air-compressors.html">Compresores de Aire</a></li>
+                        <li class="footer-sub"><a href="../es/other-products.html">Electromecánica y Ferretería</a></li>
+<!-- /WB:FOOTER-CATS -->
+
+<li><a href="../es/cases.html">Casos</a></li>
                         <li><a href="../es/contact.html">Contáctenos</a></li>
                     </ul>
                 </div>

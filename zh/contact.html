@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>联系我们 - MilesTech</title>
+    <title>联系我们 - MilesTech | 设备选型与询价</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
         /* 联系方式 Page Styles */
@@ -56,20 +56,33 @@
             }
         }
     </style>
+ <link rel="stylesheet" href="../products/assets/category-switch.css">
+ <link rel="stylesheet" href="../products/assets/site-enhancements.css">
+<!-- WB:SEO -->
+ <meta name="description" content="联系 MilesTech 获取包装机械、节能空压机与其他机电五金的选型建议、配置清单与报价；可在线填写询价需求，或致电 +86 157 3115 8807。">
+ <meta name="keywords" content="联系我们,询价,设备选型,MilesTech,河北贸姿科技">
+ <link rel="canonical" href="https://milestech.cn/zh/contact.html">
+ <link rel="alternate" hreflang="zh" href="https://milestech.cn/zh/contact.html">
+ <link rel="alternate" hreflang="en" href="https://milestech.cn/en/contact.html">
+ <link rel="alternate" hreflang="es" href="https://milestech.cn/es/contact.html">
+ <link rel="alternate" hreflang="ru" href="https://milestech.cn/ru/contact.html">
+ <link rel="alternate" hreflang="ar" href="https://milestech.cn/ar/contact.html">
+ <link rel="alternate" hreflang="x-default" href="https://milestech.cn/en/contact.html">
+<!-- /WB:SEO -->
 </head>
 <body>
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <h1 class="logo">MilesTech</h1>
-                <span class="tagline">智能包装解决方案</span>
+                <p class="logo">MilesTech</p>
+                <span class="tagline">一站式可定制设备供应商</span>
             </div>
             <div style="display:flex;align-items:center;gap:10px"><ul class="nav-menu">
                 <li><a href="../zh/index.html">首页</a></li>
                 <li><a href="../zh/about.html">关于我们</a></li>
                 <li><a href="../zh/products.html">产品中心</a></li>
-                <li><a href="../zh/cases.html">客户案例</a></li>
+<li><a href="../zh/cases.html">客户案例</a></li>
                 <li><a href="../zh/contact.html" class="active">联系我们</a></li>
             </ul>
 <!-- Language Switcher -->
@@ -157,14 +170,62 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
             </div>
         </div>
     </section>
+<!-- WB:INQUIRY -->
+<section class="inquiry-section">
+  <div class="container">
+   <h2 class="section-title">在线询价</h2>
+   <p class="section-subtitle" style="text-align:center">填写需求后一键生成邮件，我们通常在 1 个工作日内回复</p>
+   <form class="inquiry-form" id="inquiry-form">
+    <label>咨询产品<input name="product" id="inq-product" readonly></label>
+    <label>您的称呼<input name="name" required placeholder="请输入您的称呼"></label>
+    <label>公司名称<input name="company" placeholder="选填"></label>
+    <label>联系邮箱<input name="email" type="email" required placeholder="name@company.com"></label>
+    <label class="full">需求描述（工况、产能、压力或物料等）<textarea name="message" placeholder="例如：用气量、供气压力、物料形态、目标产能等"></textarea></label>
+    <div class="inquiry-actions">
+     <button type="submit" class="btn btn-primary">生成询价邮件</button>
+     <button type="button" class="btn btn-secondary" id="inq-copy">复制询价内容</button>
+    </div>
+   </form>
+   <p class="inquiry-note">本表单为纯前端：提交后调用本机邮件客户端发送，也可复制内容后自行发送至 info@milestecnology.com。</p>
+  </div>
+ </section>
+ <script>(function(){
+ var MAP={"two-stage-vfd": "两级压缩变频空压机", "two-stage-fixed-speed": "两级压缩工频空压机", "single-stage-vfd": "单级压缩变频空压机", "single-stage-fixed-speed": "单级压缩工频空压机", "low-pressure-screw": "低压螺杆空压机", "medium-high-pressure-screw": "中高压螺杆空压机"}, f=document.getElementById('inquiry-form');
+ if(!f)return;
+ var q={};
+ try{(window.__WBQ||location.search||'').replace(/^\?/,'').split('&').forEach(function(kv){
+  var i=kv.indexOf('=');if(i>0)q[decodeURIComponent(kv.slice(0,i))]=decodeURIComponent(kv.slice(i+1).replace(/\+/g,' '));});}catch(e){}
+ var pid=q['product']||'';
+ document.getElementById('inq-product').value=MAP[pid]||pid||'未指定产品';
+ function body(){
+  var d={},els=f.querySelectorAll('[name]');
+  for(var i=0;i<els.length;i++)d[els[i].name]=els[i].value||'';
+  return ['咨询产品：'+d['product'],'称呼：'+d['name'],'公司：'+d['company'],
+          '邮箱：'+d['email'],'','需求描述：',d['message']].join('\n');
+ }
+ f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=f.name.value.trim(),em=f.email.value.trim();
+  if(!n||!em){alert('请至少填写称呼与联系邮箱。');return;}
+  var s='设备询价 - '+(MAP[pid]||pid||'设备咨询');
+  location.href='mailto:info@milestecnology.com?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(body());
+ });
+ document.getElementById('inq-copy').addEventListener('click',function(){
+  var t=body(),ta=document.createElement('textarea');
+  ta.value=t;document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');this.textContent='询价内容已复制，可直接粘贴到邮件中。';}catch(e){alert(t);}
+  document.body.removeChild(ta);
+ });
+})();</script>
+<!-- /WB:INQUIRY -->
 
-    <!-- 页脚 -->
+<!-- 页脚 -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
                     <h3>MilesTech</h3>
-                    <p>智能包装解决方案领导者</p>
+                    <p>一站式可定制设备供应商</p>
                 </div>
                 <div class="footer-section">
                     <h4>联系方式</h4>
@@ -177,7 +238,13 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
                     <ul>
                         <li><a href="../zh/about.html">关于我们</a></li>
                         <li><a href="../zh/products.html">产品中心</a></li>
-                        <li><a href="../zh/cases.html">客户案例</a></li>
+                        <!-- WB:FOOTER-CATS -->
+<li class="footer-sub"><a href="../zh/packaging-machines.html">包装机械</a></li>
+                        <li class="footer-sub"><a href="../zh/air-compressors.html">空压机</a></li>
+                        <li class="footer-sub"><a href="../zh/other-products.html">其他机电产品与五金产品</a></li>
+<!-- /WB:FOOTER-CATS -->
+
+<li><a href="../zh/cases.html">客户案例</a></li>
                         <li><a href="../zh/contact.html">联系我们</a></li>
                     </ul>
                 </div>
