@@ -176,7 +176,7 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
    <h2 class="section-title">Online Enquiry</h2>
    <p class="section-subtitle" style="text-align:center">Fill in your requirements to generate an email — we usually reply within one business day</p>
    <form class="inquiry-form" id="inquiry-form">
-    <label>Product<input name="product" id="inq-product" readonly></label>
+    <label>Product<input name="product" id="inq-product" placeholder="e.g. Two-stage VFD screw compressor" autocomplete="off"></label>
     <label>Your name<input name="name" required placeholder="Your name"></label>
     <label>Company<input name="company" placeholder="Optional"></label>
     <label>Email<input name="email" type="email" required placeholder="name@company.com"></label>
@@ -185,40 +185,84 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
      <button type="submit" class="btn btn-primary">Generate enquiry email</button>
      <button type="button" class="btn btn-secondary" id="inq-copy">Copy enquiry</button>
     </div>
+    <div class="inquiry-mail-options">
+     <p class="inq-opt-title">Or choose how to send</p>
+     <div class="inq-opt-buttons">
+      <button type="button" class="btn btn-outline" data-mail="native">Default mail app</button>
+      <button type="button" class="btn btn-outline" data-mail="gmail">Gmail (web)</button>
+      <button type="button" class="btn btn-outline" data-mail="outlook">Outlook (web)</button>
+      <button type="button" class="btn btn-outline" data-mail="webmail">Other webmail</button>
+     </div>
+     <p class="inq-opt-hint">The default mail app option requires a mail program registered on your device (Outlook, NetEase Mail Master, Foxmail, etc.). If nothing happens, use a webmail option above or copy the enquiry and paste it into a new message.</p>
+     <p class="inq-opt-status" id="inq-status" role="status"></p>
+    </div>
    </form>
-   <p class="inquiry-note">This form runs entirely in your browser: it opens your local mail client, or you can copy the content and send it to info@milestecnology.com.</p>
+   <p class="inquiry-note">This form runs entirely in your browser: it opens your default mail app (Outlook / NetEase Mail Master), or you can use Gmail / Outlook on the web, or copy the content and email it to info@milestecnology.com.</p>
   </div>
  </section>
  <script>(function(){
  var MAP={"two-stage-vfd": "Two-Stage Variable Frequency Air Compressor", "two-stage-fixed-speed": "Two-Stage Fixed Speed Air Compressor", "single-stage-vfd": "Single-Stage Variable Frequency Air Compressor", "single-stage-fixed-speed": "Single-Stage Fixed Speed Air Compressor", "low-pressure-screw": "Low-Pressure Screw Air Compressor", "medium-high-pressure-screw": "Medium & High Pressure Screw Air Compressor"}, f=document.getElementById('inquiry-form');
  if(!f)return;
+ var TO='info@milestecnology.com';
+ var E=f.elements;
  var q={};
  try{(window.__WBQ||location.search||'').replace(/^\?/,'').split('&').forEach(function(kv){
   var i=kv.indexOf('=');if(i>0)q[decodeURIComponent(kv.slice(0,i))]=decodeURIComponent(kv.slice(i+1).replace(/\+/g,' '));});}catch(e){}
  var pid=q['product']||'';
- document.getElementById('inq-product').value=MAP[pid]||pid||'Not specified';
+ var pi=document.getElementById('inq-product');
+ if(pid&&pi)pi.value=MAP[pid]||pid;
+ function val(k){var el=E[k];return el&&el.value?String(el.value).trim():'';}
  function body(){
-  var d={},els=f.querySelectorAll('[name]');
-  for(var i=0;i<els.length;i++)d[els[i].name]=els[i].value||'';
-  return ['Product: '+d['product'],'Name: '+d['name'],'Company: '+d['company'],
-          'Email: '+d['email'],'','Requirements:',d['message']].join('\n');
+  return ["Product: "+val('product'),"Name: "+val('name'),"Company: "+val('company'),
+          "Email: "+val('email'),'',"Requirements:",val('message')].join('\n');
+ }
+ function subject(){return "Equipment enquiry"+' - '+(val('product')||"Equipment enquiry");}
+ function payload(){return {su:subject(),body:body()};}
+ function status(msg){var el=document.getElementById('inq-status');if(el)el.textContent=msg;}
+ function valid(){if(!val('name')||!val('email')){alert("Please fill in at least your name and email.");return false;}return true;}
+ function mailto(){var p=payload();return 'mailto:'+TO+'?subject='+encodeURIComponent(p.su)+'&body='+encodeURIComponent(p.body);}
+ function nativeMail(){
+  var a=document.createElement('a');
+  a.href=mailto();a.style.display='none';a.rel='noopener';
+  document.body.appendChild(a);a.click();document.body.removeChild(a);
+ }
+ function copyText(){
+  var t=body(),ok=false;
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).catch(function(){});ok=true;}
+  else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+   try{ok=document.execCommand('copy');}catch(e){}document.body.removeChild(ta);}
+  if(!ok)window.prompt("Enquiry copied — you can paste it into your email.",t);
+  return t;
  }
  f.addEventListener('submit',function(e){
   e.preventDefault();
-  var n=f.name.value.trim(),em=f.email.value.trim();
-  if(!n||!em){alert('Please fill in at least your name and email.');return;}
-  var s='Equipment enquiry - '+(MAP[pid]||pid||'Equipment enquiry');
-  location.href='mailto:info@milestecnology.com?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(body());
+  if(!valid())return;
+  nativeMail();
+  status("Tried to open your mail app. If nothing happened, use a webmail option below or copy the enquiry.");
  });
- document.getElementById('inq-copy').addEventListener('click',function(){
-  var t=body(),ta=document.createElement('textarea');
-  ta.value=t;document.body.appendChild(ta);ta.select();
-  try{document.execCommand('copy');this.textContent='Enquiry copied — you can paste it into your email.';}catch(e){alert(t);}
-  document.body.removeChild(ta);
+ f.querySelectorAll('[data-mail]').forEach(function(btn){
+  btn.addEventListener('click',function(){
+   if(!valid())return;
+   var kind=btn.getAttribute('data-mail'),p=payload(),url='';
+   if(kind==='native'){nativeMail();status("Tried to open your mail app. If nothing happened, use a webmail option below or copy the enquiry.");return;}
+   if(kind==='gmail'){
+    url='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(TO)+'&su='+encodeURIComponent(p.su)+'&body='+encodeURIComponent(p.body);
+   }else if(kind==='outlook'){
+    url='https://outlook.live.com/mail/0/deeplink/compose?to='+encodeURIComponent(TO)+'&subject='+encodeURIComponent(p.su)+'&body='+encodeURIComponent(p.body);
+   }else{
+    copyText();
+    window.open('https://mail.163.com/','_blank','noopener');
+    status("Enquiry copied. Please paste it into a new message in your webmail.");return;
+   }
+   window.open(url,'_blank','noopener');
+  });
+ });
+ var cp=document.getElementById('inq-copy');
+ if(cp)cp.addEventListener('click',function(){
+  copyText();this.textContent="Enquiry copied — you can paste it into your email.";status('');
  });
 })();</script>
 <!-- /WB:INQUIRY -->
-
 <!-- 页脚 -->
     <footer class="footer">
         <div class="container">

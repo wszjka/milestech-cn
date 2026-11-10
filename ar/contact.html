@@ -201,7 +201,7 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
    <h2 class="section-title">استفسار عبر الإنترنت</h2>
    <p class="section-subtitle" style="text-align:center">املأ متطلباتك لتوليد بريد إلكتروني — نرد عادة خلال يوم عمل واحد</p>
    <form class="inquiry-form" id="inquiry-form">
-    <label>المنتج<input name="product" id="inq-product" readonly></label>
+    <label>المنتج<input name="product" id="inq-product" placeholder="مثال: ضاغط لولبي ثنائي المرحلة بمحول تردد" autocomplete="off"></label>
     <label>اسمك<input name="name" required placeholder="اسمك"></label>
     <label>الشركة<input name="company" placeholder="اختياري"></label>
     <label>البريد الإلكتروني<input name="email" type="email" required placeholder="name@company.com"></label>
@@ -210,40 +210,84 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
      <button type="submit" class="btn btn-primary">توليد بريد الاستفسار</button>
      <button type="button" class="btn btn-secondary" id="inq-copy">نسخ الاستفسار</button>
     </div>
+    <div class="inquiry-mail-options">
+     <p class="inq-opt-title">أو اختر طريقة الإرسال</p>
+     <div class="inq-opt-buttons">
+      <button type="button" class="btn btn-outline" data-mail="native">برنامج البريد المحلي</button>
+      <button type="button" class="btn btn-outline" data-mail="gmail">Gmail (الويب)</button>
+      <button type="button" class="btn btn-outline" data-mail="outlook">Outlook (الويب)</button>
+      <button type="button" class="btn btn-outline" data-mail="webmail">بريد ويب آخر</button>
+     </div>
+     <p class="inq-opt-hint">يتطلب «برنامج البريد المحلي» تعيين برنامج بريد افتراضي على جهازك (Outlook أو NetEase Mail Master أو Foxmail). إذا لم يحدث شيء، استخدم بريد الويب أو انسخ الاستفسار والصقه في رسالة جديدة.</p>
+     <p class="inq-opt-status" id="inq-status" role="status"></p>
+    </div>
    </form>
-   <p class="inquiry-note">يعمل هذا النموذج داخل متصفحك بالكامل: يفتح برنامج البريد المحلي، أو يمكنك نسخ المحتوى وإرساله إلى info@milestecnology.com.</p>
+   <p class="inquiry-note">يعمل هذا النموذج داخل متصفحك بالكامل: يفتح برنامج البريد الافتراضي (Outlook / NetEase Mail Master)، أو يمكنك استخدام Gmail / Outlook عبر الويب، أو نسخ المحتوى وإرساله إلى info@milestecnology.com.</p>
   </div>
  </section>
  <script>(function(){
  var MAP={"two-stage-vfd": "ضاغط هواء ثنائي المراحل بتردد متغير", "two-stage-fixed-speed": "ضاغط هواء ثنائي المراحل بسرعة ثابتة", "single-stage-vfd": "ضاغط هواء أحادي المرحلة بتردد متغير", "single-stage-fixed-speed": "ضاغط هواء أحادي المرحلة بسرعة ثابتة", "low-pressure-screw": "ضاغط هواء لولبي منخفض الضغط", "medium-high-pressure-screw": "ضاغط هواء لولبي متوسط وعالي الضغط"}, f=document.getElementById('inquiry-form');
  if(!f)return;
+ var TO='info@milestecnology.com';
+ var E=f.elements;
  var q={};
  try{(window.__WBQ||location.search||'').replace(/^\?/,'').split('&').forEach(function(kv){
   var i=kv.indexOf('=');if(i>0)q[decodeURIComponent(kv.slice(0,i))]=decodeURIComponent(kv.slice(i+1).replace(/\+/g,' '));});}catch(e){}
  var pid=q['product']||'';
- document.getElementById('inq-product').value=MAP[pid]||pid||'غير محدد';
+ var pi=document.getElementById('inq-product');
+ if(pid&&pi)pi.value=MAP[pid]||pid;
+ function val(k){var el=E[k];return el&&el.value?String(el.value).trim():'';}
  function body(){
-  var d={},els=f.querySelectorAll('[name]');
-  for(var i=0;i<els.length;i++)d[els[i].name]=els[i].value||'';
-  return ['المنتج: '+d['product'],'الاسم: '+d['name'],'الشركة: '+d['company'],
-          'البريد الإلكتروني: '+d['email'],'','المتطلبات:',d['message']].join('\n');
+  return ["المنتج: "+val('product'),"الاسم: "+val('name'),"الشركة: "+val('company'),
+          "البريد الإلكتروني: "+val('email'),'',"المتطلبات:",val('message')].join('\n');
+ }
+ function subject(){return "استفسار عن معدات"+' - '+(val('product')||"استفسار عن معدات");}
+ function payload(){return {su:subject(),body:body()};}
+ function status(msg){var el=document.getElementById('inq-status');if(el)el.textContent=msg;}
+ function valid(){if(!val('name')||!val('email')){alert("يرجى إدخال الاسم والبريد الإلكتروني على الأقل.");return false;}return true;}
+ function mailto(){var p=payload();return 'mailto:'+TO+'?subject='+encodeURIComponent(p.su)+'&body='+encodeURIComponent(p.body);}
+ function nativeMail(){
+  var a=document.createElement('a');
+  a.href=mailto();a.style.display='none';a.rel='noopener';
+  document.body.appendChild(a);a.click();document.body.removeChild(a);
+ }
+ function copyText(){
+  var t=body(),ok=false;
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).catch(function(){});ok=true;}
+  else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+   try{ok=document.execCommand('copy');}catch(e){}document.body.removeChild(ta);}
+  if(!ok)window.prompt("تم نسخ الاستفسار — يمكنك لصقه في بريدك.",t);
+  return t;
  }
  f.addEventListener('submit',function(e){
   e.preventDefault();
-  var n=f.name.value.trim(),em=f.email.value.trim();
-  if(!n||!em){alert('يرجى إدخال الاسم والبريد الإلكتروني على الأقل.');return;}
-  var s='استفسار عن معدات - '+(MAP[pid]||pid||'استفسار عن معدات');
-  location.href='mailto:info@milestecnology.com?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(body());
+  if(!valid())return;
+  nativeMail();
+  status("تمت محاولة فتح برنامج البريد. إذا لم يحدث شيء، اختر بريد الويب أو انسخ الاستفسار.");
  });
- document.getElementById('inq-copy').addEventListener('click',function(){
-  var t=body(),ta=document.createElement('textarea');
-  ta.value=t;document.body.appendChild(ta);ta.select();
-  try{document.execCommand('copy');this.textContent='تم نسخ الاستفسار — يمكنك لصقه في بريدك.';}catch(e){alert(t);}
-  document.body.removeChild(ta);
+ f.querySelectorAll('[data-mail]').forEach(function(btn){
+  btn.addEventListener('click',function(){
+   if(!valid())return;
+   var kind=btn.getAttribute('data-mail'),p=payload(),url='';
+   if(kind==='native'){nativeMail();status("تمت محاولة فتح برنامج البريد. إذا لم يحدث شيء، اختر بريد الويب أو انسخ الاستفسار.");return;}
+   if(kind==='gmail'){
+    url='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(TO)+'&su='+encodeURIComponent(p.su)+'&body='+encodeURIComponent(p.body);
+   }else if(kind==='outlook'){
+    url='https://outlook.live.com/mail/0/deeplink/compose?to='+encodeURIComponent(TO)+'&subject='+encodeURIComponent(p.su)+'&body='+encodeURIComponent(p.body);
+   }else{
+    copyText();
+    window.open('https://mail.163.com/','_blank','noopener');
+    status("تم نسخ الاستفسار. الصقه في رسالة جديدة في بريدك على الويب.");return;
+   }
+   window.open(url,'_blank','noopener');
+  });
+ });
+ var cp=document.getElementById('inq-copy');
+ if(cp)cp.addEventListener('click',function(){
+  copyText();this.textContent="تم نسخ الاستفسار — يمكنك لصقه في بريدك.";status('');
  });
 })();</script>
 <!-- /WB:INQUIRY -->
-
 <!-- 页脚 -->
     <footer class="footer">
         <div class="container">

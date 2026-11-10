@@ -176,7 +176,7 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
    <h2 class="section-title">Consulta en Línea</h2>
    <p class="section-subtitle" style="text-align:center">Complete sus requisitos para generar un correo; normalmente respondemos en un día hábil</p>
    <form class="inquiry-form" id="inquiry-form">
-    <label>Producto<input name="product" id="inq-product" readonly></label>
+    <label>Producto<input name="product" id="inq-product" placeholder="p. ej.: compresor de tornillo de dos etapas con variador" autocomplete="off"></label>
     <label>Su nombre<input name="name" required placeholder="Su nombre"></label>
     <label>Empresa<input name="company" placeholder="Opcional"></label>
     <label>Correo electrónico<input name="email" type="email" required placeholder="name@company.com"></label>
@@ -185,40 +185,84 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
      <button type="submit" class="btn btn-primary">Generar correo de consulta</button>
      <button type="button" class="btn btn-secondary" id="inq-copy">Copiar consulta</button>
     </div>
+    <div class="inquiry-mail-options">
+     <p class="inq-opt-title">O elija cómo enviarlo</p>
+     <div class="inq-opt-buttons">
+      <button type="button" class="btn btn-outline" data-mail="native">Cliente de correo local</button>
+      <button type="button" class="btn btn-outline" data-mail="gmail">Gmail (web)</button>
+      <button type="button" class="btn btn-outline" data-mail="outlook">Outlook (web)</button>
+      <button type="button" class="btn btn-outline" data-mail="webmail">Otro correo web</button>
+     </div>
+     <p class="inq-opt-hint">«Cliente de correo local» requiere un programa de correo predeterminado (Outlook, NetEase Mail Master, Foxmail, etc.). Si no ocurre nada, use un correo web o copie la consulta y péguela en un mensaje nuevo.</p>
+     <p class="inq-opt-status" id="inq-status" role="status"></p>
+    </div>
    </form>
-   <p class="inquiry-note">Este formulario funciona en su navegador: abre su cliente de correo local, o puede copiar el contenido y enviarlo a info@milestecnology.com.</p>
+   <p class="inquiry-note">Este formulario funciona en su navegador: abre su cliente de correo predeterminado (Outlook / NetEase Mail Master), o puede usar Gmail / Outlook en la web, o copiar el contenido y enviarlo a info@milestecnology.com.</p>
   </div>
  </section>
  <script>(function(){
  var MAP={"two-stage-vfd": "Compresor de Aire de Doble Etapa con Variador de Frecuencia", "two-stage-fixed-speed": "Compresor de Aire de Doble Etapa de Velocidad Fija", "single-stage-vfd": "Compresor de Aire de Una Etapa con Variador de Frecuencia", "single-stage-fixed-speed": "Compresor de Aire de Una Etapa de Velocidad Fija", "low-pressure-screw": "Compresor de Tornillo de Baja Presión", "medium-high-pressure-screw": "Compresor de Tornillo de Media y Alta Presión"}, f=document.getElementById('inquiry-form');
  if(!f)return;
+ var TO='info@milestecnology.com';
+ var E=f.elements;
  var q={};
  try{(window.__WBQ||location.search||'').replace(/^\?/,'').split('&').forEach(function(kv){
   var i=kv.indexOf('=');if(i>0)q[decodeURIComponent(kv.slice(0,i))]=decodeURIComponent(kv.slice(i+1).replace(/\+/g,' '));});}catch(e){}
  var pid=q['product']||'';
- document.getElementById('inq-product').value=MAP[pid]||pid||'Sin especificar';
+ var pi=document.getElementById('inq-product');
+ if(pid&&pi)pi.value=MAP[pid]||pid;
+ function val(k){var el=E[k];return el&&el.value?String(el.value).trim():'';}
  function body(){
-  var d={},els=f.querySelectorAll('[name]');
-  for(var i=0;i<els.length;i++)d[els[i].name]=els[i].value||'';
-  return ['Producto: '+d['product'],'Nombre: '+d['name'],'Empresa: '+d['company'],
-          'Correo: '+d['email'],'','Requerimientos:',d['message']].join('\n');
+  return ["Producto: "+val('product'),"Nombre: "+val('name'),"Empresa: "+val('company'),
+          "Correo: "+val('email'),'',"Requerimientos:",val('message')].join('\n');
+ }
+ function subject(){return "Consulta de equipo"+' - '+(val('product')||"Consulta de equipo");}
+ function payload(){return {su:subject(),body:body()};}
+ function status(msg){var el=document.getElementById('inq-status');if(el)el.textContent=msg;}
+ function valid(){if(!val('name')||!val('email')){alert("Indique al menos su nombre y correo electrónico.");return false;}return true;}
+ function mailto(){var p=payload();return 'mailto:'+TO+'?subject='+encodeURIComponent(p.su)+'&body='+encodeURIComponent(p.body);}
+ function nativeMail(){
+  var a=document.createElement('a');
+  a.href=mailto();a.style.display='none';a.rel='noopener';
+  document.body.appendChild(a);a.click();document.body.removeChild(a);
+ }
+ function copyText(){
+  var t=body(),ok=false;
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).catch(function(){});ok=true;}
+  else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+   try{ok=document.execCommand('copy');}catch(e){}document.body.removeChild(ta);}
+  if(!ok)window.prompt("Consulta copiada; puede pegarla en su correo.",t);
+  return t;
  }
  f.addEventListener('submit',function(e){
   e.preventDefault();
-  var n=f.name.value.trim(),em=f.email.value.trim();
-  if(!n||!em){alert('Indique al menos su nombre y correo electrónico.');return;}
-  var s='Consulta de equipo - '+(MAP[pid]||pid||'Consulta de equipo');
-  location.href='mailto:info@milestecnology.com?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(body());
+  if(!valid())return;
+  nativeMail();
+  status("Se intentó abrir el cliente de correo. Si no ocurre nada, use un correo web o copie la consulta.");
  });
- document.getElementById('inq-copy').addEventListener('click',function(){
-  var t=body(),ta=document.createElement('textarea');
-  ta.value=t;document.body.appendChild(ta);ta.select();
-  try{document.execCommand('copy');this.textContent='Consulta copiada; puede pegarla en su correo.';}catch(e){alert(t);}
-  document.body.removeChild(ta);
+ f.querySelectorAll('[data-mail]').forEach(function(btn){
+  btn.addEventListener('click',function(){
+   if(!valid())return;
+   var kind=btn.getAttribute('data-mail'),p=payload(),url='';
+   if(kind==='native'){nativeMail();status("Se intentó abrir el cliente de correo. Si no ocurre nada, use un correo web o copie la consulta.");return;}
+   if(kind==='gmail'){
+    url='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(TO)+'&su='+encodeURIComponent(p.su)+'&body='+encodeURIComponent(p.body);
+   }else if(kind==='outlook'){
+    url='https://outlook.live.com/mail/0/deeplink/compose?to='+encodeURIComponent(TO)+'&subject='+encodeURIComponent(p.su)+'&body='+encodeURIComponent(p.body);
+   }else{
+    copyText();
+    window.open('https://mail.163.com/','_blank','noopener');
+    status("Consulta copiada. Péguela en un mensaje nuevo de su correo web.");return;
+   }
+   window.open(url,'_blank','noopener');
+  });
+ });
+ var cp=document.getElementById('inq-copy');
+ if(cp)cp.addEventListener('click',function(){
+  copyText();this.textContent="Consulta copiada; puede pegarla en su correo.";status('');
  });
 })();</script>
 <!-- /WB:INQUIRY -->
-
 <!-- 页脚 -->
     <footer class="footer">
         <div class="container">

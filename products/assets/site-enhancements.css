@@ -214,3 +214,40 @@
 @media (max-width: 640px) {
     .home-oh-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ---------- 联系页：4 条联系信息 2 行 2 列（覆盖页面内联样式） ---------- */
+.contact-content .contact-grid { max-width: 980px; }
+.contact-content .contact-info-section {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+.contact-content .contact-info-section h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 6px;
+}
+.contact-content .contact-info-section .contact-item {
+    margin-bottom: 0;
+    min-width: 0;
+}
+.contact-content .contact-info-section .contact-item p { word-break: break-word; }
+@media (max-width: 768px) {
+    .contact-content .contact-info-section { grid-template-columns: 1fr; }
+}
+
+/* ---------- 询价：网页邮箱备选按钮 ---------- */
+.inquiry-form .inquiry-mail-options {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+    padding: 18px 20px;
+    border: 1px solid rgba(0, 212, 255, .22);
+    border-radius: 10px;
+    background: rgba(0, 102, 204, .05);
+}
+.inq-opt-title { margin: 0 0 12px; font-size: .92rem; color: var(--text-light); font-weight: 600; }
+.inq-opt-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+.inq-opt-buttons .btn { padding: 9px 18px; font-size: .88rem; }
+.inq-opt-hint { margin: 12px 0 0; font-size: .82rem; line-height: 1.7; color: var(--text-gray); }
+.inq-opt-status { margin: 10px 0 0; font-size: .84rem; color: var(--primary); }
+.inquiry-form input[readonly] { color: inherit; }

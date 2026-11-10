@@ -176,7 +176,7 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
    <h2 class="section-title">Онлайн-запрос</h2>
    <p class="section-subtitle" style="text-align:center">Заполните требования — форма сформирует письмо; обычно мы отвечаем в течение одного рабочего дня</p>
    <form class="inquiry-form" id="inquiry-form">
-    <label>Продукт<input name="product" id="inq-product" readonly></label>
+    <label>Продукт<input name="product" id="inq-product" placeholder="например: двухступенчатый винтовой компрессор с частотным приводом" autocomplete="off"></label>
     <label>Ваше имя<input name="name" required placeholder="Ваше имя"></label>
     <label>Компания<input name="company" placeholder="Необязательно"></label>
     <label>E-mail<input name="email" type="email" required placeholder="name@company.com"></label>
@@ -185,40 +185,84 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
      <button type="submit" class="btn btn-primary">Сформировать письмо</button>
      <button type="button" class="btn btn-secondary" id="inq-copy">Скопировать запрос</button>
     </div>
+    <div class="inquiry-mail-options">
+     <p class="inq-opt-title">Или выберите способ отправки</p>
+     <div class="inq-opt-buttons">
+      <button type="button" class="btn btn-outline" data-mail="native">Локальный почтовый клиент</button>
+      <button type="button" class="btn btn-outline" data-mail="gmail">Gmail (веб)</button>
+      <button type="button" class="btn btn-outline" data-mail="outlook">Outlook (веб)</button>
+      <button type="button" class="btn btn-outline" data-mail="webmail">Другая веб-почта</button>
+     </div>
+     <p class="inq-opt-hint">Для «Локального почтового клиента» нужна почтовая программа по умолчанию (Outlook, NetEase Mail Master, Foxmail и др.). Если ничего не произошло, воспользуйтесь веб-почтой или скопируйте запрос и вставьте его в новое письмо.</p>
+     <p class="inq-opt-status" id="inq-status" role="status"></p>
+    </div>
    </form>
-   <p class="inquiry-note">Форма работает полностью в браузере: открывает локальный почтовый клиент, либо скопируйте текст и отправьте на info@milestecnology.com.</p>
+   <p class="inquiry-note">Форма работает полностью в браузере: открывает почтовую программу по умолчанию (Outlook / NetEase Mail Master), либо используйте Gmail / Outlook в вебе, или скопируйте текст и отправьте на info@milestecnology.com.</p>
   </div>
  </section>
  <script>(function(){
  var MAP={"two-stage-vfd": "Двухступенчатый винтовой компрессор с частотным приводом", "two-stage-fixed-speed": "Двухступенчатый винтовой компрессор с фиксированной частотой", "single-stage-vfd": "Одноступенчатый винтовой компрессор с частотным приводом", "single-stage-fixed-speed": "Одноступенчатый винтовой компрессор с фиксированной частотой", "low-pressure-screw": "Низконапорный винтовой компрессор", "medium-high-pressure-screw": "Винтовой компрессор среднего и высокого давления"}, f=document.getElementById('inquiry-form');
  if(!f)return;
+ var TO='info@milestecnology.com';
+ var E=f.elements;
  var q={};
  try{(window.__WBQ||location.search||'').replace(/^\?/,'').split('&').forEach(function(kv){
   var i=kv.indexOf('=');if(i>0)q[decodeURIComponent(kv.slice(0,i))]=decodeURIComponent(kv.slice(i+1).replace(/\+/g,' '));});}catch(e){}
  var pid=q['product']||'';
- document.getElementById('inq-product').value=MAP[pid]||pid||'Не указано';
+ var pi=document.getElementById('inq-product');
+ if(pid&&pi)pi.value=MAP[pid]||pid;
+ function val(k){var el=E[k];return el&&el.value?String(el.value).trim():'';}
  function body(){
-  var d={},els=f.querySelectorAll('[name]');
-  for(var i=0;i<els.length;i++)d[els[i].name]=els[i].value||'';
-  return ['Продукт: '+d['product'],'Имя: '+d['name'],'Компания: '+d['company'],
-          'E-mail: '+d['email'],'','Требования:',d['message']].join('\n');
+  return ["Продукт: "+val('product'),"Имя: "+val('name'),"Компания: "+val('company'),
+          "E-mail: "+val('email'),'',"Требования:",val('message')].join('\n');
+ }
+ function subject(){return "Запрос по оборудованию"+' - '+(val('product')||"Запрос по оборудованию");}
+ function payload(){return {su:subject(),body:body()};}
+ function status(msg){var el=document.getElementById('inq-status');if(el)el.textContent=msg;}
+ function valid(){if(!val('name')||!val('email')){alert("Укажите как минимум имя и e-mail.");return false;}return true;}
+ function mailto(){var p=payload();return 'mailto:'+TO+'?subject='+encodeURIComponent(p.su)+'&body='+encodeURIComponent(p.body);}
+ function nativeMail(){
+  var a=document.createElement('a');
+  a.href=mailto();a.style.display='none';a.rel='noopener';
+  document.body.appendChild(a);a.click();document.body.removeChild(a);
+ }
+ function copyText(){
+  var t=body(),ok=false;
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).catch(function(){});ok=true;}
+  else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+   try{ok=document.execCommand('copy');}catch(e){}document.body.removeChild(ta);}
+  if(!ok)window.prompt("Запрос скопирован — можно вставить его в письмо.",t);
+  return t;
  }
  f.addEventListener('submit',function(e){
   e.preventDefault();
-  var n=f.name.value.trim(),em=f.email.value.trim();
-  if(!n||!em){alert('Укажите как минимум имя и e-mail.');return;}
-  var s='Запрос по оборудованию - '+(MAP[pid]||pid||'Запрос по оборудованию');
-  location.href='mailto:info@milestecnology.com?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(body());
+  if(!valid())return;
+  nativeMail();
+  status("Попытка открыть почтовую программу. Если ничего не произошло, выберите веб-почту или скопируйте запрос.");
  });
- document.getElementById('inq-copy').addEventListener('click',function(){
-  var t=body(),ta=document.createElement('textarea');
-  ta.value=t;document.body.appendChild(ta);ta.select();
-  try{document.execCommand('copy');this.textContent='Запрос скопирован — можно вставить его в письмо.';}catch(e){alert(t);}
-  document.body.removeChild(ta);
+ f.querySelectorAll('[data-mail]').forEach(function(btn){
+  btn.addEventListener('click',function(){
+   if(!valid())return;
+   var kind=btn.getAttribute('data-mail'),p=payload(),url='';
+   if(kind==='native'){nativeMail();status("Попытка открыть почтовую программу. Если ничего не произошло, выберите веб-почту или скопируйте запрос.");return;}
+   if(kind==='gmail'){
+    url='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(TO)+'&su='+encodeURIComponent(p.su)+'&body='+encodeURIComponent(p.body);
+   }else if(kind==='outlook'){
+    url='https://outlook.live.com/mail/0/deeplink/compose?to='+encodeURIComponent(TO)+'&subject='+encodeURIComponent(p.su)+'&body='+encodeURIComponent(p.body);
+   }else{
+    copyText();
+    window.open('https://mail.163.com/','_blank','noopener');
+    status("Запрос скопирован. Вставьте его в новое письмо в веб-почте.");return;
+   }
+   window.open(url,'_blank','noopener');
+  });
+ });
+ var cp=document.getElementById('inq-copy');
+ if(cp)cp.addEventListener('click',function(){
+  copyText();this.textContent="Запрос скопирован — можно вставить его в письмо.";status('');
  });
 })();</script>
 <!-- /WB:INQUIRY -->
-
 <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
