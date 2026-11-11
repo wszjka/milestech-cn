@@ -83,34 +83,26 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
    <p>Consumibles de soldadura, cables y accesorios de taladrado y corte para el mantenimiento diario.</p>
   </div>
  </section>
- <!-- 产品大类切换 -->
- <section class="category-switch">
-  <div class="container">
-   <h2 class="section-title">Categorías de Producto</h2>
-   <div class="category-switch-grid">
-   <a href="../es/packaging-machines.html" class="category-switch-card">
-    <span class="cs-tag">01</span>
-    <h3>Maquinaria de Empaque</h3><p>13 series de equipos de empaque automatizado</p>
-   </a>
-   <a href="../es/air-compressors.html" class="category-switch-card">
-    <span class="cs-tag">02</span>
-    <h3>Compresores de Aire</h3><p>6 series de compresores de tornillo de bajo consumo</p>
-   </a>
-   <div class="category-switch-card is-current" aria-current="page">
-    <span class="cs-tag">03</span>
-    <h3>Productos Electromecánicos y de Ferretería</h3><p>33 artículos</p>
-   </div>
-   </div>
-  </div>
- </section>
- <!-- /产品大类切换 -->
- <section class="oh-breadcrumb">
-  <div class="container">
-   <a href="../es/products.html">Productos</a><span>›</span>
-   <a href="../es/other-products.html">Productos Electromecánicos y de Ferretería</a><span>›</span><strong>Accesorios y Consumibles</strong>
-  </div>
- </section>
+ <div class="cat-layout">
+ <aside class="cat-sidebar">
+  <div class="cat-sidebar-title">Categorías de productos</div>
+  <nav>
+    <a href="../es/transformers.html" class="cat-sidebar-item">Transformadores</a>
+    <a href="../es/packaging-machines.html" class="cat-sidebar-item">Maquinaria de Envasado</a>
+    <a href="../es/air-compressors.html" class="cat-sidebar-item">Compresores de Aire</a>
+    <a href="../es/other-products.html" class="cat-sidebar-item is-current">Productos Electromecánicos y de Ferretería</a>
+  </nav>
+ </aside>
 
+ <main class="cat-main">
+ <section class="site-breadcrumb">
+  <div class="container">
+   <a href="../es/index.html">Inicio</a><span>/</span>
+   <a href="../es/products.html">Productos</a><span>/</span>
+   <a href="../es/other-products.html">Productos Electromecánicos y de Ferretería</a><span>/</span>
+   <span class="bc-current">Accesorios y Consumibles</span>
+  </div>
+ </section>
  <section class="oh-item-section">
   <div class="container">
    <div class="oh-item-head"><h2>Accesorios y Consumibles</h2><p>Consumibles de soldadura, cables y accesorios de taladrado y corte para el mantenimiento diario.</p></div>
@@ -156,39 +148,6 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
     <span class="oh-card-action">Consultar ahora →</span>
    </a>
    </div>
-   <div class="oh-back"><a href="../es/other-products.html">← Volver al resumen de categoría</a></div>
-  </div>
- </section>
- <section class="oh-series-section">
-  <div class="container">
-   <h2 class="section-title">Series de producto</h2>
-   <div class="oh-series-nav">
-   <a class="oh-series-card" href="../es/oh-power-tools.html">
-    <span class="oh-series-tag">01</span>
-    <h3>Herramientas Eléctricas</h3><p>Plataformas inalámbricas y herramientas eléctricas para taladrado, corte, amolado e impacto.</p>
-    <span class="oh-series-count">8 artículos</span>
-   </a>
-   <a class="oh-series-card" href="../es/oh-machinery.html">
-    <span class="oh-series-tag">02</span>
-    <h3>Equipos Electromecánicos</h3><p>Equipos de elevación, taladrado, generación, soldadura y trasvase de fluidos para talleres y líneas de producción.</p>
-    <span class="oh-series-count">6 artículos</span>
-   </a>
-   <a class="oh-series-card" href="../es/oh-garden-tools.html">
-    <span class="oh-series-tag">03</span>
-    <h3>Herramientas de Jardín</h3><p>Motosierras, desbrozadoras, cortasetos y pulverizadores para jardinería y zonas verdes.</p>
-    <span class="oh-series-count">4 artículos</span>
-   </a>
-   <a class="oh-series-card" href="../es/oh-hand-tools-ppe.html">
-    <span class="oh-series-tag">04</span>
-    <h3>Herramientas Manuales y EPP</h3><p>Llaves, medición y apriete, además de equipos de protección individual para mantenimiento y obra.</p>
-    <span class="oh-series-count">7 artículos</span>
-   </a>
-   <div class="oh-series-card is-current">
-    <span class="oh-series-tag">05</span>
-    <h3>Accesorios y Consumibles</h3><p>Consumibles de soldadura, cables y accesorios de taladrado y corte para el mantenimiento diario.</p>
-    <span class="oh-series-count">8 artículos</span>
-   </div>
-   </div>
   </div>
  </section>
  <section class="oh-cta">
@@ -198,6 +157,9 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
    <a class="btn btn-primary" href="../es/contact.html">Consultar ahora</a>
   </div>
  </section>
+
+ </main>
+</div>
 <footer class="footer">
  <div class="container">
  <div class="footer-grid">
@@ -217,7 +179,8 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
  <li><a href="../es/about.html">Sobre Nosotros</a></li>
  <li><a href="../es/products.html">Productos</a></li>
                         <!-- WB:FOOTER-CATS -->
-<li class="footer-sub"><a href="../es/packaging-machines.html">Maquinaria de Empaque</a></li>
+<li class="footer-sub"><a href="../es/transformers.html">Transformadores</a></li>
+                        <li class="footer-sub"><a href="../es/packaging-machines.html">Maquinaria de Empaque</a></li>
                         <li class="footer-sub"><a href="../es/air-compressors.html">Compresores de Aire</a></li>
                         <li class="footer-sub"><a href="../es/other-products.html">Electromecánica y Ferretería</a></li>
 <!-- /WB:FOOTER-CATS -->

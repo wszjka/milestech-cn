@@ -83,36 +83,27 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
    <p>5 серий и 33 вида: электроинструмент, электромеханическое оборудование, садовый инструмент, ручной инструмент и СИЗ, оснастка и расходные материалы</p>
   </div>
  </section>
- <!-- 产品大类切换 -->
- <section class="category-switch">
+ <div class="cat-layout">
+ <aside class="cat-sidebar">
+  <div class="cat-sidebar-title">Категории продукции</div>
+  <nav>
+    <a href="../ru/transformers.html" class="cat-sidebar-item">Трансформаторы</a>
+    <a href="../ru/packaging-machines.html" class="cat-sidebar-item">Упаковочное оборудование</a>
+    <a href="../ru/air-compressors.html" class="cat-sidebar-item">Воздушные компрессоры</a>
+    <a href="../ru/other-products.html" class="cat-sidebar-item is-current">Электромеханическая продукция и инструмент</a>
+  </nav>
+ </aside>
+
+ <main class="cat-main">
+ <section class="site-breadcrumb">
   <div class="container">
-   <h2 class="section-title">Категории продукции</h2>
-   <div class="category-switch-grid">
-   <a href="../ru/packaging-machines.html" class="category-switch-card">
-    <span class="cs-tag">01</span>
-    <h3>Упаковочное оборудование</h3><p>13 серий автоматизированного упаковочного оборудования</p>
-   </a>
-   <a href="../ru/air-compressors.html" class="category-switch-card">
-    <span class="cs-tag">02</span>
-    <h3>Воздушные компрессоры</h3><p>6 серий энергосберегающих винтовых компрессоров</p>
-   </a>
-   <div class="category-switch-card is-current" aria-current="page">
-    <span class="cs-tag">03</span>
-    <h3>Электромеханическая продукция и инструмент</h3><p>33 видов</p>
-   </div>
-   </div>
-  </div>
- </section>
- <!-- /产品大类切换 -->
- <section class="oh-intro">
-  <div class="container">
-   <h2>Подбор электромеханической продукции и инструмента по сериям</h2>
-   <p>Помимо упаковочного оборудования и энергосберегающих компрессоров мы поставляем электроинструмент, электромеханическое оборудование, садовый инструмент, ручной инструмент и СИЗ, а также сварочную и отрезную оснастку. Позиции можно заказать единым пакетом по применению, характеристикам или списку закупки.<span class="oh-intro-note">Изображения приведены для справки. Бренд, модель, характеристики и упаковка определяются коммерческим предложением и поставленным товаром.</span></p>
+   <a href="../ru/index.html">Главная</a><span>/</span>
+   <a href="../ru/products.html">Продукция</a><span>/</span>
+   <span class="bc-current">Электромеханическая продукция и инструмент</span>
   </div>
  </section>
  <section class="oh-series-section">
   <div class="container">
-   <h2 class="section-title">Серии продукции</h2>
    <div class="oh-series-nav">
    <a class="oh-series-card" href="../ru/oh-power-tools.html">
     <span class="oh-series-tag">01</span>
@@ -149,6 +140,9 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
    <a class="btn btn-primary" href="../ru/contact.html">Запросить сейчас</a>
   </div>
  </section>
+
+ </main>
+</div>
 <footer class="footer">
  <div class="container">
  <div class="footer-grid">
@@ -168,7 +162,8 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
  <li><a href="../ru/about.html">О нас</a></li>
  <li><a href="../ru/products.html">Продукция</a></li>
                         <!-- WB:FOOTER-CATS -->
-<li class="footer-sub"><a href="../ru/packaging-machines.html">Упаковочное оборудование</a></li>
+<li class="footer-sub"><a href="../ru/transformers.html">Трансформаторы</a></li>
+                        <li class="footer-sub"><a href="../ru/packaging-machines.html">Упаковочное оборудование</a></li>
                         <li class="footer-sub"><a href="../ru/air-compressors.html">Воздушные компрессоры</a></li>
                         <li class="footer-sub"><a href="../ru/other-products.html">Электромеханика и инструмент</a></li>
 <!-- /WB:FOOTER-CATS -->

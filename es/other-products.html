@@ -83,36 +83,27 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
    <p>5 series y 33 artículos de herramientas eléctricas, equipos electromecánicos, herramientas de jardín, herramientas manuales y EPP, y accesorios</p>
   </div>
  </section>
- <!-- 产品大类切换 -->
- <section class="category-switch">
+ <div class="cat-layout">
+ <aside class="cat-sidebar">
+  <div class="cat-sidebar-title">Categorías de productos</div>
+  <nav>
+    <a href="../es/transformers.html" class="cat-sidebar-item">Transformadores</a>
+    <a href="../es/packaging-machines.html" class="cat-sidebar-item">Maquinaria de Envasado</a>
+    <a href="../es/air-compressors.html" class="cat-sidebar-item">Compresores de Aire</a>
+    <a href="../es/other-products.html" class="cat-sidebar-item is-current">Productos Electromecánicos y de Ferretería</a>
+  </nav>
+ </aside>
+
+ <main class="cat-main">
+ <section class="site-breadcrumb">
   <div class="container">
-   <h2 class="section-title">Categorías de Producto</h2>
-   <div class="category-switch-grid">
-   <a href="../es/packaging-machines.html" class="category-switch-card">
-    <span class="cs-tag">01</span>
-    <h3>Maquinaria de Empaque</h3><p>13 series de equipos de empaque automatizado</p>
-   </a>
-   <a href="../es/air-compressors.html" class="category-switch-card">
-    <span class="cs-tag">02</span>
-    <h3>Compresores de Aire</h3><p>6 series de compresores de tornillo de bajo consumo</p>
-   </a>
-   <div class="category-switch-card is-current" aria-current="page">
-    <span class="cs-tag">03</span>
-    <h3>Productos Electromecánicos y de Ferretería</h3><p>33 artículos</p>
-   </div>
-   </div>
-  </div>
- </section>
- <!-- /产品大类切换 -->
- <section class="oh-intro">
-  <div class="container">
-   <h2>Seleccione productos electromecánicos y de ferretería por serie</h2>
-   <p>Junto con la maquinaria de empaque y los compresores de aire de bajo consumo, suministramos herramientas eléctricas, equipos electromecánicos, herramientas de jardín, herramientas manuales y EPP, y accesorios de soldadura y corte. Los artículos pueden cotizarse como paquete combinado según aplicación, especificación o lista de compra.<span class="oh-intro-note">Las imágenes son de referencia. La marca, el modelo, las especificaciones y el embalaje están sujetos a la cotización y a los bienes entregados.</span></p>
+   <a href="../es/index.html">Inicio</a><span>/</span>
+   <a href="../es/products.html">Productos</a><span>/</span>
+   <span class="bc-current">Productos Electromecánicos y de Ferretería</span>
   </div>
  </section>
  <section class="oh-series-section">
   <div class="container">
-   <h2 class="section-title">Series de producto</h2>
    <div class="oh-series-nav">
    <a class="oh-series-card" href="../es/oh-power-tools.html">
     <span class="oh-series-tag">01</span>
@@ -149,6 +140,9 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
    <a class="btn btn-primary" href="../es/contact.html">Consultar ahora</a>
   </div>
  </section>
+
+ </main>
+</div>
 <footer class="footer">
  <div class="container">
  <div class="footer-grid">
@@ -168,7 +162,8 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
  <li><a href="../es/about.html">Sobre Nosotros</a></li>
  <li><a href="../es/products.html">Productos</a></li>
                         <!-- WB:FOOTER-CATS -->
-<li class="footer-sub"><a href="../es/packaging-machines.html">Maquinaria de Empaque</a></li>
+<li class="footer-sub"><a href="../es/transformers.html">Transformadores</a></li>
+                        <li class="footer-sub"><a href="../es/packaging-machines.html">Maquinaria de Empaque</a></li>
                         <li class="footer-sub"><a href="../es/air-compressors.html">Compresores de Aire</a></li>
                         <li class="footer-sub"><a href="../es/other-products.html">Electromecánica y Ferretería</a></li>
 <!-- /WB:FOOTER-CATS -->

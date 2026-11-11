@@ -83,34 +83,26 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
    <p>عدد بنزين وكهربائية للعناية بالمساحات والأعمال الحديقة.</p>
   </div>
  </section>
- <!-- 产品大类切换 -->
- <section class="category-switch">
-  <div class="container">
-   <h2 class="section-title">فئات المنتجات</h2>
-   <div class="category-switch-grid">
-   <a href="../ar/packaging-machines.html" class="category-switch-card">
-    <span class="cs-tag">01</span>
-    <h3>معدات التغليف</h3><p>13 سلسلة من معدات التغليف الآلية</p>
-   </a>
-   <a href="../ar/air-compressors.html" class="category-switch-card">
-    <span class="cs-tag">02</span>
-    <h3>ضواغط الهواء</h3><p>6 سلاسل من ضواغط الهواء اللولبية الموفرة للطاقة</p>
-   </a>
-   <div class="category-switch-card is-current" aria-current="page">
-    <span class="cs-tag">03</span>
-    <h3>المنتجات الكهروميكانيكية والعدد</h3><p>33 منتجاً</p>
-   </div>
-   </div>
-  </div>
- </section>
- <!-- /产品大类切换 -->
- <section class="oh-breadcrumb">
-  <div class="container">
-   <a href="../ar/products.html">المنتجات</a><span>›</span>
-   <a href="../ar/other-products.html">المنتجات الكهروميكانيكية والعدد</a><span>›</span><strong>عدد الحدائق</strong>
-  </div>
- </section>
+ <div class="cat-layout">
+ <aside class="cat-sidebar">
+  <div class="cat-sidebar-title">فئات المنتجات</div>
+  <nav>
+    <a href="../ar/transformers.html" class="cat-sidebar-item">المحولات</a>
+    <a href="../ar/packaging-machines.html" class="cat-sidebar-item">آلات التعبئة والتغليف</a>
+    <a href="../ar/air-compressors.html" class="cat-sidebar-item">ضواغط الهواء</a>
+    <a href="../ar/other-products.html" class="cat-sidebar-item is-current">المنتجات الكهروميكانيكية والعدد</a>
+  </nav>
+ </aside>
 
+ <main class="cat-main">
+ <section class="site-breadcrumb">
+  <div class="container">
+   <a href="../ar/index.html">الرئيسية</a><span>/</span>
+   <a href="../ar/products.html">المنتجات</a><span>/</span>
+   <a href="../ar/other-products.html">المنتجات الكهروميكانيكية والعدد</a><span>/</span>
+   <span class="bc-current">عدد الحدائق</span>
+  </div>
+ </section>
  <section class="oh-item-section">
   <div class="container">
    <div class="oh-item-head"><h2>عدد الحدائق</h2><p>عدد بنزين وكهربائية للعناية بالمساحات والأعمال الحديقة.</p></div>
@@ -136,39 +128,6 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
     <span class="oh-card-action">استفسر الآن ←</span>
    </a>
    </div>
-   <div class="oh-back"><a href="../ar/other-products.html">← العودة إلى نظرة عامة على الفئة</a></div>
-  </div>
- </section>
- <section class="oh-series-section">
-  <div class="container">
-   <h2 class="section-title">سلاسل المنتجات</h2>
-   <div class="oh-series-nav">
-   <a class="oh-series-card" href="../ar/oh-power-tools.html">
-    <span class="oh-series-tag">01</span>
-    <h3>العدد الكهربائية</h3><p>منصات لاسلكية وعدد كهربائية لأعمال الثقب والقطع والتجليخ والطرق.</p>
-    <span class="oh-series-count">8 منتجاً</span>
-   </a>
-   <a class="oh-series-card" href="../ar/oh-machinery.html">
-    <span class="oh-series-tag">02</span>
-    <h3>المعدات الكهروميكانيكية</h3><p>رافعات ومكنات ومولدات وماكينات لحام ومضخات لصيانة الإنتاج اليومية.</p>
-    <span class="oh-series-count">6 منتجاً</span>
-   </a>
-   <div class="oh-series-card is-current">
-    <span class="oh-series-tag">03</span>
-    <h3>عدد الحدائق</h3><p>عدد بنزين وكهربائية للعناية بالمساحات والأعمال الحديقة.</p>
-    <span class="oh-series-count">4 منتجاً</span>
-   </div>
-   <a class="oh-series-card" href="../ar/oh-hand-tools-ppe.html">
-    <span class="oh-series-tag">04</span>
-    <h3>العدد اليدوية ومعدات الوقاية</h3><p>عدد يدوية ومعدات حماية شخصية لأعمال التركيب والصيانة والإنتاج.</p>
-    <span class="oh-series-count">7 منتجاً</span>
-   </a>
-   <a class="oh-series-card" href="../ar/oh-accessories.html">
-    <span class="oh-series-tag">05</span>
-    <h3>الملحقات والمواد الاستهلاكية</h3><p>مواد لحام وكابلات وملحقات ثقب وقطع لصيانة الإنتاج اليومية.</p>
-    <span class="oh-series-count">8 منتجاً</span>
-   </a>
-   </div>
   </div>
  </section>
  <section class="oh-cta">
@@ -178,6 +137,9 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
    <a class="btn btn-primary" href="../ar/contact.html">استفسر الآن</a>
   </div>
  </section>
+
+ </main>
+</div>
 <footer class="footer">
  <div class="container">
  <div class="footer-grid">
@@ -197,7 +159,8 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
  <li><a href="../ar/about.html">من نحن</a></li>
  <li><a href="../ar/products.html">المنتجات</a></li>
                         <!-- WB:FOOTER-CATS -->
-<li class="footer-sub"><a href="../ar/packaging-machines.html">معدات التغليف</a></li>
+<li class="footer-sub"><a href="../ar/transformers.html">المحولات</a></li>
+                        <li class="footer-sub"><a href="../ar/packaging-machines.html">معدات التغليف</a></li>
                         <li class="footer-sub"><a href="../ar/air-compressors.html">ضواغط الهواء</a></li>
                         <li class="footer-sub"><a href="../ar/other-products.html">الكهروميكانيكية والعدد</a></li>
 <!-- /WB:FOOTER-CATS -->

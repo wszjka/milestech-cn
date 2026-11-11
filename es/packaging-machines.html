@@ -199,27 +199,26 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
    <p>13 series de equipos de empaque automatizado y soluciones llave en mano</p>
   </div>
  </section>
- <!-- 产品大类切换 -->
- <section class="category-switch">
+<div class="cat-layout">
+ <aside class="cat-sidebar">
+  <div class="cat-sidebar-title">Categorías de productos</div>
+  <nav>
+    <a href="../es/transformers.html" class="cat-sidebar-item">Transformadores</a>
+    <a href="../es/packaging-machines.html" class="cat-sidebar-item is-current">Maquinaria de Envasado</a>
+    <a href="../es/air-compressors.html" class="cat-sidebar-item">Compresores de Aire</a>
+    <a href="../es/other-products.html" class="cat-sidebar-item">Productos Electromecánicos y de Ferretería</a>
+  </nav>
+ </aside>
+
+ <main class="cat-main">
+ <section class="site-breadcrumb">
   <div class="container">
-   <h2 class="section-title">Categorías de productos</h2>
-   <div class="category-switch-grid">
-   <div class="category-switch-card is-current" aria-current="page">
-    <span class="cs-tag">01</span>
-    <h3>Maquinaria de Envasado</h3><p>13 series de equipos de envasado automático</p>
-   </div>
-   <a href="../es/air-compressors.html" class="category-switch-card">
-    <span class="cs-tag">02</span>
-    <h3>Compresores de Aire</h3><p>6 series de compresores de tornillo de bajo consumo</p>
-   </a>
-   <a href="../es/other-products.html" class="category-switch-card">
-    <span class="cs-tag">03</span>
-    <h3>Productos Electromecánicos y de Ferretería</h3><p>5 series · 33 artículos electromecánicos y de ferretería</p>
-   </a>
-   </div>
+   <a href="../es/index.html">Inicio</a><span>/</span>
+   <a href="../es/products.html">Productos</a><span>/</span>
+   <span class="bc-current">Maquinaria de Envasado</span>
   </div>
  </section>
- <!-- /产品大类切换 -->
+
 
  <!-- I. Máquinas de Empaque de Formado-Llenado-Sellado Vertical (Serie VFS) -->
  <section class="product-category" id="vertical">
@@ -1752,7 +1751,10 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
  </div>
  </div>
  </div>
- </section>
+ </section> </main>
+</div>
+
+
 
  <footer class="footer">
  <div class="container">
@@ -1773,7 +1775,8 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
  <li><a href="../es/about.html">Sobre Nosotros</a></li>
  <li><a href="../es/products.html">Productos</a></li>
                         <!-- WB:FOOTER-CATS -->
-<li class="footer-sub"><a href="../es/packaging-machines.html">Maquinaria de Empaque</a></li>
+<li class="footer-sub"><a href="../es/transformers.html">Transformadores</a></li>
+                        <li class="footer-sub"><a href="../es/packaging-machines.html">Maquinaria de Empaque</a></li>
                         <li class="footer-sub"><a href="../es/air-compressors.html">Compresores de Aire</a></li>
                         <li class="footer-sub"><a href="../es/other-products.html">Electromecánica y Ferretería</a></li>
 <!-- /WB:FOOTER-CATS -->

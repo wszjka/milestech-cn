@@ -83,34 +83,26 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
    <p>Бензиновый и электрический инструмент для ухода за территорией и садовых работ.</p>
   </div>
  </section>
- <!-- 产品大类切换 -->
- <section class="category-switch">
-  <div class="container">
-   <h2 class="section-title">Категории продукции</h2>
-   <div class="category-switch-grid">
-   <a href="../ru/packaging-machines.html" class="category-switch-card">
-    <span class="cs-tag">01</span>
-    <h3>Упаковочное оборудование</h3><p>13 серий автоматизированного упаковочного оборудования</p>
-   </a>
-   <a href="../ru/air-compressors.html" class="category-switch-card">
-    <span class="cs-tag">02</span>
-    <h3>Воздушные компрессоры</h3><p>6 серий энергосберегающих винтовых компрессоров</p>
-   </a>
-   <div class="category-switch-card is-current" aria-current="page">
-    <span class="cs-tag">03</span>
-    <h3>Электромеханическая продукция и инструмент</h3><p>33 видов</p>
-   </div>
-   </div>
-  </div>
- </section>
- <!-- /产品大类切换 -->
- <section class="oh-breadcrumb">
-  <div class="container">
-   <a href="../ru/products.html">Продукция</a><span>›</span>
-   <a href="../ru/other-products.html">Электромеханическая продукция и инструмент</a><span>›</span><strong>Садовый инструмент</strong>
-  </div>
- </section>
+ <div class="cat-layout">
+ <aside class="cat-sidebar">
+  <div class="cat-sidebar-title">Категории продукции</div>
+  <nav>
+    <a href="../ru/transformers.html" class="cat-sidebar-item">Трансформаторы</a>
+    <a href="../ru/packaging-machines.html" class="cat-sidebar-item">Упаковочное оборудование</a>
+    <a href="../ru/air-compressors.html" class="cat-sidebar-item">Воздушные компрессоры</a>
+    <a href="../ru/other-products.html" class="cat-sidebar-item is-current">Электромеханическая продукция и инструмент</a>
+  </nav>
+ </aside>
 
+ <main class="cat-main">
+ <section class="site-breadcrumb">
+  <div class="container">
+   <a href="../ru/index.html">Главная</a><span>/</span>
+   <a href="../ru/products.html">Продукция</a><span>/</span>
+   <a href="../ru/other-products.html">Электромеханическая продукция и инструмент</a><span>/</span>
+   <span class="bc-current">Садовый инструмент</span>
+  </div>
+ </section>
  <section class="oh-item-section">
   <div class="container">
    <div class="oh-item-head"><h2>Садовый инструмент</h2><p>Бензиновый и электрический инструмент для ухода за территорией и садовых работ.</p></div>
@@ -136,39 +128,6 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
     <span class="oh-card-action">Запросить сейчас →</span>
    </a>
    </div>
-   <div class="oh-back"><a href="../ru/other-products.html">← Назад к обзору категории</a></div>
-  </div>
- </section>
- <section class="oh-series-section">
-  <div class="container">
-   <h2 class="section-title">Серии продукции</h2>
-   <div class="oh-series-nav">
-   <a class="oh-series-card" href="../ru/oh-power-tools.html">
-    <span class="oh-series-tag">01</span>
-    <h3>Электроинструмент</h3><p>Аккумуляторные платформы и электрические инструменты для сверления, резки, шлифования и ударных работ.</p>
-    <span class="oh-series-count">8 видов</span>
-   </a>
-   <a class="oh-series-card" href="../ru/oh-machinery.html">
-    <span class="oh-series-tag">02</span>
-    <h3>Электромеханическое оборудование</h3><p>Тали, станки, генераторы, сварочные аппараты и насосы для повседневного обслуживания производства.</p>
-    <span class="oh-series-count">6 видов</span>
-   </a>
-   <div class="oh-series-card is-current">
-    <span class="oh-series-tag">03</span>
-    <h3>Садовый инструмент</h3><p>Бензиновый и электрический инструмент для ухода за территорией и садовых работ.</p>
-    <span class="oh-series-count">4 видов</span>
-   </div>
-   <a class="oh-series-card" href="../ru/oh-hand-tools-ppe.html">
-    <span class="oh-series-tag">04</span>
-    <h3>Ручной инструмент и СИЗ</h3><p>Ручной инструмент и средства индивидуальной защиты для монтажа, ремонта и производства.</p>
-    <span class="oh-series-count">7 видов</span>
-   </a>
-   <a class="oh-series-card" href="../ru/oh-accessories.html">
-    <span class="oh-series-tag">05</span>
-    <h3>Оснастка и расходные материалы</h3><p>Сварочные расходники, кабели, оснастка для сверления и резки для повседневного обслуживания.</p>
-    <span class="oh-series-count">8 видов</span>
-   </a>
-   </div>
   </div>
  </section>
  <section class="oh-cta">
@@ -178,6 +137,9 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
    <a class="btn btn-primary" href="../ru/contact.html">Запросить сейчас</a>
   </div>
  </section>
+
+ </main>
+</div>
 <footer class="footer">
  <div class="container">
  <div class="footer-grid">
@@ -197,7 +159,8 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
  <li><a href="../ru/about.html">О нас</a></li>
  <li><a href="../ru/products.html">Продукция</a></li>
                         <!-- WB:FOOTER-CATS -->
-<li class="footer-sub"><a href="../ru/packaging-machines.html">Упаковочное оборудование</a></li>
+<li class="footer-sub"><a href="../ru/transformers.html">Трансформаторы</a></li>
+                        <li class="footer-sub"><a href="../ru/packaging-machines.html">Упаковочное оборудование</a></li>
                         <li class="footer-sub"><a href="../ru/air-compressors.html">Воздушные компрессоры</a></li>
                         <li class="footer-sub"><a href="../ru/other-products.html">Электромеханика и инструмент</a></li>
 <!-- /WB:FOOTER-CATS -->

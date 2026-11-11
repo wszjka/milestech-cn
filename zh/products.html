@@ -3,13 +3,13 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>产品中心 - MilesTech | 包装机械、空压机与其他机电五金三大类</title>
+ <title>产品中心 - MilesTech | 变压器、包装机械、空压机与其他机电五金四大类</title>
  <link rel="stylesheet" href="../css/style.css">
  <link rel="stylesheet" href="../products/assets/category-switch.css">
  <link rel="stylesheet" href="../products/assets/site-enhancements.css">
 <!-- WB:SEO -->
- <meta name="description" content="MilesTech 产品中心并列展示包装机械 13 大系列、节能螺杆空压机 6 大系列与其他机电产品与五金产品 5 大系列 33 个小类，可按物料、产能、压力与用气量及采购清单选型定制。">
- <meta name="keywords" content="产品中心,包装机械,空压机,其他机电产品,五金产品,电动工具,产品大类,设备选型,MilesTech">
+ <meta name="description" content="MilesTech 产品中心并列展示变压器 2 大系列、包装机械 13 大系列、节能螺杆空压机 6 大系列与其他机电产品与五金产品 5 大系列 33 个小类，可按容量、电压等级、物料、产能与用气量选型定制。">
+ <meta name="keywords" content="产品中心,变压器,干式变压器,液浸式变压器,包装机械,空压机,其他机电产品,五金产品,电动工具,产品大类,设备选型,MilesTech">
  <link rel="canonical" href="https://milestech.cn/zh/products.html">
  <link rel="alternate" hreflang="zh" href="https://milestech.cn/zh/products.html">
  <link rel="alternate" hreflang="en" href="https://milestech.cn/en/products.html">
@@ -80,38 +80,41 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
  <section class="page-header">
   <div class="container">
    <h1>产品中心</h1>
-   <p>包装机械 + 节能空压机 + 其他机电与五金，三大类设备一站式可定制</p>
+   <p>变压器 + 包装机械 + 节能空压机 + 其他机电与五金，四大类设备一站式可定制</p>
   </div>
  </section>
 
- <!-- 产品大类切换 -->
- <section class="category-switch">
-  <div class="container">
-   <h2 class="section-title">产品大类</h2>
-   <div class="category-switch-grid">
-   <a href="../zh/packaging-machines.html" class="category-switch-card">
-    <span class="cs-tag">01</span>
-    <h3>包装机械</h3><p>13 大系列自动化包装设备</p>
-   </a>
-   <a href="../zh/air-compressors.html" class="category-switch-card">
-    <span class="cs-tag">02</span>
-    <h3>空压机</h3><p>6 大系列节能螺杆空压机</p>
-   </a>
-   <a href="../zh/other-products.html" class="category-switch-card">
-    <span class="cs-tag">03</span>
-    <h3>其他机电产品与五金产品</h3><p>5 大系列 · 33 个小类机电与五金产品</p>
-   </a>
-   </div>
-  </div>
- </section>
- <!-- /产品大类切换 -->
+<div class="cat-layout">
+ <aside class="cat-sidebar">
+  <div class="cat-sidebar-title">产品大类</div>
+  <nav>
+    <a href="../zh/transformers.html" class="cat-sidebar-item">变压器</a>
+    <a href="../zh/packaging-machines.html" class="cat-sidebar-item">包装机械</a>
+    <a href="../zh/air-compressors.html" class="cat-sidebar-item">空压机</a>
+    <a href="../zh/other-products.html" class="cat-sidebar-item">其他机电产品与五金产品</a>
+  </nav>
+ </aside>
+
+ <main class="cat-main">
 
  <section class="category-overview">
   <div class="container">
-   <h2 class="section-title">按产品大类浏览</h2>
-   <p class="section-subtitle" style="text-align:center">三大类产品共用同一套选型、定制与售后服务体系，可按产线需求组合配置。</p>
    <div class="overview-grid">
-    <article class="overview-card">
+    <a class="overview-card overview-link" href="../zh/transformers.html">
+     <div class="overview-figure tr-figure"><img src="../products/transformers/images/category-cover.jpg" alt="变压器" loading="lazy"></div>
+     <div class="overview-body">
+      <span class="overview-tag">2 大系列</span>
+      <h3>变压器</h3>
+      <p>干式与液浸式两大系列电力变压器</p>
+      <div class="overview-series-title">包含系列</div>
+      <div class="overview-series">
+    <span>环氧树脂真空浇注干式变压器</span>
+    <span>液浸式电力变压器</span>
+      </div>
+      <span class="btn btn-primary">查看 2 大系列</span>
+     </div>
+    </a>
+    <a class="overview-card overview-link" href="../zh/packaging-machines.html">
      <div class="overview-figure"><img src="../images/product-categories/1.jpg" alt="包装机械设备" loading="lazy"></div>
      <div class="overview-body">
       <span class="overview-tag">13 大系列</span>
@@ -127,10 +130,10 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
     <span>挤压包装机组</span>
     <span>等 13 个系列</span>
       </div>
-      <a class="btn btn-primary" href="../zh/packaging-machines.html">查看全部 13 个系列</a>
+      <span class="btn btn-primary">查看全部 13 个系列</span>
      </div>
-    </article>
-    <article class="overview-card">
+    </a>
+    <a class="overview-card overview-link" href="../zh/air-compressors.html">
      <div class="overview-figure air-figure"><img src="../products/air-compressors/images/category-cover.jpg" alt="节能螺杆空压机" loading="lazy"></div>
      <div class="overview-body">
       <span class="overview-tag">6 大系列</span>
@@ -145,10 +148,10 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
     <span>低压螺杆空压机</span>
     <span>中高压螺杆空压机</span>
       </div>
-      <a class="btn btn-primary" href="../zh/air-compressors.html">查看全部 6 款产品</a>
+      <span class="btn btn-primary">查看全部 6 款产品</span>
      </div>
-    </article>
-    <article class="overview-card">
+    </a>
+    <a class="overview-card overview-link" href="../zh/other-products.html">
      <div class="overview-figure oh-figure"><img src="../products/other-machinery-hardware/images/category-cover.jpg" alt="其他机电产品与五金产品" loading="lazy"></div>
      <div class="overview-body">
       <span class="overview-tag">5 大系列</span>
@@ -162,9 +165,9 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
     <span>手动工具与劳保产品系列</span>
     <span>附件配件系列</span>
       </div>
-      <a class="btn btn-primary" href="../zh/other-products.html">查看 5 大系列 33 个小类</a>
+      <span class="btn btn-primary">查看 5 大系列 33 个小类</span>
      </div>
-    </article>
+    </a>
    </div>
   </div>
  </section>
@@ -176,6 +179,9 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
    <a class="btn btn-primary" href="../zh/contact.html">联系我们选型</a>
   </div>
  </section>
+
+ </main>
+</div>
 
 <footer class="footer">
  <div class="container">
@@ -196,7 +202,8 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
  <li><a href="../zh/about.html">关于我们</a></li>
  <li><a href="../zh/products.html">产品中心</a></li>
                         <!-- WB:FOOTER-CATS -->
-<li class="footer-sub"><a href="../zh/packaging-machines.html">包装机械</a></li>
+<li class="footer-sub"><a href="../zh/transformers.html">变压器</a></li>
+                        <li class="footer-sub"><a href="../zh/packaging-machines.html">包装机械</a></li>
                         <li class="footer-sub"><a href="../zh/air-compressors.html">空压机</a></li>
                         <li class="footer-sub"><a href="../zh/other-products.html">其他机电产品与五金产品</a></li>
 <!-- /WB:FOOTER-CATS -->

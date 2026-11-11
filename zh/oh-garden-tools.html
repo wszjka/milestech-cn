@@ -83,34 +83,26 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
    <p>园林养护与绿化施工用动力工具，覆盖锯切、割草、修枝与喷洒作业。</p>
   </div>
  </section>
- <!-- 产品大类切换 -->
- <section class="category-switch">
-  <div class="container">
-   <h2 class="section-title">产品大类</h2>
-   <div class="category-switch-grid">
-   <a href="../zh/packaging-machines.html" class="category-switch-card">
-    <span class="cs-tag">01</span>
-    <h3>包装机械</h3><p>13 大系列自动化包装设备</p>
-   </a>
-   <a href="../zh/air-compressors.html" class="category-switch-card">
-    <span class="cs-tag">02</span>
-    <h3>空压机</h3><p>6 大系列节能螺杆空压机</p>
-   </a>
-   <div class="category-switch-card is-current" aria-current="page">
-    <span class="cs-tag">03</span>
-    <h3>其他机电产品与五金产品</h3><p>33 个小类</p>
-   </div>
-   </div>
-  </div>
- </section>
- <!-- /产品大类切换 -->
- <section class="oh-breadcrumb">
-  <div class="container">
-   <a href="../zh/products.html">产品中心</a><span>›</span>
-   <a href="../zh/other-products.html">其他机电产品与五金产品</a><span>›</span><strong>园林工具系列</strong>
-  </div>
- </section>
+ <div class="cat-layout">
+ <aside class="cat-sidebar">
+  <div class="cat-sidebar-title">产品大类</div>
+  <nav>
+    <a href="../zh/transformers.html" class="cat-sidebar-item">变压器</a>
+    <a href="../zh/packaging-machines.html" class="cat-sidebar-item">包装机械</a>
+    <a href="../zh/air-compressors.html" class="cat-sidebar-item">空压机</a>
+    <a href="../zh/other-products.html" class="cat-sidebar-item is-current">其他机电产品与五金产品</a>
+  </nav>
+ </aside>
 
+ <main class="cat-main">
+ <section class="site-breadcrumb">
+  <div class="container">
+   <a href="../zh/index.html">首页</a><span>/</span>
+   <a href="../zh/products.html">产品中心</a><span>/</span>
+   <a href="../zh/other-products.html">其他机电产品与五金产品</a><span>/</span>
+   <span class="bc-current">园林工具系列</span>
+  </div>
+ </section>
  <section class="oh-item-section">
   <div class="container">
    <div class="oh-item-head"><h2>园林工具系列</h2><p>园林养护与绿化施工用动力工具，覆盖锯切、割草、修枝与喷洒作业。</p></div>
@@ -136,39 +128,6 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
     <span class="oh-card-action">立即咨询 →</span>
    </a>
    </div>
-   <div class="oh-back"><a href="../zh/other-products.html">← 返回大类总览</a></div>
-  </div>
- </section>
- <section class="oh-series-section">
-  <div class="container">
-   <h2 class="section-title">产品系列</h2>
-   <div class="oh-series-nav">
-   <a class="oh-series-card" href="../zh/oh-power-tools.html">
-    <span class="oh-series-tag">01</span>
-    <h3>电动工具系列</h3><p>锂电平台与各类电动加工工具，覆盖钻孔、切割、磨削、冲击作业等工况。</p>
-    <span class="oh-series-count">8个小类</span>
-   </a>
-   <a class="oh-series-card" href="../zh/oh-machinery.html">
-    <span class="oh-series-tag">02</span>
-    <h3>机电产品系列</h3><p>起重、钻削、发电、焊接与流体输送设备，适用于车间、工地与配套工程。</p>
-    <span class="oh-series-count">6个小类</span>
-   </a>
-   <div class="oh-series-card is-current">
-    <span class="oh-series-tag">03</span>
-    <h3>园林工具系列</h3><p>园林养护与绿化施工用动力工具，覆盖锯切、割草、修枝与喷洒作业。</p>
-    <span class="oh-series-count">4个小类</span>
-   </div>
-   <a class="oh-series-card" href="../zh/oh-hand-tools-ppe.html">
-    <span class="oh-series-tag">04</span>
-    <h3>手动工具与劳保产品系列</h3><p>常用手动工具与作业防护用品，适合产线日常维护与现场作业配套采购。</p>
-    <span class="oh-series-count">7个小类</span>
-   </a>
-   <a class="oh-series-card" href="../zh/oh-accessories.html">
-    <span class="oh-series-tag">05</span>
-    <h3>附件配件系列</h3><p>焊接耗材、电缆与钻削磨削类附件，可按主机型号配套选型。</p>
-    <span class="oh-series-count">8个小类</span>
-   </a>
-   </div>
   </div>
  </section>
  <section class="oh-cta">
@@ -178,6 +137,9 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
    <a class="btn btn-primary" href="../zh/contact.html">立即咨询</a>
   </div>
  </section>
+
+ </main>
+</div>
 <footer class="footer">
  <div class="container">
  <div class="footer-grid">
@@ -197,7 +159,8 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
  <li><a href="../zh/about.html">关于我们</a></li>
  <li><a href="../zh/products.html">产品中心</a></li>
                         <!-- WB:FOOTER-CATS -->
-<li class="footer-sub"><a href="../zh/packaging-machines.html">包装机械</a></li>
+<li class="footer-sub"><a href="../zh/transformers.html">变压器</a></li>
+                        <li class="footer-sub"><a href="../zh/packaging-machines.html">包装机械</a></li>
                         <li class="footer-sub"><a href="../zh/air-compressors.html">空压机</a></li>
                         <li class="footer-sub"><a href="../zh/other-products.html">其他机电产品与五金产品</a></li>
 <!-- /WB:FOOTER-CATS -->

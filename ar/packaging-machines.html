@@ -199,27 +199,26 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
    <p>13 سلسلة من معدات التغليف الآلية وحلول تسليم المفتاح</p>
   </div>
  </section>
- <!-- 产品大类切换 -->
- <section class="category-switch">
+<div class="cat-layout">
+ <aside class="cat-sidebar">
+  <div class="cat-sidebar-title">فئات المنتجات</div>
+  <nav>
+    <a href="../ar/transformers.html" class="cat-sidebar-item">المحولات</a>
+    <a href="../ar/packaging-machines.html" class="cat-sidebar-item is-current">آلات التعبئة والتغليف</a>
+    <a href="../ar/air-compressors.html" class="cat-sidebar-item">ضواغط الهواء</a>
+    <a href="../ar/other-products.html" class="cat-sidebar-item">المنتجات الكهروميكانيكية والعدد</a>
+  </nav>
+ </aside>
+
+ <main class="cat-main">
+ <section class="site-breadcrumb">
   <div class="container">
-   <h2 class="section-title">فئات المنتجات</h2>
-   <div class="category-switch-grid">
-   <div class="category-switch-card is-current" aria-current="page">
-    <span class="cs-tag">01</span>
-    <h3>آلات التعبئة والتغليف</h3><p>13 سلسلة من معدات التعبئة والتغليف الآلية</p>
-   </div>
-   <a href="../ar/air-compressors.html" class="category-switch-card">
-    <span class="cs-tag">02</span>
-    <h3>ضواغط الهواء</h3><p>6 سلاسل من الضواغط اللولبية الموفرة للطاقة</p>
-   </a>
-   <a href="../ar/other-products.html" class="category-switch-card">
-    <span class="cs-tag">03</span>
-    <h3>المنتجات الكهروميكانيكية والعدد</h3><p>5 سلاسل · 33 منتجاً كهروميكانيكياً وعدداً</p>
-   </a>
-   </div>
+   <a href="../ar/index.html">الرئيسية</a><span>/</span>
+   <a href="../ar/products.html">المنتجات</a><span>/</span>
+   <span class="bc-current">آلات التعبئة والتغليف</span>
   </div>
  </section>
- <!-- /产品大类切换 -->
+
 
  <!-- I. آلات التغليف بالتشكيل والتعبئة والختم العمودي (سلسلة VFS) -->
  <section class="product-category" id="vertical">
@@ -1752,7 +1751,10 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
  </div>
  </div>
  </div>
- </section>
+ </section> </main>
+</div>
+
+
 
  <footer class="footer">
  <div class="container">
@@ -1773,7 +1775,8 @@ document.addEventListener('click',function(e){if(!e.target.closest('#lang-switch
  <li><a href="../ar/about.html">من نحن</a></li>
  <li><a href="../ar/products.html">المنتجات</a></li>
                         <!-- WB:FOOTER-CATS -->
-<li class="footer-sub"><a href="../ar/packaging-machines.html">معدات التغليف</a></li>
+<li class="footer-sub"><a href="../ar/transformers.html">المحولات</a></li>
+                        <li class="footer-sub"><a href="../ar/packaging-machines.html">معدات التغليف</a></li>
                         <li class="footer-sub"><a href="../ar/air-compressors.html">ضواغط الهواء</a></li>
                         <li class="footer-sub"><a href="../ar/other-products.html">الكهروميكانيكية والعدد</a></li>
 <!-- /WB:FOOTER-CATS -->
