@@ -54,8 +54,31 @@ body {
 
 .nav-brand {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 15px;
+}
+
+/* 导航栏横版组合 Logo（透明底，深色背景专用，3x 高清资源） */
+.brand-logo-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.brand-logo {
+    display: block;
+    height: 40px;
+    width: auto;
+}
+
+@media (max-width: 768px) {
+    .brand-logo {
+        height: 32px;
+    }
+    .nav-brand .tagline {
+        display: none;
+    }
 }
 
 .logo {
